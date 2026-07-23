@@ -1,0 +1,68 @@
+{
+  "id": "stick-mythology-en",
+  "name": "Stick Figure Mythology EN",
+  "version": "1.0.0",
+  "description": "Retellings of Greek/Norse mythology in hand-drawn stickman doodle style, English narrator.",
+  "author": "aivideoultimate",
+  "license": "MIT",
+  "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
+
+  "target": {
+    "language": "en",
+    "market": ["en-US", "en-GB", "en-CA", "en-AU"],
+    "audience": "adult",
+    "genre": "mythology-retelling",
+    "aspectRatio": "16:9",
+    "duration": { "min": 300, "target": 900, "max": 1500 }
+  },
+
+  "compat": { "core": ">=1.0.0" },
+
+  "assets": {
+    "templates": "templates",
+    "characters": "characters",
+    "sfx": "sfx",
+    "voice": "voice",
+    "sources": "sources",
+    "style": "style/tokens.css"
+  },
+
+  "prompts": {
+    "script": "prompts/script.md",
+    "scene": "prompts/scene.md"
+  },
+
+  "voice": {
+    "referenceClip": "voice/ref-narrator-en.mp3",
+    "defaultVoiceId": "stick-mythology-narrator-en",
+    "language": "en"
+  },
+
+  "scenes": {
+    "defaultTemplate": "narrator-scene",
+    "hookTemplate": "hero-hook",
+    "outroTemplate": "outro-cta",
+    "beatStructure": ["hook", "setup", "conflict", "climax", "resolution", "outro"]
+  },
+
+  "extraSceneFields": {
+    "character.pose": {
+      "type": "enum",
+      "values": ["walking", "talking", "fighting", "thinking", "reacting"],
+      "default": "talking",
+      "label": "Stick figure pose"
+    },
+    "character.expression": {
+      "type": "enum",
+      "values": ["neutral", "angry", "shocked", "sad", "smug"],
+      "default": "neutral",
+      "label": "Facial expression"
+    },
+    "background.style": {
+      "type": "enum",
+      "values": ["savanna", "cave", "mountain", "sea", "village", "abstract"],
+      "default": "abstract",
+      "label": "Background"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "packs": [
+    {
+      "packId": "stick-mythology-en",
+      "version": "1.0.0",
+      "name": "Stick Figure Mythology EN",
+      "description": "Retellings of Greek/Norse mythology in a hand-drawn stickman doodle style, English narrator.",
+      "aspectRatio": "16:9",
+      "language": "en"
+    },
+    {
+      "packId": "self-improvement-vn",
+      "version": "1.0.0",
+      "name": "Tự Phát Triển Bản Thân VN",
+      "description": "Doodle animation VN cho self-improvement / productivity 60–90s vertical.",
+      "aspectRatio": "9:16",
+      "language": "vi"
+    }
+  ]
+}

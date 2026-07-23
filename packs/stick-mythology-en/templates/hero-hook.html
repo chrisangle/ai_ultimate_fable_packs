@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; background: #0f172a; font-family: -apple-system, sans-serif; overflow: hidden; }
+  .stage { width: 1920px; height: 1080px; position: relative;
+    background: radial-gradient(ellipse at center, #f97316 0%, #7c2d12 50%, #1a1a1a 100%); }
+  .kicker { position: absolute; top: 120px; left: 50%; transform: translateX(-50%);
+    color: #fbbf24; font-size: 40px; font-weight: 700; letter-spacing: 6px; text-transform: uppercase; }
+  .headline { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    color: white; font-size: 180px; font-weight: 900; line-height: 1.05; text-align: center;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.6); max-width: 1600px; }
+  .stickman-mini { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="kicker" data-composition-variable="kicker">MYTHOLOGY</div>
+    <div class="headline" data-composition-variable="headline">The Real Story</div>
+    <svg class="stickman-mini" width="120" height="200" viewBox="0 0 100 170">
+      <circle cx="50" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
+      <line x1="50" y1="36" x2="50" y2="105" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="55" x2="25" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="55" x2="75" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="105" x2="35" y2="150" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="105" x2="65" y2="150" stroke="#1c1917" stroke-width="4"/>
+    </svg>
+  </div>
+</body>
+</html>

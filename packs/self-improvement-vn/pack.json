@@ -1,0 +1,58 @@
+{
+  "id": "self-improvement-vn",
+  "name": "Tự Phát Triển Bản Thân VN",
+  "version": "1.0.0",
+  "description": "Doodle animation VN cho self-improvement / productivity 60–90s vertical (giống Đồn Như Lời).",
+  "author": "aivideoultimate",
+  "license": "MIT",
+  "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
+
+  "target": {
+    "language": "vi",
+    "market": ["vi-VN"],
+    "audience": "adult",
+    "genre": "self-improvement",
+    "aspectRatio": "9:16",
+    "duration": { "min": 60, "target": 90, "max": 180 }
+  },
+
+  "compat": { "core": ">=1.0.0" },
+
+  "assets": {
+    "templates": "templates",
+    "voice": "voice",
+    "sfx": "sfx",
+    "style": "style/tokens.css"
+  },
+
+  "prompts": {
+    "script": "prompts/script.md",
+    "scene": "prompts/scene.md"
+  },
+
+  "voice": {
+    "referenceClip": "voice/ref-narrator-vn.mp3",
+    "defaultVoiceId": "self-improvement-narrator-vn",
+    "language": "vi"
+  },
+
+  "scenes": {
+    "defaultTemplate": "doodle-scene",
+    "hookTemplate": "big-question-hook",
+    "outroTemplate": "cta-followup",
+    "beatStructure": ["hook", "problem", "principle", "example", "action", "outro"]
+  },
+
+  "extraSceneFields": {
+    "emotion": {
+      "type": "enum",
+      "values": ["tired", "motivated", "frustrated", "energetic", "curious"],
+      "default": "curious",
+      "label": "Cảm xúc nhân vật"
+    },
+    "keyPoint": {
+      "type": "string",
+      "label": "1 câu chốt (nếu có)"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; background: #f5e0b8; font-family: -apple-system, "Helvetica Neue", sans-serif; overflow: hidden; }
+  .stage { width: 1080px; height: 1920px; position: relative; background: #f5e0b8; }
+  .doodle-char { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); }
+  .caption { position: absolute; bottom: 240px; left: 60px; right: 60px;
+    background: rgba(28, 25, 23, 0.9); color: #fef3c7; font-size: 56px; font-weight: 700;
+    padding: 32px 40px; border-radius: 16px; text-align: center; line-height: 1.35; }
+  .footer { position: absolute; bottom: 100px; left: 0; right: 0; text-align: center;
+    color: #78350f; font-size: 32px; font-weight: 600; letter-spacing: 4px; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <svg class="doodle-char" width="440" height="600" viewBox="0 0 100 140">
+      <!-- Doodle head + shrug body (Đồn Như Lời style) -->
+      <circle cx="50" cy="30" r="22" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
+      <path d="M 40 34 Q 50 40 60 34" stroke="#1c1917" stroke-width="2" fill="none"/>
+      <circle cx="43" cy="27" r="2" fill="#1c1917"/>
+      <circle cx="57" cy="27" r="2" fill="#1c1917"/>
+      <line x1="50" y1="52" x2="50" y2="95" stroke="#1c1917" stroke-width="4"/>
+      <path d="M 50 65 Q 25 60 20 80" stroke="#1c1917" stroke-width="3" fill="none"/>
+      <path d="M 50 65 Q 75 60 80 80" stroke="#1c1917" stroke-width="3" fill="none"/>
+      <line x1="50" y1="95" x2="35" y2="130" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="95" x2="65" y2="130" stroke="#1c1917" stroke-width="4"/>
+    </svg>
+    <div class="caption" data-composition-variable="voiceText">Nội dung caption VN.</div>
+    <div class="footer" data-composition-variable="footer">TỰ PHÁT TRIỂN</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* Pack color palette — imported by templates via CSS variables */
+:root {
+  --pack-accent: #f97316;
+  --pack-bg: #1a1a1a;
+  --pack-text: #fef3c7;
+}

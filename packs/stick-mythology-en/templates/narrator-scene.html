@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; background: #1a1a1a; font-family: -apple-system, sans-serif; overflow: hidden; }
+  .stage { width: 1920px; height: 1080px; position: relative; }
+  .bg { position: absolute; inset: 0; background: linear-gradient(180deg, #f5e0b8 0%, #d97706 60%, #78350f 100%); }
+  .stickman { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .caption { position: absolute; left: 50%; bottom: 80px; transform: translateX(-50%);
+    background: rgba(0,0,0,0.75); color: white; font-size: 44px; font-weight: 600;
+    padding: 18px 32px; border-radius: 10px; max-width: 1400px; text-align: center;
+    line-height: 1.35; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="bg" data-composition-variable="background.style"></div>
+    <svg class="stickman" width="280" height="480" viewBox="0 0 100 170">
+      <!-- Hand-drawn stickman: head + body + limbs -->
+      <circle cx="50" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
+      <circle cx="45" cy="18" r="1.8" fill="#1c1917"/>
+      <circle cx="55" cy="18" r="1.8" fill="#1c1917"/>
+      <path d="M 44 26 Q 50 30 56 26" stroke="#1c1917" stroke-width="2" fill="none"/>
+      <line x1="50" y1="36" x2="50" y2="105" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="55" x2="25" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="55" x2="75" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="105" x2="35" y2="150" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="105" x2="65" y2="150" stroke="#1c1917" stroke-width="4"/>
+    </svg>
+    <div class="caption" data-composition-variable="voiceText">
+      Narrator caption placeholder.
+    </div>
+  </div>
+</body>
+</html>
