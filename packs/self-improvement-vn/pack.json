@@ -1,8 +1,14 @@
 {
   "id": "self-improvement-vn",
-  "name": "Tự Phát Triển Bản Thân VN",
-  "version": "1.0.3",
-  "description": "Doodle animation VN cho self-improvement / productivity 60–90s vertical (giống Đồn Như Lời).",
+  "name": {
+    "en": "Self-Improvement (VN)",
+    "vi": "Tự Phát Triển Bản Thân"
+  },
+  "version": "1.1.0",
+  "description": {
+    "en": "Vietnamese doodle animation for self-improvement / productivity shorts, 60–90s vertical (Đồn Như Lời style).",
+    "vi": "Doodle animation tiếng Việt cho short về self-improvement / productivity, dọc 60–90 giây (kiểu Đồn Như Lời)."
+  },
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
@@ -42,6 +48,88 @@
     "hookTemplate": "big-question-hook",
     "outroTemplate": "cta-followup",
     "beatStructure": ["hook", "problem", "principle", "example", "action", "outro"]
+  },
+
+  "templateCatalog": {
+    "big-question-hook": {
+      "id": "big-question-hook",
+      "name": {
+        "en": "Big Question Hook",
+        "vi": "Hook Câu Hỏi Lớn"
+      },
+      "description": {
+        "en": "Opening — red stamp kicker + huge question headline + tilted doodle character. Use ONCE as scene 1.",
+        "vi": "Mở đầu — kicker đỏ đóng dấu + câu hỏi lớn + doodle nhân vật nghiêng. Dùng MỘT LẦN cho cảnh 1."
+      },
+      "role": "hook",
+      "slots": {
+        "kicker": {
+          "type": "string",
+          "required": true,
+          "maxLength": 24,
+          "label": { "en": "Red kicker stamp", "vi": "Nhãn đỏ đóng dấu" }
+        },
+        "headline": {
+          "type": "string",
+          "required": true,
+          "maxLength": 40,
+          "label": { "en": "Big question", "vi": "Câu hỏi lớn" },
+          "help": { "en": "1 short line that provokes curiosity", "vi": "1 câu ngắn, gây tò mò" }
+        }
+      }
+    },
+    "doodle-scene": {
+      "id": "doodle-scene",
+      "name": {
+        "en": "Doodle Scene",
+        "vi": "Cảnh Doodle"
+      },
+      "description": {
+        "en": "Body scene — floating doodle character + centered caption pill + footer tag. Default for every body beat.",
+        "vi": "Cảnh body — doodle nhân vật float + caption pill giữa + footer tag. Mặc định cho mọi beat body."
+      },
+      "role": "body",
+      "slots": {
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 180,
+          "label": { "en": "Caption (narrator reads)", "vi": "Caption (người dẫn đọc)" }
+        },
+        "footer": {
+          "type": "string",
+          "maxLength": 24,
+          "label": { "en": "Footer tag", "vi": "Footer tag" },
+          "help": { "en": "Small caps label at the bottom (default: TỰ PHÁT TRIỂN)", "vi": "Nhãn chữ in nhỏ (mặc định TỰ PHÁT TRIỂN)" }
+        }
+      }
+    },
+    "cta-followup": {
+      "id": "cta-followup",
+      "name": {
+        "en": "CTA Followup",
+        "vi": "CTA Kết Bài"
+      },
+      "description": {
+        "en": "Outro — thank-you line + pulsing red CTA button. Use ONCE as the last scene.",
+        "vi": "Outro — câu cảm ơn + nút CTA đỏ pulsing. Dùng MỘT LẦN cho cảnh cuối."
+      },
+      "role": "outro",
+      "slots": {
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 80,
+          "label": { "en": "Thanks / sign-off", "vi": "Câu cảm ơn / kết bài" }
+        },
+        "cta": {
+          "type": "string",
+          "required": true,
+          "maxLength": 20,
+          "label": { "en": "CTA button (all caps)", "vi": "Nút CTA (in hoa)" }
+        }
+      }
+    }
   },
 
   "extraSceneFields": {

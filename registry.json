@@ -2,25 +2,43 @@
   "packs": [
     {
       "packId": "stick-mythology-en",
-      "version": "1.0.3",
-      "name": "Stick Figure Mythology EN",
-      "description": "Retellings of Greek/Norse mythology in a hand-drawn stickman doodle style, English narrator.",
+      "version": "1.1.0",
+      "name": {
+        "en": "Stick Figure Mythology",
+        "vi": "Thần Thoại Que Diêm"
+      },
+      "description": {
+        "en": "Retellings of Greek/Norse mythology in hand-drawn stickman doodle style, English narrator.",
+        "vi": "Kể lại thần thoại Hy Lạp/Bắc Âu dưới dạng doodle hình que vẽ tay, người dẫn nói tiếng Anh."
+      },
       "aspectRatio": "16:9",
       "language": "en"
     },
     {
       "packId": "self-improvement-vn",
-      "version": "1.0.3",
-      "name": "Tự Phát Triển Bản Thân VN",
-      "description": "Doodle animation VN cho self-improvement / productivity 60–90s vertical.",
+      "version": "1.1.0",
+      "name": {
+        "en": "Self-Improvement (VN)",
+        "vi": "Tự Phát Triển Bản Thân"
+      },
+      "description": {
+        "en": "Vietnamese doodle animation for self-improvement / productivity shorts, 60–90s vertical.",
+        "vi": "Doodle animation tiếng Việt cho short về self-improvement / productivity, dọc 60–90 giây."
+      },
       "aspectRatio": "9:16",
       "language": "vi"
     },
     {
       "packId": "bedtime-tales-en",
-      "version": "1.0.3",
-      "name": "Bedtime Tales EN",
-      "description": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
+      "version": "1.1.0",
+      "name": {
+        "en": "Bedtime Tales",
+        "vi": "Chuyện Kể Trước Giờ Ngủ"
+      },
+      "description": {
+        "en": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
+        "vi": "Truyện kể trước giờ ngủ cho trẻ em, phong cách sách tranh ấm áp, người dẫn tiếng Anh, video 3–6 phút."
+      },
       "aspectRatio": "16:9",
       "language": "en"
     }

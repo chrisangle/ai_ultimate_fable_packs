@@ -1,8 +1,14 @@
 {
   "id": "stick-mythology-en",
-  "name": "Stick Figure Mythology EN",
-  "version": "1.0.3",
-  "description": "Retellings of Greek/Norse mythology in hand-drawn stickman doodle style, English narrator.",
+  "name": {
+    "en": "Stick Figure Mythology",
+    "vi": "Thần Thoại Que Diêm"
+  },
+  "version": "1.1.0",
+  "description": {
+    "en": "Retellings of Greek/Norse mythology in hand-drawn stickman doodle style, English narrator.",
+    "vi": "Kể lại thần thoại Hy Lạp/Bắc Âu dưới dạng doodle hình que vẽ tay, người dẫn nói tiếng Anh."
+  },
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
@@ -44,6 +50,81 @@
     "hookTemplate": "hero-hook",
     "outroTemplate": "outro-cta",
     "beatStructure": ["hook", "setup", "conflict", "climax", "resolution", "outro"]
+  },
+
+  "templateCatalog": {
+    "hero-hook": {
+      "id": "hero-hook",
+      "name": {
+        "en": "Hero Hook",
+        "vi": "Hook Mở Đầu"
+      },
+      "description": {
+        "en": "Opening hook — kicker chip + huge headline + bobbing stickman over a sunset aurora glow. Use ONCE as scene 1.",
+        "vi": "Mở đầu — nhãn kicker + tiêu đề lớn + hình que nhấp nhô trên nền hoàng hôn rực. Dùng MỘT LẦN cho cảnh 1."
+      },
+      "role": "hook",
+      "slots": {
+        "kicker": {
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": { "en": "Kicker (small caps chip)", "vi": "Kicker (chữ in nhỏ)" }
+        },
+        "headline": {
+          "type": "string",
+          "required": true,
+          "maxLength": 60,
+          "label": { "en": "Headline (3 lines max)", "vi": "Tiêu đề (tối đa 3 dòng)" }
+        }
+      }
+    },
+    "narrator-scene": {
+      "id": "narrator-scene",
+      "name": {
+        "en": "Narrator Scene",
+        "vi": "Cảnh Người Dẫn"
+      },
+      "description": {
+        "en": "Body scene — stickman standing under a sunset sky with a caption pill at the bottom. Default for every story beat.",
+        "vi": "Cảnh body — hình que đứng dưới bầu trời hoàng hôn với thẻ caption ở dưới. Mặc định cho mọi nhịp truyện."
+      },
+      "role": "body",
+      "slots": {
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 220,
+          "label": { "en": "Narrator caption (auto-wrap 2 lines)", "vi": "Caption người dẫn (auto-wrap 2 dòng)" }
+        }
+      }
+    },
+    "outro-cta": {
+      "id": "outro-cta",
+      "name": {
+        "en": "Outro CTA",
+        "vi": "Outro CTA"
+      },
+      "description": {
+        "en": "Closing — thank-you headline + glowing CTA pill + waving stickman. Use ONCE as the last scene.",
+        "vi": "Kết bài — lời cảm ơn + nút CTA phát sáng + hình que vẫy tay. Dùng MỘT LẦN cho cảnh cuối."
+      },
+      "role": "outro",
+      "slots": {
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 80,
+          "label": { "en": "Thanks / sign-off line", "vi": "Câu cảm ơn / kết thúc" }
+        },
+        "cta": {
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": { "en": "Call to action (all caps)", "vi": "Kêu gọi hành động (chữ in hoa)" }
+        }
+      }
+    }
   },
 
   "extraSceneFields": {

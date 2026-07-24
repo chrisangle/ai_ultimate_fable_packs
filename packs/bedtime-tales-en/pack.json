@@ -1,8 +1,14 @@
 {
   "id": "bedtime-tales-en",
-  "name": "Bedtime Tales EN",
-  "version": "1.0.3",
-  "description": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
+  "name": {
+    "en": "Bedtime Tales",
+    "vi": "Chuyện Kể Trước Giờ Ngủ"
+  },
+  "version": "1.1.0",
+  "description": {
+    "en": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
+    "vi": "Truyện kể trước giờ ngủ cho trẻ em, phong cách sách tranh ấm áp, người dẫn tiếng Anh, video 3–6 phút."
+  },
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
@@ -23,7 +29,8 @@
     "templates": "templates",
     "characters": "characters",
     "sfx": "sfx",
-    "voice": "voice"
+    "voice": "voice",
+    "style": "style/tokens.css"
   },
 
   "prompts": {
@@ -42,5 +49,105 @@
     "hookTemplate": "hook-title",
     "outroTemplate": "end-card",
     "beatStructure": ["hook", "setup", "problem", "resolution", "moral", "outro"]
+  },
+
+  "templateCatalog": {
+    "hook-title": {
+      "id": "hook-title",
+      "name": {
+        "en": "Hook Title",
+        "vi": "Trang Mở Đầu"
+      },
+      "description": {
+        "en": "Cozy opening — moon + twinkling stars + purple night sky + centered book with story title. Use ONCE as scene 1.",
+        "vi": "Mở đầu ấm áp — trăng + sao lấp lánh + bầu trời đêm tím + cuốn sách chứa tựa truyện. Dùng MỘT LẦN cho cảnh 1."
+      },
+      "role": "hook",
+      "slots": {
+        "kicker": {
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": { "en": "Kicker (small caps)", "vi": "Kicker (chữ in nhỏ)" }
+        },
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 80,
+          "label": { "en": "Story title inside the book", "vi": "Tựa truyện trong sách" }
+        },
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 120,
+          "label": { "en": "Warm invitation caption", "vi": "Caption lời mời ấm áp" }
+        }
+      }
+    },
+    "storybook-page": {
+      "id": "storybook-page",
+      "name": {
+        "en": "Storybook Page",
+        "vi": "Trang Sách"
+      },
+      "description": {
+        "en": "Body — parchment spread with a soft illustration on the left, heading + body copy on the right, chapter/page number. Default for every scene beat.",
+        "vi": "Body — trang giấy da với minh họa nhẹ nhàng bên trái, tiêu đề + nội dung bên phải, số chương/trang. Mặc định cho mọi nhịp truyện."
+      },
+      "role": "body",
+      "slots": {
+        "order": {
+          "type": "string",
+          "required": true,
+          "maxLength": 3,
+          "label": { "en": "Chapter / page number", "vi": "Số chương / trang" },
+          "help": { "en": "1, 2, 3…", "vi": "1, 2, 3…" }
+        },
+        "heading": {
+          "type": "string",
+          "required": true,
+          "maxLength": 40,
+          "label": { "en": "Heading (sentence case)", "vi": "Tiêu đề (chữ thường)" }
+        },
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 260,
+          "label": { "en": "Body copy (narrator reads this)", "vi": "Nội dung (người dẫn đọc)" }
+        }
+      }
+    },
+    "end-card": {
+      "id": "end-card",
+      "name": {
+        "en": "End Card",
+        "vi": "Thẻ Kết Thúc"
+      },
+      "description": {
+        "en": "Closing — night sky + moon + italic 'The End' + sweet-dreams caption. Use ONCE as the last scene.",
+        "vi": "Kết — bầu trời đêm + trăng + chữ nghiêng 'The End' + caption chúc ngủ ngon. Dùng MỘT LẦN cho cảnh cuối."
+      },
+      "role": "outro",
+      "slots": {
+        "endTitle": {
+          "type": "string",
+          "required": true,
+          "maxLength": 20,
+          "label": { "en": "End title (default: The End)", "vi": "Tựa kết (mặc định: The End)" }
+        },
+        "sub": {
+          "type": "string",
+          "required": true,
+          "maxLength": 20,
+          "label": { "en": "Subtitle (default: Sweet Dreams)", "vi": "Phụ đề (mặc định: Sweet Dreams)" }
+        },
+        "voiceText": {
+          "type": "string",
+          "required": true,
+          "maxLength": 100,
+          "label": { "en": "Goodnight caption", "vi": "Caption chúc ngủ ngon" }
+        }
+      }
+    }
   }
 }
