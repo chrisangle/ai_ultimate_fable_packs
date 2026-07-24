@@ -27,7 +27,6 @@
     color: var(--pack-ink);
     font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
   }
-  /* Distant sun disc — anchors the horizon, keeps the frame from feeling flat. */
   .sun {
     position: absolute; top: 240px; left: 50%; transform: translateX(-50%);
     width: 240px; height: 240px; border-radius: 50%;
@@ -35,7 +34,6 @@
     filter: blur(2px);
     animation: sway 8s ease-in-out infinite;
   }
-  /* Ground silhouette — soft dark strip suggesting terrain without competing with the stickman. */
   .ground {
     position: absolute; left: 0; right: 0; bottom: 0;
     height: 220px;
@@ -46,11 +44,11 @@
     50%     { transform: translateX(-50%) translateY(-12px); }
   }
   @keyframes walk {
-    0%,100% { transform: translateY(0); }
-    50%     { transform: translateY(-8px); }
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%     { transform: translateX(-50%) translateY(-10px); }
   }
   .stickman {
-    position: absolute; bottom: 260px; left: 50%; transform: translateX(-50%);
+    position: absolute; bottom: 260px; left: 50%;
     animation: walk 2.4s ease-in-out infinite;
   }
   .caption {
@@ -67,21 +65,43 @@
 </style>
 </head>
 <body>
-  <div id="root" data-composition-id="narrator-scene" data-duration="10">
+  <div id="root"
+       data-composition-id="narrator-scene"
+       data-start="0"
+       data-duration="10"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"voiceText":"Narrator caption placeholder."}'>
     <div class="sun"></div>
     <div class="ground"></div>
     <svg class="stickman" width="280" height="480" viewBox="0 0 100 170" aria-hidden="true">
-      <circle cx="50" cy="20" r="16" fill="var(--pack-stick-skin)" stroke="var(--pack-stick-ink)" stroke-width="2.5"/>
-      <circle cx="45" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
-      <circle cx="55" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
-      <path d="M 44 26 Q 50 30 56 26" stroke="var(--pack-stick-ink)" stroke-width="2" fill="none"/>
-      <line x1="50" y1="36" x2="50" y2="105" stroke="var(--pack-stick-ink)" stroke-width="4"/>
-      <line x1="50" y1="55" x2="25" y2="75" stroke="var(--pack-stick-ink)" stroke-width="3"/>
-      <line x1="50" y1="55" x2="75" y2="75" stroke="var(--pack-stick-ink)" stroke-width="3"/>
-      <line x1="50" y1="105" x2="35" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
-      <line x1="50" y1="105" x2="65" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+      <circle cx="50" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
+      <circle cx="45" cy="18" r="1.8" fill="#1c1917"/>
+      <circle cx="55" cy="18" r="1.8" fill="#1c1917"/>
+      <path d="M 44 26 Q 50 30 56 26" stroke="#1c1917" stroke-width="2" fill="none"/>
+      <line x1="50" y1="36" x2="50" y2="105" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="55" x2="25" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="55" x2="75" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="105" x2="35" y2="150" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="105" x2="65" y2="150" stroke="#1c1917" stroke-width="4"/>
     </svg>
-    <div class="caption" data-composition-variable="voiceText">Narrator caption placeholder.</div>
+    <div class="caption" data-slot="voiceText">Narrator caption placeholder.</div>
   </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['narrator-scene'] = {
+        pause: function () {},
+        seek:  function () {},
+        paused: function () { return true; },
+      };
+    })();
+  </script>
 </body>
 </html>

@@ -28,7 +28,6 @@
     color: var(--pack-ink);
     font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
   }
-  /* subtle warm light drifting up from the horizon */
   .glow {
     position: absolute; left: 50%; bottom: -220px; transform: translateX(-50%);
     width: 1400px; height: 700px; border-radius: 50%;
@@ -74,21 +73,43 @@
 </style>
 </head>
 <body>
-  <div id="root" data-composition-id="hero-hook" data-duration="8">
+  <div id="root"
+       data-composition-id="hero-hook"
+       data-start="0"
+       data-duration="8"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"kicker":"MYTHOLOGY","headline":"The Real Story"}'>
     <div class="glow"></div>
-    <div class="kicker" data-composition-variable="kicker">MYTHOLOGY</div>
-    <div class="headline" data-composition-variable="headline">The Real Story</div>
+    <div class="kicker" data-slot="kicker">MYTHOLOGY</div>
+    <div class="headline" data-slot="headline">The Real Story</div>
     <svg class="stickman" width="120" height="200" viewBox="0 0 100 170" aria-hidden="true">
-      <circle cx="50" cy="20" r="16" fill="var(--pack-stick-skin)" stroke="var(--pack-stick-ink)" stroke-width="2.5"/>
-      <circle cx="45" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
-      <circle cx="55" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
-      <path d="M 44 26 Q 50 30 56 26" stroke="var(--pack-stick-ink)" stroke-width="2" fill="none"/>
-      <line x1="50" y1="36" x2="50" y2="105" stroke="var(--pack-stick-ink)" stroke-width="4"/>
-      <line x1="50" y1="55" x2="25" y2="75" stroke="var(--pack-stick-ink)" stroke-width="3"/>
-      <line x1="50" y1="55" x2="75" y2="75" stroke="var(--pack-stick-ink)" stroke-width="3"/>
-      <line x1="50" y1="105" x2="35" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
-      <line x1="50" y1="105" x2="65" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+      <circle cx="50" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
+      <circle cx="45" cy="18" r="1.8" fill="#1c1917"/>
+      <circle cx="55" cy="18" r="1.8" fill="#1c1917"/>
+      <path d="M 44 26 Q 50 30 56 26" stroke="#1c1917" stroke-width="2" fill="none"/>
+      <line x1="50" y1="36" x2="50" y2="105" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="55" x2="25" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="55" x2="75" y2="75" stroke="#1c1917" stroke-width="3"/>
+      <line x1="50" y1="105" x2="35" y2="150" stroke="#1c1917" stroke-width="4"/>
+      <line x1="50" y1="105" x2="65" y2="150" stroke="#1c1917" stroke-width="4"/>
     </svg>
   </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['hero-hook'] = {
+        pause: function () {},
+        seek:  function () {},
+        paused: function () { return true; },
+      };
+    })();
+  </script>
 </body>
 </html>

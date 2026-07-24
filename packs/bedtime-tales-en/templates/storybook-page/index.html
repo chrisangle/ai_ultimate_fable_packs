@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bedtime Tales — Storybook Page</title>
+<meta name="viewport" content="width=1920, height=1080">
+<title>Bedtime Tales · Storybook Page · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap');
-  body { margin: 0; background: #1a1330; font-family: 'Fraunces', Georgia, serif; overflow: hidden; }
-  .stage { width: 1920px; height: 1080px; position: relative;
-    background: linear-gradient(180deg, #fef3c7 0%, #fef9c3 50%, #fde68a 100%); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink-dark: #78350f;
+    --pack-ink-body: #422006;
+    --pack-safe: 80px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fef3c7 0%, #fef9c3 50%, #fde68a 100%);
+    color: var(--pack-ink-body);
+    font-family: "Fraunces", Georgia, serif;
+  }
   .paper {
     position: absolute; inset: 60px; border-radius: 20px;
     background: #fffbeb;
@@ -15,10 +32,16 @@
       radial-gradient(circle at 20% 30%, rgba(180, 83, 9, 0.05) 0%, transparent 40%),
       radial-gradient(circle at 80% 70%, rgba(180, 83, 9, 0.04) 0%, transparent 40%);
     box-shadow: 0 30px 80px rgba(120, 53, 15, 0.25), inset 0 0 100px rgba(180, 83, 9, 0.08);
+    animation: page-turn 0.9s ease-out both;
+  }
+  @keyframes page-turn {
+    from { transform: rotateY(-10deg) scale(0.98); opacity: 0; }
+    to   { transform: rotateY(0)      scale(1);    opacity: 1; }
   }
   .scene-number {
-    position: absolute; top: 100px; left: 130px; font-size: 22px; letter-spacing: 6px;
-    text-transform: uppercase; color: #92400e; font-weight: 500;
+    position: absolute; top: 100px; left: 130px;
+    font-size: 22px; letter-spacing: 6px; text-transform: uppercase;
+    color: #92400e; font-weight: 500;
   }
   .illustration {
     position: absolute; left: 130px; top: 180px; width: 800px; height: 640px;
@@ -27,8 +50,10 @@
     box-shadow: inset 0 0 60px rgba(6, 78, 59, 0.15);
     display: flex; align-items: flex-end; justify-content: center;
   }
-  .house {
-    width: 300px; height: 240px; margin-bottom: 60px; position: relative;
+  .house { width: 300px; height: 240px; margin-bottom: 60px; position: relative; animation: sway 5s ease-in-out infinite; }
+  @keyframes sway {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-6px); }
   }
   .house .roof {
     width: 0; height: 0; margin: 0 auto;
@@ -36,34 +61,44 @@
     border-bottom: 130px solid #b45309;
   }
   .house .wall {
-    width: 260px; height: 130px; margin: 0 auto; background: #fef3c7;
-    border: 3px solid #92400e; border-top: none;
+    width: 260px; height: 130px; margin: 0 auto;
+    background: #fef3c7; border: 3px solid #92400e; border-top: none;
   }
   .house .door {
     position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
     width: 70px; height: 100px; background: #7c2d12; border-radius: 35px 35px 0 0;
   }
   .house .window {
-    position: absolute; top: 165px; width: 44px; height: 44px; background: #fde68a;
-    border: 3px solid #92400e;
+    position: absolute; top: 165px; width: 44px; height: 44px;
+    background: #fde68a; border: 3px solid #92400e;
   }
   .house .window.left { left: 30px; }
   .house .window.right { right: 30px; }
-  .tree {
-    position: absolute; bottom: 30px; width: 100px; height: 220px;
-  }
+  .tree { position: absolute; bottom: 30px; width: 100px; height: 220px; }
   .tree.left { left: 40px; }
   .tree.right { right: 40px; }
-  .tree .trunk { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-    width: 22px; height: 90px; background: #78350f; }
-  .tree .canopy { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
-    width: 100px; height: 130px; background: #15803d; border-radius: 50%;
-    box-shadow: inset 0 0 20px rgba(20, 83, 45, 0.4); }
-  .text-block {
-    position: absolute; right: 130px; top: 220px; width: 780px;
+  .tree .trunk {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 22px; height: 90px; background: #78350f;
   }
-  .heading { font-size: 52px; font-weight: 700; color: #78350f; margin-bottom: 30px; line-height: 1.2; }
-  .body-copy { font-size: 34px; color: #422006; line-height: 1.55; font-weight: 500; }
+  .tree .canopy {
+    position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+    width: 100px; height: 130px; background: #15803d; border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(20, 83, 45, 0.4);
+    animation: rustle 4s ease-in-out infinite;
+  }
+  @keyframes rustle {
+    0%,100% { transform: translateX(-50%) rotate(-2deg); }
+    50%     { transform: translateX(-50%) rotate(2deg); }
+  }
+  .text-block { position: absolute; right: 130px; top: 220px; width: 780px; }
+  .heading {
+    font-size: 52px; font-weight: 700; color: var(--pack-ink-dark);
+    margin-bottom: 30px; line-height: 1.2;
+  }
+  .body-copy {
+    font-size: 34px; color: var(--pack-ink-body); line-height: 1.55; font-weight: 500;
+  }
   .page-number {
     position: absolute; bottom: 100px; right: 130px;
     font-size: 24px; color: #92400e; letter-spacing: 4px;
@@ -71,16 +106,18 @@
 </style>
 </head>
 <body>
-  <div class="stage" data-composition-id="storybook-page" data-duration="10" >
+  <div id="root"
+       data-composition-id="storybook-page"
+       data-start="0"
+       data-duration="10"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"order":"1","heading":"A cozy little house","voiceText":"In a small village at the edge of the woods, there stood a warm little cottage where a kind old baker made bread every morning."}'>
     <div class="paper">
-      <div class="scene-number">Chapter <span data-composition-variable="order">1</span></div>
+      <div class="scene-number">Chapter <span data-slot="order">1</span></div>
       <div class="illustration">
-        <div class="tree left">
-          <div class="canopy"></div><div class="trunk"></div>
-        </div>
-        <div class="tree right">
-          <div class="canopy"></div><div class="trunk"></div>
-        </div>
+        <div class="tree left"><div class="canopy"></div><div class="trunk"></div></div>
+        <div class="tree right"><div class="canopy"></div><div class="trunk"></div></div>
         <div class="house">
           <div class="roof"></div>
           <div class="wall"></div>
@@ -90,13 +127,29 @@
         </div>
       </div>
       <div class="text-block">
-        <div class="heading" data-composition-variable="heading">A cozy little house</div>
-        <div class="body-copy" data-composition-variable="voiceText">
+        <div class="heading" data-slot="heading">A cozy little house</div>
+        <div class="body-copy" data-slot="voiceText">
           In a small village at the edge of the woods, there stood a warm little cottage where a kind old baker made bread every morning.
         </div>
       </div>
-      <div class="page-number" data-composition-variable="order">page 1</div>
+      <div class="page-number">page <span data-slot="order">1</span></div>
     </div>
   </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['storybook-page'] = {
+        pause: function () {},
+        seek:  function () {},
+        paused: function () { return true; },
+      };
+    })();
+  </script>
 </body>
 </html>

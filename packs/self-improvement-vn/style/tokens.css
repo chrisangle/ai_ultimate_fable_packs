@@ -1,6 +1,35 @@
-/* Pack color palette — imported by templates via CSS variables */
+/*
+ * self-improvement-vn — reference palette + typography for pack authors.
+ *
+ * Templates INLINE these values (hyperframes renders each HTML standalone).
+ * Edit here first, then mirror into each template's <style> :root block.
+ * Font: Be Vietnam Pro chosen for full Vietnamese diacritic + long-line rhythm
+ * ("Đồn Như Lời" style — modern, friendly, high-contrast).
+ */
 :root {
-  --pack-accent: #dc2626;
+  /* Base surface — warm cream, mirrors the paper feel of doodle notebooks. */
   --pack-bg: #f5e0b8;
-  --pack-text: #1c1917;
+  --pack-surface: #fef3c7;
+
+  /* Ink — near-black warmish for maximum contrast on cream. */
+  --pack-ink: #1c1917;
+
+  /* Accent — signal red for question hooks + CTA; used sparingly. */
+  --pack-accent-1: #dc2626;
+  --pack-accent-2: #f97316;
+
+  /* Caption pill — inverted (dark chip) sits over illustrations. */
+  --pack-caption-bg: rgba(28, 25, 23, 0.9);
+  --pack-caption-ink: #fef3c7;
+
+  /* Doodle character ink + skin tone (constant across the pack). */
+  --pack-doodle-ink: #1c1917;
+  --pack-doodle-skin: #fde68a;
+
+  /* Safe-area padding — heavier for 9:16 so mobile UI (like/comment overlays) stays clear. */
+  --pack-safe-area: 100px;
+
+  /* Fonts — Be Vietnam Pro is the primary VN typeface; Inter Tight fallback for Latin. */
+  --pack-font-display: "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
+  --pack-font-body:    "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
 }

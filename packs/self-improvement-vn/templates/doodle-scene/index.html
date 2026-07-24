@@ -1,22 +1,87 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Tự Phát Triển · Doodle Scene · 9:16</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { margin: 0; background: #f5e0b8; font-family: -apple-system, "Helvetica Neue", sans-serif; overflow: hidden; }
-  .stage { width: 1080px; height: 1920px; position: relative; background: #f5e0b8; }
-  .doodle-char { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); }
-  .caption { position: absolute; bottom: 240px; left: 60px; right: 60px;
-    background: rgba(28, 25, 23, 0.9); color: #fef3c7; font-size: 56px; font-weight: 700;
-    padding: 32px 40px; border-radius: 16px; text-align: center; line-height: 1.35; }
-  .footer { position: absolute; bottom: 100px; left: 0; right: 0; text-align: center;
-    color: #78350f; font-size: 32px; font-weight: 600; letter-spacing: 4px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1080px; height: 1920px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-bg: #f5e0b8;
+    --pack-ink: #1c1917;
+    --pack-caption-bg: rgba(28, 25, 23, 0.9);
+    --pack-caption-ink: #fef3c7;
+    --pack-doodle-ink: #1c1917;
+    --pack-doodle-skin: #fde68a;
+    --pack-safe: 100px;
+  }
+  #root {
+    position: relative;
+    width: 1080px; height: 1920px;
+    overflow: hidden;
+    background: var(--pack-bg);
+    color: var(--pack-ink);
+    font-family: "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
+  }
+  .lines {
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 118px,
+      rgba(28, 25, 23, 0.05) 118px,
+      rgba(28, 25, 23, 0.05) 120px
+    );
+    pointer-events: none;
+  }
+  @keyframes float {
+    0%,100% { transform: translate(-50%, 0); }
+    50%     { transform: translate(-50%, -18px); }
+  }
+  @keyframes settle {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .doodle-char {
+    position: absolute; top: 28%; left: 50%;
+    transform: translate(-50%, 0);
+    animation: float 3.4s ease-in-out infinite;
+  }
+  .caption {
+    position: absolute;
+    bottom: 300px; left: var(--pack-safe); right: var(--pack-safe);
+    background: var(--pack-caption-bg); color: var(--pack-caption-ink);
+    font-size: 56px; font-weight: 700; line-height: 1.32;
+    padding: 36px 44px; border-radius: 18px;
+    text-align: center;
+    box-shadow: 8px 8px 0 rgba(28, 25, 23, 0.15);
+    animation: settle 0.7s ease-out both 0.4s;
+  }
+  .footer {
+    position: absolute; bottom: var(--pack-safe); left: 0; right: 0;
+    text-align: center;
+    color: #78350f;
+    font-size: 32px; font-weight: 600; letter-spacing: 6px;
+    text-transform: uppercase;
+  }
 </style>
 </head>
 <body>
-  <div class="stage" data-composition-id="doodle-scene" data-duration="10">
-    <svg class="doodle-char" width="440" height="600" viewBox="0 0 100 140">
-      <!-- Doodle head + shrug body (Đồn Như Lời style) -->
+  <div id="root"
+       data-composition-id="doodle-scene"
+       data-start="0"
+       data-duration="10"
+       data-width="1080"
+       data-height="1920"
+       data-composition-variables='{"voiceText":"Nội dung caption VN.","footer":"TỰ PHÁT TRIỂN"}'>
+    <div class="lines"></div>
+    <svg class="doodle-char" width="440" height="600" viewBox="0 0 100 140" aria-hidden="true">
       <circle cx="50" cy="30" r="22" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
       <path d="M 40 34 Q 50 40 60 34" stroke="#1c1917" stroke-width="2" fill="none"/>
       <circle cx="43" cy="27" r="2" fill="#1c1917"/>
@@ -27,8 +92,24 @@
       <line x1="50" y1="95" x2="35" y2="130" stroke="#1c1917" stroke-width="4"/>
       <line x1="50" y1="95" x2="65" y2="130" stroke="#1c1917" stroke-width="4"/>
     </svg>
-    <div class="caption" data-composition-variable="voiceText">Nội dung caption VN.</div>
-    <div class="footer" data-composition-variable="footer">TỰ PHÁT TRIỂN</div>
+    <div class="caption" data-slot="voiceText">Nội dung caption VN.</div>
+    <div class="footer" data-slot="footer">TỰ PHÁT TRIỂN</div>
   </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['doodle-scene'] = {
+        pause: function () {},
+        seek:  function () {},
+        paused: function () { return true; },
+      };
+    })();
+  </script>
 </body>
 </html>

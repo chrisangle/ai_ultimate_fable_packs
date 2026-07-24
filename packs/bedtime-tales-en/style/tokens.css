@@ -1,0 +1,35 @@
+/*
+ * bedtime-tales-en — reference palette + typography for pack authors.
+ *
+ * Templates INLINE these values (hyperframes renders each HTML standalone).
+ * Cozy storybook aesthetic: warm cream paper + midnight-purple night sky +
+ * gold moon accent. Fraunces serif carries the "read-aloud" tone.
+ */
+:root {
+  /* Night sky (hook + end-card) */
+  --pack-night-1: #2d1b52;
+  --pack-night-2: #1a1330;
+  --pack-night-3: #0d0820;
+
+  /* Paper (storybook-page) */
+  --pack-paper: #fffbeb;
+  --pack-paper-tint: rgba(180, 83, 9, 0.06);
+
+  /* Ink — warm brown for text on cream, cream for text on night. */
+  --pack-ink-dark: #78350f;
+  --pack-ink-body: #422006;
+  --pack-ink-cream: #fef3c7;
+
+  /* Accent — moon gold + eyebrow orange. */
+  --pack-moon-core: #fef9c3;
+  --pack-moon-warm: #fde68a;
+  --pack-moon-edge: #ca8a04;
+  --pack-accent-eyebrow: #fbbf24;
+
+  /* Safe area padding — text stays inside. */
+  --pack-safe-area: 120px;
+
+  /* Fonts — Fraunces has expressive serif optical sizing for storybook feel. */
+  --pack-font-display: "Fraunces", "Georgia", "Times New Roman", serif;
+  --pack-font-body:    "Fraunces", "Georgia", "Times New Roman", serif;
+}

@@ -1,57 +1,130 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bedtime Tales — Hook Title</title>
+<meta name="viewport" content="width=1920, height=1080">
+<title>Bedtime Tales · Hook Title · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap');
-  body { margin: 0; background: #1a1330; font-family: 'Fraunces', Georgia, serif; overflow: hidden; }
-  .stage { width: 1920px; height: 1080px; position: relative;
-    background: radial-gradient(ellipse at 50% 40%, #2d1b52 0%, #1a1330 70%, #0d0820 100%); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink-cream: #fef3c7;
+    --pack-eyebrow: #fbbf24;
+    --pack-safe: 100px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 40%, #2d1b52 0%, #1a1330 70%, #0d0820 100%);
+    color: var(--pack-ink-cream);
+    font-family: "Fraunces", Georgia, serif;
+  }
   .stars { position: absolute; inset: 0; overflow: hidden; }
   .star {
     position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff;
-    box-shadow: 0 0 6px #fff, 0 0 12px rgba(255,255,255,0.5); opacity: 0.8;
+    box-shadow: 0 0 6px #fff, 0 0 12px rgba(255,255,255,0.5); opacity: 0.85;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  .star.slow { animation-duration: 5s; }
+  .star.fast { animation-duration: 2s; }
+  @keyframes twinkle {
+    0%,100% { opacity: 0.85; }
+    50%     { opacity: 0.35; }
   }
   .moon {
-    position: absolute; right: 180px; top: 140px; width: 220px; height: 220px; border-radius: 50%;
+    position: absolute; right: 180px; top: 140px;
+    width: 220px; height: 220px; border-radius: 50%;
     background: radial-gradient(circle at 40% 40%, #fef9c3 0%, #fde68a 60%, #ca8a04 100%);
-    box-shadow: 0 0 80px rgba(254,240,138,0.35);
+    box-shadow: 0 0 80px rgba(254, 240, 138, 0.35);
+    animation: float-moon 8s ease-in-out infinite;
+  }
+  @keyframes float-moon {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-14px); }
   }
   .book {
     position: absolute; left: 50%; top: 55%; transform: translate(-50%, -50%);
     width: 900px; height: 640px; border-radius: 14px;
     background: linear-gradient(180deg, #5b21b6 0%, #4c1d95 100%);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.15);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.15);
     display: flex; align-items: center; justify-content: center; padding: 80px;
+    animation: enter 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
-  .title { color: #fef3c7; font-size: 92px; font-weight: 700; text-align: center; line-height: 1.15;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-  .kicker { color: #fbbf24; font-size: 28px; font-weight: 500; letter-spacing: 8px; text-transform: uppercase;
-    position: absolute; top: 60px; left: 50%; transform: translateX(-50%); }
-  .caption { position: absolute; left: 50%; bottom: 80px; transform: translateX(-50%);
-    color: #fef9c3; font-size: 32px; font-weight: 500; font-style: italic; max-width: 1400px;
-    text-align: center; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  @keyframes enter {
+    from { opacity: 0; transform: translate(-50%, -46%) scale(0.94); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+  .title {
+    color: var(--pack-ink-cream);
+    font-size: 92px; font-weight: 700; text-align: center; line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  .kicker {
+    color: var(--pack-eyebrow);
+    font-size: 28px; font-weight: 500; letter-spacing: 8px; text-transform: uppercase;
+    position: absolute; top: 60px; left: 50%; transform: translateX(-50%);
+    animation: fade-down 0.9s ease-out both;
+  }
+  @keyframes fade-down {
+    from { opacity: 0; transform: translate(-50%, -12px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
+  }
+  .caption {
+    position: absolute; left: 50%; bottom: var(--pack-safe); transform: translateX(-50%);
+    color: #fef9c3;
+    font-size: 32px; font-weight: 500; font-style: italic;
+    max-width: calc(1920px - 2 * var(--pack-safe));
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
 </style>
 </head>
 <body>
-  <div class="stage" data-composition-id="hook-title" data-duration="8" >
+  <div id="root"
+       data-composition-id="hook-title"
+       data-start="0"
+       data-duration="8"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"kicker":"A Bedtime Tale","title":"Once upon a time…","voiceText":"Gather round for tonight\u0027s story."}'>
     <div class="stars">
       <div class="star" style="left:12%; top:15%"></div>
-      <div class="star" style="left:28%; top:28%; width:2px; height:2px;"></div>
+      <div class="star slow" style="left:28%; top:28%; width:2px; height:2px;"></div>
       <div class="star" style="left:44%; top:8%"></div>
-      <div class="star" style="left:78%; top:35%; width:4px; height:4px;"></div>
+      <div class="star fast" style="left:78%; top:35%; width:4px; height:4px;"></div>
       <div class="star" style="left:88%; top:75%"></div>
-      <div class="star" style="left:16%; top:70%; width:2px; height:2px;"></div>
+      <div class="star slow" style="left:16%; top:70%; width:2px; height:2px;"></div>
       <div class="star" style="left:60%; top:20%"></div>
-      <div class="star" style="left:35%; top:82%"></div>
+      <div class="star fast" style="left:35%; top:82%"></div>
     </div>
     <div class="moon"></div>
-    <div class="kicker" data-composition-variable="kicker">A Bedtime Tale</div>
+    <div class="kicker" data-slot="kicker">A Bedtime Tale</div>
     <div class="book">
-      <div class="title" data-composition-variable="title">Once upon a time…</div>
+      <div class="title" data-slot="title">Once upon a time…</div>
     </div>
-    <div class="caption" data-composition-variable="voiceText">Gather round for tonight's story.</div>
+    <div class="caption" data-slot="voiceText">Gather round for tonight's story.</div>
   </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['hook-title'] = {
+        pause: function () {},
+        seek:  function () {},
+        paused: function () { return true; },
+      };
+    })();
+  </script>
 </body>
 </html>
