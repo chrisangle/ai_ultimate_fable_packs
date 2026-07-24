@@ -1,0 +1,45 @@
+{
+  "id": "bedtime-tales-en",
+  "name": "Bedtime Tales EN",
+  "version": "1.0.0",
+  "description": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
+  "author": "aivideoultimate",
+  "license": "MIT",
+  "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
+
+  "target": {
+    "language": "en",
+    "market": ["en-US", "en-GB", "en-CA", "en-AU"],
+    "audience": "kids",
+    "genre": "bedtime-story",
+    "aspectRatio": "16:9",
+    "duration": { "min": 180, "target": 300, "max": 360 }
+  },
+
+  "compat": { "core": ">=1.0.0" },
+
+  "assets": {
+    "templates": "templates",
+    "characters": "characters",
+    "sfx": "sfx",
+    "voice": "voice"
+  },
+
+  "prompts": {
+    "script": "prompts/script.md",
+    "scene": "prompts/scene.md"
+  },
+
+  "voice": {
+    "referenceClip": "voice/ref-narrator-en.mp3",
+    "defaultVoiceId": "bedtime-narrator-en",
+    "language": "en"
+  },
+
+  "scenes": {
+    "defaultTemplate": "storybook-page",
+    "hookTemplate": "hook-title",
+    "outroTemplate": "end-card",
+    "beatStructure": ["hook", "setup", "problem", "resolution", "moral", "outro"]
+  }
+}
