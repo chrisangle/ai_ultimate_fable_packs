@@ -58,6 +58,22 @@
     text-align: center; font-style: italic; opacity: 0.85;
     animation: fade 1s ease-out both 1s;
   }
+  /* Character identity fallback — reserved slots {characterName / leftName /
+     rightName}. Auto-injected by the boilerplate script when the value is
+     present AND no <div data-slot="<name>"> authored the placement. Pack
+     authors may override colors per template but MUST NOT rename the class. */
+  .auto-char-badge {
+    position: absolute; top: 60px;
+    padding: 10px 26px;
+    background: rgba(0, 0, 0, 0.55); color: #fff;
+    font-size: 30px; font-weight: 700; letter-spacing: 7px;
+    text-transform: uppercase; border-radius: 999px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  .auto-char-badge.auto-characterName { left: 50%; transform: translateX(-50%); }
+  .auto-char-badge.auto-leftName      { left: 60px; }
+  .auto-char-badge.auto-rightName     { right: 60px; }
 </style>
 </head>
 <body>
@@ -77,10 +93,27 @@
     (function () {
       var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
         ? window.__hyperframes.getVariables() : {};
+      // A. Populate declared [data-slot] elements verbatim.
       document.querySelectorAll('[data-slot]').forEach(function (el) {
         var key = el.getAttribute('data-slot');
         if (v[key] != null) el.textContent = String(v[key]);
       });
+      // B. Auto-badge fallback — inject default character badge for reserved
+      //    identity slots (characterName / leftName / rightName) when the
+      //    value is set AND the template did not author its own placement.
+      //    Docs: docs/pack-template-contract.md#character-identity.
+      var root = document.getElementById('root');
+      if (root) {
+        ['characterName', 'leftName', 'rightName'].forEach(function (slot) {
+          var val = v[slot];
+          if (val && !document.querySelector('[data-slot="' + slot + '"]')) {
+            var b = document.createElement('div');
+            b.className = 'auto-char-badge auto-' + slot;
+            b.textContent = String(val);
+            root.appendChild(b);
+          }
+        });
+      }
       window.__timelines = window.__timelines || {};
       window.__timelines['question-page'] = {
         pause: function () {}, seek: function () {}, paused: function () { return true; },
