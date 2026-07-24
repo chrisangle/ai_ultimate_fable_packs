@@ -41,6 +41,34 @@
       },
       "aspectRatio": "16:9",
       "language": "en"
+    },
+    {
+      "packId": "news-poster-en",
+      "version": "1.0.0",
+      "name": {
+        "en": "News Poster",
+        "vi": "Poster Tin Tức"
+      },
+      "description": {
+        "en": "Editorial-poster short news — 11 designer-grade templates (Vignelli · Pentagram · Swiss · aurora · cyberpunk) forked MIT from huytranvan2010/AI-auto-generate-video. Landscape 16:9, English narrator.",
+        "vi": "Poster editorial cho tin ngắn — 11 template chất lượng thiết kế (Vignelli · Pentagram · Swiss · aurora · cyberpunk) fork MIT từ huytranvan2010/AI-auto-generate-video. Ngang 16:9, người dẫn tiếng Anh."
+      },
+      "aspectRatio": "16:9",
+      "language": "en"
+    },
+    {
+      "packId": "news-poster-vn",
+      "version": "1.0.0",
+      "name": {
+        "en": "News Poster (VN)",
+        "vi": "Poster Tin Tức Việt"
+      },
+      "description": {
+        "en": "Vietnamese editorial-poster short news — same 11 templates as news-poster-en, tuned for Vietnamese typography (Be Vietnam Pro + Inter Tight fallback). Portrait 9:16 primary.",
+        "vi": "Poster editorial tin tức tiếng Việt — 11 template như news-poster-en, tối ưu chữ Việt (Be Vietnam Pro + Inter Tight). Dọc 9:16 chính."
+      },
+      "aspectRatio": "9:16",
+      "language": "vi"
     }
   ]
 }

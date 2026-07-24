@@ -1,0 +1,231 @@
+{
+  "id": "news-poster-en",
+  "name": {
+    "en": "News Poster",
+    "vi": "Poster Tin Tức"
+  },
+  "version": "1.0.0",
+  "description": {
+    "en": "Editorial-poster short news for tech / product / breaking beats — 11 designer-grade templates forked from huytranvan2010/AI-auto-generate-video (MIT). Vignelli · Pentagram · Swiss · aurora · cyberpunk. English narrator, 60-120s landscape.",
+    "vi": "Poster editorial cho tin tech / sản phẩm / breaking — 11 template chất lượng thiết kế fork từ huytranvan2010/AI-auto-generate-video (MIT). Vignelli · Pentagram · Swiss · aurora · cyberpunk. Người dẫn tiếng Anh, ngang 60-120 giây."
+  },
+  "author": "aivideoultimate",
+  "license": "MIT",
+  "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
+
+  "target": {
+    "language": "en",
+    "market": ["en-US", "en-GB", "en-CA", "en-AU"],
+    "audience": "adult",
+    "genre": "news-poster",
+    "aspectRatio": "16:9",
+    "supportedAspects": ["16:9", "9:16"],
+    "duration": { "min": 60, "target": 90, "max": 180 }
+  },
+
+  "compat": { "core": ">=1.0.0" },
+
+  "assets": {
+    "templates": "templates",
+    "voice": "voice",
+    "style": "style/tokens.css"
+  },
+
+  "prompts": {
+    "script": "prompts/script.md",
+    "scene": "prompts/scene.md"
+  },
+
+  "voice": {
+    "referenceClip": "voice/ref-narrator-en.mp3",
+    "defaultVoiceId": "news-poster-narrator-en",
+    "language": "en"
+  },
+
+  "scenes": {
+    "defaultTemplate": "frame-vignelli",
+    "hookTemplate": "frame-liquid-bg-hero",
+    "outroTemplate": "frame-logo-outro",
+    "beatStructure": ["hook", "context", "figure", "insight", "contrast", "list", "outro"]
+  },
+
+  "templateCatalog": {
+    "frame-liquid-bg-hero": {
+      "id": "frame-liquid-bg-hero",
+      "name": { "en": "Aurora Hero", "vi": "Aurora Hero" },
+      "description": {
+        "en": "Opening hook — aurora liquid background + hero headline + subheadline + CTA pill + top-bottom brand chip. Use ONCE as scene 1.",
+        "vi": "Hook mở đầu — nền aurora + tiêu đề lớn + subheadline + pill CTA + brand chip. Dùng MỘT LẦN cho cảnh 1."
+      },
+      "role": "hook",
+      "slots": {
+        "kicker":     { "type": "string", "required": true, "maxLength": 32, "label": { "en": "Kicker chip", "vi": "Kicker chip" } },
+        "brand":      { "type": "string", "maxLength": 40, "label": { "en": "Brand / URL", "vi": "Brand / URL" } },
+        "headline":   { "type": "string", "required": true, "maxLength": 60, "label": { "en": "Headline (3 lines max)", "vi": "Tiêu đề (tối đa 3 dòng)" } },
+        "subheadline":{ "type": "string", "maxLength": 100, "label": { "en": "Subheadline", "vi": "Phụ đề" } },
+        "cta":        { "type": "string", "maxLength": 32, "label": { "en": "CTA pill", "vi": "Nút CTA" } }
+      }
+    },
+    "frame-vignelli": {
+      "id": "frame-vignelli",
+      "name": { "en": "Vignelli Stat", "vi": "Vignelli Stat" },
+      "description": {
+        "en": "One striking number on dark charcoal + red accent — Vignelli tribute. Use for a single dominant statistic.",
+        "vi": "1 con số nổi bật trên nền than + đỏ — Vignelli. Dùng cho 1 số liệu chủ đạo."
+      },
+      "role": "body",
+      "slots": {
+        "kicker": { "type": "string", "maxLength": 32 },
+        "number": { "type": "string", "required": true, "maxLength": 12, "label": { "en": "Big number", "vi": "Số lớn" } },
+        "label":  { "type": "string", "required": true, "maxLength": 40, "label": { "en": "What the number means", "vi": "Số nghĩa là gì" } },
+        "note":   { "type": "string", "maxLength": 80 },
+        "brand":  { "type": "string", "maxLength": 40 }
+      }
+    },
+    "frame-pentagram-stat": {
+      "id": "frame-pentagram-stat",
+      "name": { "en": "Pentagram Stat", "vi": "Pentagram Stat" },
+      "description": {
+        "en": "Hero number / benchmark on dark neon — Swiss grid + glowing orange figure + cyan accent + bar chart. Use for a research/benchmark figure.",
+        "vi": "Số/benchmark chủ đạo, nền tối neon — Swiss grid + số cam glow + cyan accent + bar chart. Dùng cho số liệu nghiên cứu."
+      },
+      "role": "body",
+      "slots": {
+        "label":        { "type": "string", "required": true, "maxLength": 40 },
+        "headline":     { "type": "string", "required": true, "maxLength": 12, "label": { "en": "The number", "vi": "Con số" } },
+        "subtitle":     { "type": "string", "required": true, "maxLength": 80 },
+        "anchor":       { "type": "string", "maxLength": 12 },
+        "footer_left":  { "type": "string", "maxLength": 40 },
+        "footer_right": { "type": "string", "maxLength": 40 }
+      }
+    },
+    "frame-bold-poster": {
+      "id": "frame-bold-poster",
+      "name": { "en": "Bold Poster", "vi": "Bold Poster" },
+      "description": {
+        "en": "Punchy multi-line statement + giant figure — editorial poster. Use for a strong single claim + supporting number.",
+        "vi": "Tuyên bố mạnh nhiều dòng + con số khổng lồ — poster editorial. Dùng cho 1 nhận định mạnh + số hỗ trợ."
+      },
+      "role": "body",
+      "slots": {
+        "kicker":       { "type": "string", "maxLength": 32 },
+        "date":         { "type": "string", "maxLength": 24 },
+        "figure":       { "type": "string", "required": true, "maxLength": 12, "label": { "en": "Big figure", "vi": "Số lớn" } },
+        "headline":     { "type": "string[]", "required": true, "label": { "en": "Headline lines (array)", "vi": "Các dòng headline (mảng)" } },
+        "standfirst":   { "type": "string", "maxLength": 180 },
+        "footer_left":  { "type": "string", "maxLength": 40 },
+        "footer_right": { "type": "string", "maxLength": 40 }
+      }
+    },
+    "frame-build-minimal": {
+      "id": "frame-build-minimal",
+      "name": { "en": "Build Minimal", "vi": "Build Minimal" },
+      "description": {
+        "en": "One bold word revealed letter-by-letter — dark + amber glow. Use for a striking single-word beat (a name, an idea).",
+        "vi": "1 từ lớn hiển thị từng ký tự — nền tối + glow cam. Dùng cho 1 từ đanh (tên, khái niệm)."
+      },
+      "role": "body",
+      "slots": {
+        "eyebrow":    { "type": "string", "maxLength": 32 },
+        "hero":       { "type": "string", "required": true, "maxLength": 16, "label": { "en": "The 1 word", "vi": "1 từ" } },
+        "desc":       { "type": "string", "maxLength": 120 },
+        "side_left":  { "type": "string", "maxLength": 24 },
+        "side_right": { "type": "string", "maxLength": 24 }
+      }
+    },
+    "frame-creative-voltage": {
+      "id": "frame-creative-voltage",
+      "name": { "en": "Creative Voltage", "vi": "Creative Voltage" },
+      "description": {
+        "en": "Creative slogan — electric-blue split + handwriting accent. Use for a punchy tagline.",
+        "vi": "Câu sáng tạo — nền xanh điện split + chữ viết tay accent. Dùng cho tagline mạnh."
+      },
+      "role": "body",
+      "slots": {
+        "meta":          { "type": "string", "maxLength": 32 },
+        "display_lines": { "type": "string[]", "required": true },
+        "accent_index":  { "type": "string", "maxLength": 4 },
+        "script":        { "type": "string", "maxLength": 40 },
+        "caption":       { "type": "string", "maxLength": 120 }
+      }
+    },
+    "frame-glitch-title": {
+      "id": "frame-glitch-title",
+      "name": { "en": "Glitch Title", "vi": "Glitch Title" },
+      "description": {
+        "en": "Cyberpunk RGB-split glitch — breaking / tech news beat. Use for shocking or breaking beats.",
+        "vi": "Cyberpunk RGB-split glitch — beat breaking / tech. Dùng cho tin sốc / breaking."
+      },
+      "role": "body",
+      "slots": {
+        "title":    { "type": "string", "required": true, "maxLength": 60 },
+        "subtitle": { "type": "string", "maxLength": 120 }
+      }
+    },
+    "frame-aicoding-list": {
+      "id": "frame-aicoding-list",
+      "name": { "en": "Icon List", "vi": "Danh Sách Icon" },
+      "description": {
+        "en": "List of 2–5 items with icon + level tag on dark gradient. Use for a ranked list or checklist.",
+        "vi": "Danh sách 2–5 mục với icon + tag mức độ, nền tối gradient. Dùng cho ranked list hoặc checklist."
+      },
+      "role": "body",
+      "slots": {
+        "title":       { "type": "string", "required": true, "maxLength": 40 },
+        "accent":      { "type": "string", "maxLength": 40 },
+        "accent_from": { "type": "color", "maxLength": 12 },
+        "accent_to":   { "type": "color", "maxLength": 12 },
+        "subtitle":    { "type": "string", "maxLength": 120 },
+        "items":       { "type": "string[]", "required": true, "label": { "en": "Items (2-5)", "vi": "Mục (2-5)" } }
+      }
+    },
+    "frame-aicoding-comparison": {
+      "id": "frame-aicoding-comparison",
+      "name": { "en": "A vs B", "vi": "A vs B" },
+      "description": {
+        "en": "Head-to-head comparison of exactly TWO things — dual gradient cards + WIN badge + stat. Use when the beat is a contrast (old vs new, A vs B, before vs after).",
+        "vi": "So sánh CHÍNH XÁC 2 thứ — 2 card gradient + WIN badge + stat. Dùng khi beat là contrast (cũ vs mới, A vs B, trước vs sau)."
+      },
+      "role": "body",
+      "slots": {
+        "badge": { "type": "string", "maxLength": 32 },
+        "pre":   { "type": "string", "maxLength": 40 },
+        "vs":    { "type": "string", "maxLength": 8 },
+        "post":  { "type": "string", "maxLength": 40 },
+        "left":  { "type": "string", "required": true, "label": { "en": "Left card (JSON — see huytranvan)", "vi": "Card trái (JSON — xem huytranvan)" } },
+        "right": { "type": "string", "required": true, "label": { "en": "Right card (JSON — see huytranvan)", "vi": "Card phải (JSON — xem huytranvan)" } }
+      }
+    },
+    "frame-logo-outro": {
+      "id": "frame-logo-outro",
+      "name": { "en": "Logo Outro", "vi": "Logo Outro" },
+      "description": {
+        "en": "Brand end-card — logo glow + brand name + tagline + URL. Default outro. Use ONCE as the last scene.",
+        "vi": "End-card thương hiệu — logo glow + tên + tagline + URL. Outro mặc định. Dùng MỘT LẦN cho cảnh cuối."
+      },
+      "role": "outro",
+      "slots": {
+        "brand_name": { "type": "string", "required": true, "maxLength": 40 },
+        "tagline":    { "type": "string", "maxLength": 80 },
+        "primary_url":{ "type": "url",    "maxLength": 100 }
+      }
+    },
+    "frame-statement-outro": {
+      "id": "frame-statement-outro",
+      "name": { "en": "Statement Outro", "vi": "Statement Outro" },
+      "description": {
+        "en": "Alternative outro — red statement card on paper. Use ONCE as the last scene for a bold sign-off.",
+        "vi": "Outro thay thế — card đỏ trên nền giấy. Dùng MỘT LẦN cho cảnh cuối, kết mạnh."
+      },
+      "role": "outro",
+      "slots": {
+        "statement":  { "type": "string", "required": true, "maxLength": 120 },
+        "brand":      { "type": "string", "maxLength": 40 },
+        "primary_url":{ "type": "url",    "maxLength": 100 },
+        "cta":        { "type": "string", "maxLength": 32 },
+        "channel":    { "type": "string", "maxLength": 40 },
+        "source":     { "type": "string", "maxLength": 60 }
+      }
+    }
+  }
+}

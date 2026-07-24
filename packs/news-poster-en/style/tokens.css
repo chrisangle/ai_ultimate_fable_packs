@@ -1,0 +1,35 @@
+/*
+ * news-poster-en — reference palette + typography.
+ *
+ * Templates INLINE these values (hyperframes renders each HTML standalone).
+ * Editorial poster feel — dark charcoal + accent color per template. Inter
+ * Tight carries the headline weight; Fraunces used only in frame-statement-
+ * outro's paper card for a printed-editorial touch.
+ */
+:root {
+  /* Dark editorial base */
+  --pack-bg-dark:   #1a1a1a;
+  --pack-bg-mid:    #0f172a;
+  --pack-bg-paper:  #f5f2ef;
+
+  /* Ink */
+  --pack-ink-cream: #fef3c7;
+  --pack-ink-dark:  #1c1410;
+
+  /* Accents — each template picks one; kept here as a reference palette. */
+  --pack-accent-red:      #dc2626;
+  --pack-accent-orange:   #f97316;
+  --pack-accent-amber:    #fbbf24;
+  --pack-accent-cyan:     #22d3ee;
+  --pack-accent-violet:   #a78bfa;
+  --pack-accent-electric: #2563eb;
+
+  /* Safe area — poster templates cap their own inside layout; this value is
+     mainly for auto-char-badge positioning + wizard preview overlays. */
+  --pack-safe-area: 80px;
+
+  /* Fonts */
+  --pack-font-display: "Inter Tight", system-ui, -apple-system, sans-serif;
+  --pack-font-body:    "Inter Tight", system-ui, -apple-system, sans-serif;
+  --pack-font-editorial: "Fraunces", Georgia, "Times New Roman", serif;
+}

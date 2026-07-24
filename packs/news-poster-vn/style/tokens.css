@@ -1,0 +1,26 @@
+/*
+ * news-poster-vn — Vietnamese-tuned typography over the same editorial
+ * palette as news-poster-en. Be Vietnam Pro handles diacritics; Inter Tight
+ * fallback covers Latin + numerals.
+ */
+:root {
+  --pack-bg-dark:   #1a1a1a;
+  --pack-bg-mid:    #0f172a;
+  --pack-bg-paper:  #f5f2ef;
+
+  --pack-ink-cream: #fef3c7;
+  --pack-ink-dark:  #1c1410;
+
+  --pack-accent-red:      #dc2626;
+  --pack-accent-orange:   #f97316;
+  --pack-accent-amber:    #fbbf24;
+  --pack-accent-cyan:     #22d3ee;
+  --pack-accent-violet:   #a78bfa;
+  --pack-accent-electric: #2563eb;
+
+  --pack-safe-area: 100px;
+
+  --pack-font-display: "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
+  --pack-font-body:    "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
+  --pack-font-editorial: "Fraunces", Georgia, "Times New Roman", serif;
+}
