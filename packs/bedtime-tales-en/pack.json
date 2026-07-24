@@ -1,7 +1,7 @@
 {
   "id": "bedtime-tales-en",
   "name": "Bedtime Tales EN",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
   "author": "aivideoultimate",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "audience": "kids",
     "genre": "bedtime-story",
     "aspectRatio": "16:9",
+    "supportedAspects": ["16:9"],
     "duration": { "min": 180, "target": 300, "max": 360 }
   },
 

@@ -1,7 +1,7 @@
 {
   "id": "self-improvement-vn",
   "name": "Tự Phát Triển Bản Thân VN",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Doodle animation VN cho self-improvement / productivity 60–90s vertical (giống Đồn Như Lời).",
   "author": "aivideoultimate",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "audience": "adult",
     "genre": "self-improvement",
     "aspectRatio": "9:16",
+    "supportedAspects": ["9:16"],
     "duration": { "min": 60, "target": 90, "max": 180 }
   },
 

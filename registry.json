@@ -2,7 +2,7 @@
   "packs": [
     {
       "packId": "stick-mythology-en",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "name": "Stick Figure Mythology EN",
       "description": "Retellings of Greek/Norse mythology in a hand-drawn stickman doodle style, English narrator.",
       "aspectRatio": "16:9",
@@ -10,7 +10,7 @@
     },
     {
       "packId": "self-improvement-vn",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "name": "Tự Phát Triển Bản Thân VN",
       "description": "Doodle animation VN cho self-improvement / productivity 60–90s vertical.",
       "aspectRatio": "9:16",
@@ -18,7 +18,7 @@
     },
     {
       "packId": "bedtime-tales-en",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "name": "Bedtime Tales EN",
       "description": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
       "aspectRatio": "16:9",

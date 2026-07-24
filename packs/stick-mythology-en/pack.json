@@ -1,7 +1,7 @@
 {
   "id": "stick-mythology-en",
   "name": "Stick Figure Mythology EN",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Retellings of Greek/Norse mythology in hand-drawn stickman doodle style, English narrator.",
   "author": "aivideoultimate",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "audience": "adult",
     "genre": "mythology-retelling",
     "aspectRatio": "16:9",
+    "supportedAspects": ["16:9"],
     "duration": { "min": 300, "target": 900, "max": 1500 }
   },
 
