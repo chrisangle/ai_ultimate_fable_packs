@@ -217,6 +217,18 @@
     }
   },
 
+  "wizard": {
+    "supportsUrl": true,
+    "ideaPlaceholder": {
+      "en": "e.g. Why you never stick to habits — 3 mental traps that break motivation on day 4.",
+      "vi": "VD: Tại sao bạn không kỷ luật được — 3 bẫy tư duy làm mất động lực từ ngày thứ 4."
+    },
+    "urlPlaceholder": {
+      "en": "https://vnexpress.net/tam-ly-hoc-tao-thoi-quen",
+      "vi": "https://vnexpress.net/tam-ly-hoc-tao-thoi-quen"
+    }
+  },
+
   "extraSceneFields": {
     "emotion": {
       "type": "enum",

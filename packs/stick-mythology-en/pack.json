@@ -184,6 +184,18 @@
     }
   },
 
+  "wizard": {
+    "supportsUrl": true,
+    "ideaPlaceholder": {
+      "en": "e.g. Odysseus vs the Cyclops — the dark original of the myth, before Disney sanitised it.",
+      "vi": "VD: Odysseus và Cyclops — phiên bản gốc đen tối của thần thoại, trước khi Disney tô hồng."
+    },
+    "urlPlaceholder": {
+      "en": "https://en.wikipedia.org/wiki/Odyssey",
+      "vi": "https://vi.wikipedia.org/wiki/Odyssey"
+    }
+  },
+
   "extraSceneFields": {
     "character.pose": {
       "type": "enum",

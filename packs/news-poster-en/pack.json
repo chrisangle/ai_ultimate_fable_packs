@@ -49,6 +49,18 @@
     "beatStructure": ["hook", "context", "figure", "insight", "contrast", "list", "outro"]
   },
 
+  "wizard": {
+    "supportsUrl": true,
+    "ideaPlaceholder": {
+      "en": "e.g. Apple unveils Vision Pro 2 with 100MP camera — first hardware refresh since 2024.",
+      "vi": "VD: Apple ra mắt Vision Pro 2 với camera một trăm megapixel — bản nâng cấp phần cứng đầu tiên từ 2024."
+    },
+    "urlPlaceholder": {
+      "en": "https://techcrunch.com/2026/07/apple-vision-pro-2",
+      "vi": "https://techcrunch.com/2026/07/apple-vision-pro-2"
+    }
+  },
+
   "templateCatalog": {
     "frame-liquid-bg-hero": {
       "id": "frame-liquid-bg-hero",

@@ -51,6 +51,14 @@
     "beatStructure": ["hook", "setup", "problem", "resolution", "moral", "outro"]
   },
 
+  "wizard": {
+    "supportsUrl": false,
+    "ideaPlaceholder": {
+      "en": "e.g. A cozy little fox loses her mittens in the winter forest — and finds them by helping the other animals.",
+      "vi": "VD: Chú cáo nhỏ đánh rơi găng tay trong rừng mùa đông — tìm lại được nhờ giúp đỡ các bạn."
+    }
+  },
+
   "templateCatalog": {
     "hook-title": {
       "id": "hook-title",

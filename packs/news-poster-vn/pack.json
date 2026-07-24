@@ -49,6 +49,18 @@
     "beatStructure": ["hook", "bối cảnh", "con số", "insight", "so sánh", "danh sách", "outro"]
   },
 
+  "wizard": {
+    "supportsUrl": true,
+    "ideaPlaceholder": {
+      "en": "e.g. Apple unveils Vision Pro 2 with 100MP camera — first hardware refresh since 2024.",
+      "vi": "VD: Apple ra mắt Vision Pro 2 camera một trăm megapixel — bản nâng cấp phần cứng đầu tiên kể từ 2024."
+    },
+    "urlPlaceholder": {
+      "en": "https://vnexpress.net/cong-nghe/apple-vision-pro-2",
+      "vi": "https://vnexpress.net/cong-nghe/apple-vision-pro-2"
+    }
+  },
+
   "templateCatalog": {
     "frame-liquid-bg-hero": {
       "id": "frame-liquid-bg-hero",
