@@ -124,6 +124,63 @@
           "label": { "en": "Call to action (all caps)", "vi": "Kêu gọi hành động (chữ in hoa)" }
         }
       }
+    },
+    "dialogue-panel": {
+      "id": "dialogue-panel",
+      "name": { "en": "Dialogue Panel", "vi": "Đối Thoại 2 Nhân Vật" },
+      "description": {
+        "en": "Two stickmen face each other with speech bubbles. Use when the scene is a direct exchange (2 lines, one per character).",
+        "vi": "Hai hình que đối mặt với bong bóng thoại. Dùng cho cảnh đối đáp trực tiếp (2 câu, mỗi câu 1 nhân vật)."
+      },
+      "role": "body",
+      "slots": {
+        "leftText": {
+          "type": "string", "required": true, "maxLength": 80,
+          "label": { "en": "Left character line", "vi": "Câu thoại bên trái" }
+        },
+        "rightText": {
+          "type": "string", "required": true, "maxLength": 80,
+          "label": { "en": "Right character line", "vi": "Câu thoại bên phải" }
+        }
+      }
+    },
+    "action-beat": {
+      "id": "action-beat",
+      "name": { "en": "Action Beat", "vi": "Nhịp Hành Động" },
+      "description": {
+        "en": "High-energy scene — spinning burst + lunging stickman + right-side headline. Use for the climax / big turn.",
+        "vi": "Cảnh cao trào — burst xoay + hình que lao tới + headline bên phải. Dùng cho climax / bước ngoặt lớn."
+      },
+      "role": "body",
+      "slots": {
+        "kicker": {
+          "type": "string", "required": true, "maxLength": 24,
+          "label": { "en": "Kicker (all caps)", "vi": "Kicker (in hoa)" }
+        },
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 100,
+          "label": { "en": "Action line", "vi": "Câu hành động" }
+        }
+      }
+    },
+    "quote-card": {
+      "id": "quote-card",
+      "name": { "en": "Quote Card", "vi": "Thẻ Trích Dẫn" },
+      "description": {
+        "en": "Italic pulled quote + attribution. Use for a memorable line — no character art, focus on the words.",
+        "vi": "Trích dẫn in nghiêng + tác giả. Dùng cho câu đáng nhớ — không có nhân vật, tập trung vào chữ."
+      },
+      "role": "body",
+      "slots": {
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 120,
+          "label": { "en": "The quote (no quotes needed)", "vi": "Câu trích dẫn (không cần dấu ngoặc)" }
+        },
+        "attribution": {
+          "type": "string", "required": true, "maxLength": 32,
+          "label": { "en": "Speaker / source", "vi": "Người nói / nguồn" }
+        }
+      }
     }
   },
 

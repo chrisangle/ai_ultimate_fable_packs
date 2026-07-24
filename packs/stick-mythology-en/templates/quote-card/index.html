@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Stick Mythology · Quote Card · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink: #fef3c7;
+    --pack-accent: #fbbf24;
+    --pack-safe: 120px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 50%, #78350f 0%, #1c1917 65%, #0f0f0e 100%);
+    color: var(--pack-ink);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  }
+  .mark {
+    position: absolute; left: var(--pack-safe); top: 120px;
+    color: var(--pack-accent);
+    font-size: 240px; line-height: 0.7;
+    font-weight: 900; font-style: italic;
+    opacity: 0.65;
+    animation: fade 1.2s ease-out both;
+  }
+  @keyframes fade { from { opacity: 0; transform: translateY(20px); } to { opacity: 0.65; transform: translateY(0); } }
+  .quote {
+    position: absolute; left: var(--pack-safe); right: var(--pack-safe);
+    top: 50%; transform: translateY(-50%);
+    color: var(--pack-ink);
+    font-size: 88px; font-weight: 500; font-style: italic;
+    line-height: 1.15; text-align: left;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: reveal 1.4s ease-out both 0.4s;
+  }
+  @keyframes reveal { from { opacity: 0; transform: translateY(-46%); } to { opacity: 1; transform: translateY(-50%); } }
+  .attribution {
+    position: absolute; right: var(--pack-safe); bottom: var(--pack-safe);
+    color: var(--pack-accent);
+    font-size: 34px; font-weight: 700; letter-spacing: 6px;
+    text-transform: uppercase;
+    animation: fade 0.9s ease-out both 1.4s;
+  }
+  .attribution::before {
+    content: '— '; margin-right: 4px;
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="quote-card"
+       data-start="0"
+       data-duration="8"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"voiceText":"The gods do not answer to men.","attribution":"Homer"}'>
+    <div class="mark">"</div>
+    <div class="quote" data-slot="voiceText">The gods do not answer to men.</div>
+    <div class="attribution" data-slot="attribution">Homer</div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['quote-card'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>

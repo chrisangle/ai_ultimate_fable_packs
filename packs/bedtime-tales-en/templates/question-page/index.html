@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Bedtime Tales · Question Page · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink-body: #422006;
+    --pack-ink-dark: #78350f;
+    --pack-safe: 100px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fef9c3 0%, #fde68a 50%, #fbbf24 100%);
+    color: var(--pack-ink-body);
+    font-family: "Fraunces", Georgia, serif;
+  }
+  .mark {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    color: rgba(120, 53, 15, 0.12);
+    font-size: 900px; font-weight: 700; line-height: 0.85;
+    font-style: italic; user-select: none;
+    animation: rise 1.4s ease-out both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translate(-50%, -46%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+  }
+  .question {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    color: var(--pack-ink-dark);
+    font-size: 100px; font-weight: 700; font-style: italic;
+    text-align: center; line-height: 1.15;
+    max-width: calc(1920px - 2 * var(--pack-safe));
+    animation: rise 1.1s ease-out both 0.5s;
+  }
+  .prompt {
+    position: absolute; top: 140px; left: 50%; transform: translateX(-50%);
+    color: var(--pack-ink-dark);
+    font-size: 30px; font-weight: 500; letter-spacing: 8px; text-transform: uppercase;
+    animation: fade 0.9s ease-out both;
+  }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .caption {
+    position: absolute; bottom: 120px; left: var(--pack-safe); right: var(--pack-safe);
+    color: var(--pack-ink-body);
+    font-size: 36px; font-weight: 500;
+    text-align: center; font-style: italic; opacity: 0.85;
+    animation: fade 1s ease-out both 1s;
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="question-page"
+       data-start="0"
+       data-duration="8"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"prompt":"A GENTLE QUESTION","question":"What would you have done?","voiceText":"The little fox stood at the edge of the meadow, wondering the very same thing."}'>
+    <div class="mark">?</div>
+    <div class="prompt" data-slot="prompt">A GENTLE QUESTION</div>
+    <div class="question" data-slot="question">What would you have done?</div>
+    <div class="caption" data-slot="voiceText">The little fox stood at the edge of the meadow, wondering the very same thing.</div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['question-page'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>

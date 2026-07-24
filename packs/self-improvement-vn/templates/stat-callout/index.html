@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Tự Phát Triển · Stat Callout · 9:16</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1080px; height: 1920px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink: #fef3c7;
+    --pack-accent-1: #dc2626;
+    --pack-accent-2: #fbbf24;
+    --pack-safe: 100px;
+  }
+  #root {
+    position: relative;
+    width: 1080px; height: 1920px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1c1917 0%, #78350f 100%);
+    color: var(--pack-ink);
+    font-family: "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
+  }
+  @keyframes ticker {
+    from { opacity: 0; transform: translate(-50%, 40px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
+  }
+  @keyframes pop {
+    0%   { opacity: 0; transform: translate(-50%, 20px) scale(0.7); }
+    70%  { opacity: 1; transform: translate(-50%, -6px) scale(1.06); }
+    100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  }
+  .kicker {
+    position: absolute; top: 320px; left: 50%; transform: translateX(-50%);
+    color: var(--pack-accent-2);
+    font-size: 40px; font-weight: 700; letter-spacing: 8px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: 2px solid var(--pack-accent-2); border-radius: 999px;
+    animation: ticker 1s ease-out both;
+  }
+  .stat {
+    position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+    color: var(--pack-accent-1);
+    font-size: 400px; font-weight: 900; line-height: 1;
+    text-shadow: 0 12px 40px rgba(220, 38, 38, 0.35);
+    animation: pop 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both 0.4s;
+  }
+  .label {
+    position: absolute; top: 65%; left: 50%; transform: translateX(-50%);
+    color: var(--pack-ink);
+    font-size: 76px; font-weight: 800; text-align: center;
+    max-width: calc(1080px - 2 * var(--pack-safe));
+    line-height: 1.1;
+    animation: ticker 0.9s ease-out both 1s;
+  }
+  .caption {
+    position: absolute; bottom: 320px; left: var(--pack-safe); right: var(--pack-safe);
+    color: var(--pack-ink);
+    font-size: 44px; font-weight: 500; line-height: 1.4;
+    text-align: center; opacity: 0.9;
+    animation: ticker 0.9s ease-out both 1.4s;
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="stat-callout"
+       data-start="0"
+       data-duration="8"
+       data-width="1080"
+       data-height="1920"
+       data-composition-variables='{"kicker":"NGHIÊN CỨU","stat":"66","label":"ngày để tạo thói quen","voiceText":"Nghiên cứu Đại học London cho thấy trung bình mất sáu mươi sáu ngày để một hành vi trở thành tự động."}'>
+    <div class="kicker" data-slot="kicker">NGHIÊN CỨU</div>
+    <div class="stat" data-slot="stat">66</div>
+    <div class="label" data-slot="label">ngày để tạo thói quen</div>
+    <div class="caption" data-slot="voiceText">Nghiên cứu Đại học London cho thấy trung bình mất sáu mươi sáu ngày để một hành vi trở thành tự động.</div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['stat-callout'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>

@@ -129,6 +129,91 @@
           "label": { "en": "CTA button (all caps)", "vi": "Nút CTA (in hoa)" }
         }
       }
+    },
+    "insight-card": {
+      "id": "insight-card",
+      "name": { "en": "Insight Card", "vi": "Thẻ Nguyên Tắc" },
+      "description": {
+        "en": "Numbered insight — red badge + huge orange number + short title + caption. Use for a discrete principle / rule / step.",
+        "vi": "Insight có số — badge đỏ + số cam khổng lồ + tiêu đề ngắn + caption. Dùng cho một nguyên tắc / quy tắc / bước cụ thể."
+      },
+      "role": "body",
+      "slots": {
+        "badge": {
+          "type": "string", "required": true, "maxLength": 20,
+          "label": { "en": "Red badge (all caps)", "vi": "Badge đỏ (in hoa)" }
+        },
+        "number": {
+          "type": "string", "required": true, "maxLength": 3,
+          "label": { "en": "Big number", "vi": "Số lớn" }
+        },
+        "title": {
+          "type": "string", "required": true, "maxLength": 32,
+          "label": { "en": "Short title (≤ 6 words)", "vi": "Tiêu đề ngắn (≤ 6 từ)" }
+        },
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 180,
+          "label": { "en": "Caption (narrator reads)", "vi": "Caption (người dẫn đọc)" }
+        }
+      }
+    },
+    "stat-callout": {
+      "id": "stat-callout",
+      "name": { "en": "Stat Callout", "vi": "Callout Con Số" },
+      "description": {
+        "en": "One dominant statistic — huge red number + label + supporting caption. Use when a research figure carries the beat.",
+        "vi": "Một con số nổi bật — số đỏ khổng lồ + nhãn + caption. Dùng khi 1 số liệu nghiên cứu là điểm nhấn."
+      },
+      "role": "body",
+      "slots": {
+        "kicker": {
+          "type": "string", "required": true, "maxLength": 24,
+          "label": { "en": "Small kicker", "vi": "Nhãn nhỏ" }
+        },
+        "stat": {
+          "type": "string", "required": true, "maxLength": 8,
+          "label": { "en": "The number (e.g. 66 or 82%)", "vi": "Con số (ví dụ 66 hoặc 82%)" }
+        },
+        "label": {
+          "type": "string", "required": true, "maxLength": 40,
+          "label": { "en": "What the number means", "vi": "Con số nghĩa là gì" }
+        },
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 180,
+          "label": { "en": "Caption (narrator reads)", "vi": "Caption (người dẫn đọc)" }
+        }
+      }
+    },
+    "checklist-panel": {
+      "id": "checklist-panel",
+      "name": { "en": "Checklist Panel", "vi": "Bảng Checklist" },
+      "description": {
+        "en": "2–4 checked items with animated checkmarks + a stamp title. Use for actionable list of daily habits / steps.",
+        "vi": "2–4 mục đánh dấu với check animation + tiêu đề đóng dấu. Dùng cho danh sách thói quen / bước hành động."
+      },
+      "role": "body",
+      "slots": {
+        "title": {
+          "type": "string", "required": true, "maxLength": 32,
+          "label": { "en": "Title stamp (all caps)", "vi": "Tiêu đề đóng dấu (in hoa)" }
+        },
+        "item1": {
+          "type": "string", "required": true, "maxLength": 40,
+          "label": { "en": "Item 1", "vi": "Mục 1" }
+        },
+        "item2": {
+          "type": "string", "required": true, "maxLength": 40,
+          "label": { "en": "Item 2", "vi": "Mục 2" }
+        },
+        "item3": {
+          "type": "string", "maxLength": 40,
+          "label": { "en": "Item 3 (optional)", "vi": "Mục 3 (tuỳ chọn)" }
+        },
+        "item4": {
+          "type": "string", "maxLength": 40,
+          "label": { "en": "Item 4 (optional)", "vi": "Mục 4 (tuỳ chọn)" }
+        }
+      }
     }
   },
 

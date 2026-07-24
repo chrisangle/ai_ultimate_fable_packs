@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Bedtime Tales · Quiet Moment · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink-cream: #fef3c7;
+    --pack-safe: 120px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, #4c1d95 0%, #2d1b52 55%, #1a1330 100%);
+    color: var(--pack-ink-cream);
+    font-family: "Fraunces", Georgia, serif;
+  }
+  .stars { position: absolute; inset: 0; overflow: hidden; }
+  .star {
+    position: absolute; border-radius: 50%; background: #fff;
+    box-shadow: 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, 0.5);
+    animation: twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle { 0%,100% { opacity: 0.8; } 50% { opacity: 0.25; } }
+  .firefly {
+    position: absolute; width: 8px; height: 8px; border-radius: 50%;
+    background: radial-gradient(circle, #fef9c3, rgba(254, 240, 138, 0));
+    filter: blur(1px);
+    animation: drift 8s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0%,100% { transform: translate(0, 0); opacity: 0.7; }
+    50%     { transform: translate(-40px, -30px); opacity: 1; }
+  }
+  .caption {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    color: var(--pack-ink-cream);
+    font-size: 68px; font-weight: 500; font-style: italic;
+    text-align: center; line-height: 1.4;
+    max-width: calc(1920px - 2 * var(--pack-safe));
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+    animation: settle 1.6s ease-out both;
+  }
+  @keyframes settle {
+    from { opacity: 0; transform: translate(-50%, -46%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="quiet-moment"
+       data-start="0"
+       data-duration="8"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"voiceText":"And so the little fox curled up beneath the elder tree, listening to the crickets sing."}'>
+    <div class="stars">
+      <div class="star" style="left:5%;  top:12%; width:3px; height:3px;"></div>
+      <div class="star" style="left:14%; top:78%; width:2px; height:2px;"></div>
+      <div class="star" style="left:28%; top:22%; width:3px; height:3px;"></div>
+      <div class="star" style="left:41%; top:88%; width:2px; height:2px;"></div>
+      <div class="star" style="left:64%; top:14%; width:4px; height:4px;"></div>
+      <div class="star" style="left:78%; top:65%; width:2px; height:2px;"></div>
+      <div class="star" style="left:88%; top:28%; width:3px; height:3px;"></div>
+      <div class="star" style="left:94%; top:82%; width:2px; height:2px;"></div>
+    </div>
+    <div class="firefly" style="left:22%; top:70%; animation-delay:0s;"></div>
+    <div class="firefly" style="left:44%; top:60%; animation-delay:2s;"></div>
+    <div class="firefly" style="left:70%; top:75%; animation-delay:4s;"></div>
+    <div class="firefly" style="left:82%; top:50%; animation-delay:6s;"></div>
+    <div class="caption" data-slot="voiceText">And so the little fox curled up beneath the elder tree, listening to the crickets sing.</div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['quiet-moment'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>

@@ -148,6 +148,72 @@
           "label": { "en": "Goodnight caption", "vi": "Caption chúc ngủ ngon" }
         }
       }
+    },
+    "character-moment": {
+      "id": "character-moment",
+      "name": { "en": "Character Moment", "vi": "Khoảnh Khắc Nhân Vật" },
+      "description": {
+        "en": "Warm portrait circle with an emoji face + character label + heading + body copy. Use when introducing or focusing on a single character.",
+        "vi": "Vòng chân dung ấm áp với emoji + nhãn nhân vật + tiêu đề + nội dung. Dùng khi giới thiệu hoặc tập trung vào một nhân vật."
+      },
+      "role": "body",
+      "slots": {
+        "name": {
+          "type": "string", "required": true, "maxLength": 24,
+          "label": { "en": "Character label (all caps)", "vi": "Nhãn nhân vật (in hoa)" }
+        },
+        "face": {
+          "type": "string", "required": true, "maxLength": 4,
+          "label": { "en": "Emoji face", "vi": "Emoji khuôn mặt" },
+          "help": { "en": "One emoji only, e.g. 🧑‍🍳 🐇 🦊 👵", "vi": "Chỉ 1 emoji, ví dụ 🧑‍🍳 🐇 🦊 👵" }
+        },
+        "heading": {
+          "type": "string", "required": true, "maxLength": 40,
+          "label": { "en": "Short heading", "vi": "Tiêu đề ngắn" }
+        },
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 220,
+          "label": { "en": "Body copy (narrator reads)", "vi": "Nội dung (người dẫn đọc)" }
+        }
+      }
+    },
+    "question-page": {
+      "id": "question-page",
+      "name": { "en": "Question Page", "vi": "Trang Câu Hỏi" },
+      "description": {
+        "en": "Giant faded question mark + italic question + soft caption. Use to make the child pause and wonder — no answers, only the question.",
+        "vi": "Dấu chấm hỏi mờ khổng lồ + câu hỏi in nghiêng + caption dịu. Dùng để trẻ dừng lại và suy nghĩ — không đưa đáp án, chỉ đặt câu hỏi."
+      },
+      "role": "body",
+      "slots": {
+        "prompt": {
+          "type": "string", "required": true, "maxLength": 32,
+          "label": { "en": "Prompt label (all caps)", "vi": "Nhãn (in hoa)" }
+        },
+        "question": {
+          "type": "string", "required": true, "maxLength": 60,
+          "label": { "en": "The question (italic)", "vi": "Câu hỏi (in nghiêng)" }
+        },
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 160,
+          "label": { "en": "Follow-up caption", "vi": "Caption tiếp nối" }
+        }
+      }
+    },
+    "quiet-moment": {
+      "id": "quiet-moment",
+      "name": { "en": "Quiet Moment", "vi": "Khoảnh Khắc Yên Bình" },
+      "description": {
+        "en": "Night sky + drifting fireflies + a single italic caption centered. Use for a mood beat — no action, just atmosphere.",
+        "vi": "Bầu trời đêm + đom đóm trôi + 1 caption in nghiêng giữa màn hình. Dùng cho nhịp không khí — không hành động, chỉ tâm trạng."
+      },
+      "role": "body",
+      "slots": {
+        "voiceText": {
+          "type": "string", "required": true, "maxLength": 160,
+          "label": { "en": "Mood caption (italic)", "vi": "Caption tâm trạng (in nghiêng)" }
+        }
+      }
     }
   }
 }

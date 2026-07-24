@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Stick Mythology · Action Beat · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink: #fef3c7;
+    --pack-accent: #f97316;
+    --pack-safe: 80px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 35% 55%, #7c2d12 0%, #1c1917 60%, #0f0f0e 100%);
+    color: var(--pack-ink);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  }
+  .burst {
+    position: absolute; top: 50%; left: 42%; transform: translate(-50%, -50%);
+    width: 1200px; height: 1200px;
+    background: repeating-conic-gradient(from 0deg, transparent 0 6deg, rgba(251, 146, 60, 0.25) 6deg 10deg);
+    filter: blur(1px);
+    animation: spin 12s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  .stickman {
+    position: absolute; top: 50%; left: 42%; transform: translate(-50%, -50%);
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.55));
+    animation: strike 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes strike {
+    0%   { transform: translate(-50%, -46%) scale(0.85) rotate(-6deg); opacity: 0; }
+    60%  { transform: translate(-50%, -52%) scale(1.06) rotate(4deg);  opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1)    rotate(0deg); }
+  }
+  .caption {
+    position: absolute; right: var(--pack-safe); top: 50%; transform: translateY(-50%);
+    color: var(--pack-ink); text-align: right;
+    font-size: 96px; font-weight: 900; line-height: 1.05; max-width: 720px;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+    animation: slide-in 0.9s ease-out both 0.4s;
+  }
+  @keyframes slide-in {
+    from { opacity: 0; transform: translate(24px, -50%); }
+    to   { opacity: 1; transform: translate(0,    -50%); }
+  }
+  .kicker {
+    position: absolute; top: 120px; left: 50%; transform: translateX(-50%);
+    color: var(--pack-accent); font-size: 32px; font-weight: 700;
+    letter-spacing: 12px; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="action-beat"
+       data-start="0"
+       data-duration="8"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"kicker":"THE BATTLE","voiceText":"He drew his sword and struck."}'>
+    <div class="burst"></div>
+    <div class="kicker" data-slot="kicker">THE BATTLE</div>
+    <svg class="stickman" width="440" height="720" viewBox="0 0 100 170" aria-hidden="true">
+      <!-- lunging pose: forward-tilted body, sword-arm extended -->
+      <circle cx="52" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
+      <path d="M 46 26 L 58 30" stroke="#1c1917" stroke-width="2.5" fill="none"/>
+      <circle cx="47" cy="18" r="1.8" fill="#1c1917"/>
+      <circle cx="57" cy="18" r="1.8" fill="#1c1917"/>
+      <line x1="52" y1="36" x2="46" y2="106" stroke="#1c1917" stroke-width="4"/>
+      <line x1="52" y1="55" x2="88" y2="42" stroke="#1c1917" stroke-width="3"/>
+      <line x1="88" y1="42" x2="98" y2="24" stroke="#f97316" stroke-width="3"/>
+      <line x1="52" y1="55" x2="22" y2="72" stroke="#1c1917" stroke-width="3"/>
+      <line x1="46" y1="106" x2="70" y2="150" stroke="#1c1917" stroke-width="4"/>
+      <line x1="46" y1="106" x2="24" y2="150" stroke="#1c1917" stroke-width="4"/>
+    </svg>
+    <div class="caption" data-slot="voiceText">He drew his sword and struck.</div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['action-beat'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>

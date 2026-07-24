@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Bedtime Tales · Character Moment · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-paper: #fffbeb;
+    --pack-ink-body: #422006;
+    --pack-ink-dark: #78350f;
+    --pack-safe: 100px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fef3c7 0%, #fde68a 45%, #fbbf24 100%);
+    color: var(--pack-ink-body);
+    font-family: "Fraunces", Georgia, serif;
+  }
+  .warm-glow {
+    position: absolute; inset: -80px;
+    background: radial-gradient(ellipse at 30% 40%, rgba(255, 236, 179, 0.7), transparent 55%);
+    filter: blur(20px);
+    animation: glow 6s ease-in-out infinite;
+  }
+  @keyframes glow { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+  .portrait {
+    position: absolute; left: 260px; top: 50%; transform: translateY(-50%);
+    width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fde68a, #f97316 70%, #7c2d12);
+    box-shadow: 0 40px 100px rgba(120, 53, 15, 0.35), inset 0 0 80px rgba(255, 255, 255, 0.25);
+    display: flex; align-items: center; justify-content: center;
+    animation: bloom 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes bloom {
+    from { opacity: 0; transform: translateY(-46%) scale(0.85); }
+    to   { opacity: 1; transform: translateY(-50%) scale(1); }
+  }
+  .portrait .face {
+    font-size: 220px; line-height: 1; filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.25));
+  }
+  .text-block {
+    position: absolute; right: var(--pack-safe); top: 50%; transform: translateY(-50%);
+    width: 900px;
+  }
+  .name {
+    color: var(--pack-ink-dark); font-size: 32px; font-weight: 500;
+    letter-spacing: 8px; text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fade-up 0.9s ease-out both 0.6s;
+  }
+  .heading {
+    color: var(--pack-ink-body); font-size: 76px; font-weight: 700; line-height: 1.15;
+    margin-bottom: 32px;
+    animation: fade-up 1s ease-out both 0.9s;
+  }
+  .body-copy {
+    color: var(--pack-ink-body); font-size: 34px; font-weight: 500; line-height: 1.5;
+    animation: fade-up 1s ease-out both 1.2s;
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="character-moment"
+       data-start="0"
+       data-duration="10"
+       data-width="1920"
+       data-height="1080"
+       data-composition-variables='{"name":"THE BAKER","face":"🧑‍🍳","heading":"A kind old baker.","voiceText":"He rose before the sun, kneaded warm dough with his hands, and hummed the same old tune his mother once sang."}'>
+    <div class="warm-glow"></div>
+    <div class="portrait"><div class="face" data-slot="face">🧑‍🍳</div></div>
+    <div class="text-block">
+      <div class="name" data-slot="name">THE BAKER</div>
+      <div class="heading" data-slot="heading">A kind old baker.</div>
+      <div class="body-copy" data-slot="voiceText">He rose before the sun, kneaded warm dough with his hands, and hummed the same old tune his mother once sang.</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['character-moment'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>

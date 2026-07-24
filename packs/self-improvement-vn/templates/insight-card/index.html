@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Tự Phát Triển · Insight Card · 9:16</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1080px; height: 1920px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-bg: #f5e0b8;
+    --pack-ink: #1c1917;
+    --pack-accent-1: #dc2626;
+    --pack-accent-2: #f97316;
+    --pack-safe: 100px;
+  }
+  #root {
+    position: relative;
+    width: 1080px; height: 1920px;
+    overflow: hidden;
+    background: var(--pack-bg);
+    color: var(--pack-ink);
+    font-family: "Be Vietnam Pro", "Inter Tight", system-ui, sans-serif;
+  }
+  .lines {
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom, transparent 0px, transparent 118px,
+      rgba(28, 25, 23, 0.05) 118px, rgba(28, 25, 23, 0.05) 120px);
+    pointer-events: none;
+  }
+  @keyframes badge-in {
+    from { opacity: 0; transform: translateX(-50%) rotate(-8deg) scale(0.7); }
+    to   { opacity: 1; transform: translateX(-50%) rotate(-4deg) scale(1); }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translate(-50%, 30px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
+  }
+  .badge {
+    position: absolute; top: 260px; left: 50%; transform: translateX(-50%) rotate(-4deg);
+    background: var(--pack-accent-1); color: white;
+    font-size: 42px; font-weight: 900; letter-spacing: 4px;
+    padding: 20px 44px; border-radius: 12px;
+    box-shadow: 10px 10px 0 rgba(28, 25, 23, 0.15);
+    animation: badge-in 0.7s ease-out both;
+  }
+  .number {
+    position: absolute; top: 460px; left: 50%; transform: translateX(-50%);
+    color: var(--pack-accent-2);
+    font-size: 320px; font-weight: 900; line-height: 1;
+    text-shadow: 0 8px 24px rgba(249, 115, 22, 0.25);
+    animation: rise 1s ease-out both 0.4s;
+  }
+  .title {
+    position: absolute; top: 900px; left: 50%; transform: translateX(-50%);
+    color: var(--pack-ink);
+    font-size: 84px; font-weight: 900; text-align: center;
+    max-width: calc(1080px - 2 * var(--pack-safe));
+    line-height: 1.1;
+    animation: rise 0.9s ease-out both 0.8s;
+  }
+  .caption {
+    position: absolute;
+    bottom: 320px; left: var(--pack-safe); right: var(--pack-safe);
+    color: var(--pack-ink);
+    font-size: 44px; font-weight: 500; line-height: 1.4;
+    text-align: center;
+    animation: rise 0.9s ease-out both 1.2s;
+  }
+  .footer {
+    position: absolute; bottom: var(--pack-safe); left: 0; right: 0;
+    text-align: center;
+    color: #78350f;
+    font-size: 32px; font-weight: 600; letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div id="root"
+       data-composition-id="insight-card"
+       data-start="0"
+       data-duration="8"
+       data-width="1080"
+       data-height="1920"
+       data-composition-variables='{"badge":"NGUYÊN TẮC","number":"1","title":"Bắt đầu từ việc nhỏ.","voiceText":"Đừng đợi có động lực — hãy bắt đầu từ hành động nhỏ nhất bạn có thể làm ngay hôm nay."}'>
+    <div class="lines"></div>
+    <div class="badge" data-slot="badge">NGUYÊN TẮC</div>
+    <div class="number" data-slot="number">1</div>
+    <div class="title" data-slot="title">Bắt đầu từ việc nhỏ.</div>
+    <div class="caption" data-slot="voiceText">Đừng đợi có động lực — hãy bắt đầu từ hành động nhỏ nhất bạn có thể làm ngay hôm nay.</div>
+    <div class="footer">TỰ PHÁT TRIỂN</div>
+  </div>
+  <script>
+    (function () {
+      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
+        ? window.__hyperframes.getVariables() : {};
+      document.querySelectorAll('[data-slot]').forEach(function (el) {
+        var key = el.getAttribute('data-slot');
+        if (v[key] != null) el.textContent = String(v[key]);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines['insight-card'] = {
+        pause: function () {}, seek: function () {}, paused: function () { return true; },
+      };
+    })();
+  </script>
+</body>
+</html>
