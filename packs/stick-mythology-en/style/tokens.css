@@ -1,6 +1,34 @@
-/* Pack color palette — imported by templates via CSS variables */
+/*
+ * stick-mythology-en — reference palette + typography for pack authors.
+ *
+ * Templates INLINE these values (hyperframes renders each HTML standalone with
+ * no relative-CSS resolution guaranteed). Edit here first, then mirror into
+ * each template's <style> :root block. Kept in sync manually — 3 templates × 6
+ * values is small enough that the linter can catch drift later if needed.
+ */
 :root {
-  --pack-accent: #f97316;
+  /* Base surface — the intentional #root background, never body. */
   --pack-bg: #1a1a1a;
-  --pack-text: #fef3c7;
+  --pack-surface: #0f172a;
+
+  /* Ink — foreground text on dark surfaces. Warm off-white matches parchment feel. */
+  --pack-ink: #fef3c7;
+
+  /* Accent — sunset orange + gold. Aurora tone across hook / narrator / outro. */
+  --pack-accent-1: #f97316;
+  --pack-accent-2: #fbbf24;
+
+  /* Caption pill — semi-opaque dark chip so narrator text stays legible over any bg. */
+  --pack-caption-bg: rgba(0, 0, 0, 0.72);
+
+  /* Stickman ink + skin tone — kept constant across the pack for identity. */
+  --pack-stick-ink: #1c1917;
+  --pack-stick-skin: #fde68a;
+
+  /* Safe-area padding — captions and headlines stay this far from every edge. */
+  --pack-safe-area: 80px;
+
+  /* Fonts — Inter Tight covers Latin + basic diacritics. Google Fonts loaded per template. */
+  --pack-font-display: "Inter Tight", system-ui, -apple-system, sans-serif;
+  --pack-font-body:    "Inter Tight", system-ui, -apple-system, sans-serif;
 }

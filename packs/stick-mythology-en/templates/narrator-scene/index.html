@@ -1,36 +1,87 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Stick Mythology · Narrator Scene · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { margin: 0; background: #1a1a1a; font-family: -apple-system, sans-serif; overflow: hidden; }
-  .stage { width: 1920px; height: 1080px; position: relative; }
-  .bg { position: absolute; inset: 0; background: linear-gradient(180deg, #f5e0b8 0%, #d97706 60%, #78350f 100%); }
-  .stickman { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-  .caption { position: absolute; left: 50%; bottom: 80px; transform: translateX(-50%);
-    background: rgba(0,0,0,0.75); color: white; font-size: 44px; font-weight: 600;
-    padding: 18px 32px; border-radius: 10px; max-width: 1400px; text-align: center;
-    line-height: 1.35; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink: #fef3c7;
+    --pack-stick-ink: #1c1917;
+    --pack-stick-skin: #fde68a;
+    --pack-caption-bg: rgba(0, 0, 0, 0.72);
+    --pack-safe: 80px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f5e0b8 0%, #d97706 55%, #78350f 100%);
+    color: var(--pack-ink);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  }
+  /* Distant sun disc — anchors the horizon, keeps the frame from feeling flat. */
+  .sun {
+    position: absolute; top: 240px; left: 50%; transform: translateX(-50%);
+    width: 240px; height: 240px; border-radius: 50%;
+    background: radial-gradient(circle, #fef3c7 0%, #fde68a 40%, rgba(253,230,138,0) 70%);
+    filter: blur(2px);
+    animation: sway 8s ease-in-out infinite;
+  }
+  /* Ground silhouette — soft dark strip suggesting terrain without competing with the stickman. */
+  .ground {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 220px;
+    background: linear-gradient(180deg, rgba(28,25,23,0) 0%, rgba(28,25,23,0.35) 60%, rgba(28,25,23,0.6) 100%);
+  }
+  @keyframes sway {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%     { transform: translateX(-50%) translateY(-12px); }
+  }
+  @keyframes walk {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-8px); }
+  }
+  .stickman {
+    position: absolute; bottom: 260px; left: 50%; transform: translateX(-50%);
+    animation: walk 2.4s ease-in-out infinite;
+  }
+  .caption {
+    position: absolute;
+    left: 50%; bottom: var(--pack-safe);
+    transform: translateX(-50%);
+    background: var(--pack-caption-bg); color: white;
+    font-size: 44px; font-weight: 600; line-height: 1.32;
+    padding: 20px 36px; border-radius: 14px;
+    max-width: calc(1920px - 2 * var(--pack-safe));
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
 </style>
 </head>
 <body>
-  <div class="stage" data-composition-id="narrator-scene" data-duration="10">
-    <div class="bg" data-composition-variable="background.style"></div>
-    <svg class="stickman" width="280" height="480" viewBox="0 0 100 170">
-      <!-- Hand-drawn stickman: head + body + limbs -->
-      <circle cx="50" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
-      <circle cx="45" cy="18" r="1.8" fill="#1c1917"/>
-      <circle cx="55" cy="18" r="1.8" fill="#1c1917"/>
-      <path d="M 44 26 Q 50 30 56 26" stroke="#1c1917" stroke-width="2" fill="none"/>
-      <line x1="50" y1="36" x2="50" y2="105" stroke="#1c1917" stroke-width="4"/>
-      <line x1="50" y1="55" x2="25" y2="75" stroke="#1c1917" stroke-width="3"/>
-      <line x1="50" y1="55" x2="75" y2="75" stroke="#1c1917" stroke-width="3"/>
-      <line x1="50" y1="105" x2="35" y2="150" stroke="#1c1917" stroke-width="4"/>
-      <line x1="50" y1="105" x2="65" y2="150" stroke="#1c1917" stroke-width="4"/>
+  <div id="root" data-composition-id="narrator-scene" data-duration="10">
+    <div class="sun"></div>
+    <div class="ground"></div>
+    <svg class="stickman" width="280" height="480" viewBox="0 0 100 170" aria-hidden="true">
+      <circle cx="50" cy="20" r="16" fill="var(--pack-stick-skin)" stroke="var(--pack-stick-ink)" stroke-width="2.5"/>
+      <circle cx="45" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
+      <circle cx="55" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
+      <path d="M 44 26 Q 50 30 56 26" stroke="var(--pack-stick-ink)" stroke-width="2" fill="none"/>
+      <line x1="50" y1="36" x2="50" y2="105" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+      <line x1="50" y1="55" x2="25" y2="75" stroke="var(--pack-stick-ink)" stroke-width="3"/>
+      <line x1="50" y1="55" x2="75" y2="75" stroke="var(--pack-stick-ink)" stroke-width="3"/>
+      <line x1="50" y1="105" x2="35" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+      <line x1="50" y1="105" x2="65" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
     </svg>
-    <div class="caption" data-composition-variable="voiceText">
-      Narrator caption placeholder.
-    </div>
+    <div class="caption" data-composition-variable="voiceText">Narrator caption placeholder.</div>
   </div>
 </body>
 </html>

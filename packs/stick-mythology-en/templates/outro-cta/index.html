@@ -1,22 +1,84 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Stick Mythology · Outro CTA · 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-  body { margin: 0; background: #0f172a; font-family: -apple-system, sans-serif; overflow: hidden; }
-  .stage { width: 1920px; height: 1080px; position: relative;
-    background: linear-gradient(180deg, #1a1a1a 0%, #7c2d12 100%); }
-  .outro { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
-    color: white; font-size: 96px; font-weight: 800; text-align: center; max-width: 1500px;
-    line-height: 1.15; }
-  .cta { position: absolute; bottom: 220px; left: 50%; transform: translateX(-50%);
-    color: #fbbf24; font-size: 56px; font-weight: 700; letter-spacing: 3px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: transparent;
+  }
+  :root {
+    --pack-ink: #fef3c7;
+    --pack-accent-2: #fbbf24;
+    --pack-stick-ink: #1c1917;
+    --pack-stick-skin: #fde68a;
+    --pack-safe: 80px;
+  }
+  #root {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1a1a1a 0%, #7c2d12 100%);
+    color: var(--pack-ink);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translate(-50%, -42%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+  }
+  @keyframes pulse-cta {
+    0%,100% { text-shadow: 0 0 0 rgba(251,191,36,0); }
+    50%     { text-shadow: 0 0 40px rgba(251,191,36,0.55); }
+  }
+  @keyframes wave {
+    0%,100% { transform: rotate(-8deg); }
+    50%     { transform: rotate(12deg); }
+  }
+  .outro {
+    position: absolute; top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--pack-ink);
+    font-size: 96px; font-weight: 800; text-align: center;
+    max-width: calc(1920px - 2 * var(--pack-safe));
+    line-height: 1.15;
+    animation: rise 1s ease-out both;
+  }
+  .cta {
+    position: absolute; bottom: 200px; left: 50%; transform: translateX(-50%);
+    color: var(--pack-accent-2);
+    font-size: 56px; font-weight: 800; letter-spacing: 6px;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    border: 3px solid var(--pack-accent-2); border-radius: 999px;
+    animation: pulse-cta 2.4s ease-in-out infinite 1s;
+  }
+  .stickman {
+    position: absolute; bottom: 90px; right: 100px;
+    transform-origin: 50% 100%;
+    animation: wave 1.6s ease-in-out infinite;
+  }
 </style>
 </head>
 <body>
-  <div class="stage" data-composition-id="outro-cta" data-duration="6">
+  <div id="root" data-composition-id="outro-cta" data-duration="6">
     <div class="outro" data-composition-variable="voiceText">Thanks for watching.</div>
     <div class="cta" data-composition-variable="cta">SUBSCRIBE FOR MORE</div>
+    <svg class="stickman" width="100" height="170" viewBox="0 0 100 170" aria-hidden="true">
+      <circle cx="50" cy="20" r="16" fill="var(--pack-stick-skin)" stroke="var(--pack-stick-ink)" stroke-width="2.5"/>
+      <circle cx="45" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
+      <circle cx="55" cy="18" r="1.8" fill="var(--pack-stick-ink)"/>
+      <path d="M 42 24 Q 50 32 58 24" stroke="var(--pack-stick-ink)" stroke-width="2" fill="none"/>
+      <line x1="50" y1="36" x2="50" y2="105" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+      <line x1="50" y1="55" x2="15" y2="35" stroke="var(--pack-stick-ink)" stroke-width="3"/>
+      <line x1="50" y1="55" x2="80" y2="70" stroke="var(--pack-stick-ink)" stroke-width="3"/>
+      <line x1="50" y1="105" x2="35" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+      <line x1="50" y1="105" x2="65" y2="150" stroke="var(--pack-stick-ink)" stroke-width="4"/>
+    </svg>
   </div>
 </body>
 </html>
