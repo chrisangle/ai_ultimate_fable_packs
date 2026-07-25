@@ -4,7 +4,7 @@
     "en": "Bedtime Tales",
     "vi": "Chuyện Kể Trước Giờ Ngủ"
   },
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": {
     "en": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
     "vi": "Truyện kể trước giờ ngủ cho trẻ em, phong cách sách tranh ấm áp, người dẫn tiếng Anh, video 3–6 phút."
@@ -23,7 +23,7 @@
     "duration": { "min": 180, "target": 300, "max": 360 }
   },
 
-  "compat": { "core": ">=1.0.0" },
+  "compat": { "core": ">=1.1.0" },
 
   "assets": {
     "templates": "templates",
@@ -222,6 +222,40 @@
           "label": { "en": "Mood caption (italic)", "vi": "Caption tâm trạng (in nghiêng)" }
         }
       }
+    }
+  },
+
+  "customizationSurface": {
+    "hook-title": {
+      "positionEditable": ["title", "voiceText"],
+      "hideable": ["moon"],
+      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+    },
+    "storybook-page": {
+      "positionEditable": ["heading", "voiceText"],
+      "hideable": ["chapterNumber"],
+      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"],
+      "imageSlot": { "mode": "cover", "defaultOpacity": 0.35 }
+    },
+    "end-card": {
+      "positionEditable": ["endTitle", "voiceText"],
+      "hideable": ["moon"],
+      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+    },
+    "character-moment": {
+      "positionEditable": ["heading", "voiceText"],
+      "hideable": ["warmGlow"],
+      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+    },
+    "question-page": {
+      "positionEditable": ["question", "voiceText"],
+      "hideable": ["questionMark"],
+      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+    },
+    "quiet-moment": {
+      "positionEditable": ["voiceText"],
+      "hideable": ["stars"],
+      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
     }
   }
 }

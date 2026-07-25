@@ -97,44 +97,83 @@
        data-width="1920"
        data-height="1080"
        data-composition-variables='{"name":"THE BAKER","face":"🧑‍🍳","heading":"A kind old baker.","voiceText":"He rose before the sun, kneaded warm dough with his hands, and hummed the same old tune his mother once sang."}'>
-    <div class="warm-glow"></div>
+    <div class="warm-glow" data-slot="warmGlow" data-user-hideable="true"></div>
     <div class="portrait"><div class="face" data-slot="face">🧑‍🍳</div></div>
     <div class="text-block">
       <div class="name" data-slot="name">THE BAKER</div>
-      <div class="heading" data-slot="heading">A kind old baker.</div>
-      <div class="body-copy" data-slot="voiceText">He rose before the sun, kneaded warm dough with his hands, and hummed the same old tune his mother once sang.</div>
+      <div class="heading" data-slot="heading" data-user-editable="position">A kind old baker.</div>
+      <div class="body-copy" data-slot="voiceText" data-user-editable="position">He rose before the sun, kneaded warm dough with his hands, and hummed the same old tune his mother once sang.</div>
     </div>
   </div>
   <script>
-    (function () {
-      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
-        ? window.__hyperframes.getVariables() : {};
-      // A. Populate declared [data-slot] elements verbatim.
-      document.querySelectorAll('[data-slot]').forEach(function (el) {
-        var key = el.getAttribute('data-slot');
-        if (v[key] != null) el.textContent = String(v[key]);
-      });
-      // B. Auto-badge fallback — inject default character badge for reserved
-      //    identity slots (characterName / leftName / rightName) when the
-      //    value is set AND the template did not author its own placement.
-      //    Docs: docs/pack-template-contract.md#character-identity.
-      var root = document.getElementById('root');
-      if (root) {
-        ['characterName', 'leftName', 'rightName'].forEach(function (slot) {
-          var val = v[slot];
-          if (val && !document.querySelector('[data-slot="' + slot + '"]')) {
-            var b = document.createElement('div');
-            b.className = 'auto-char-badge auto-' + slot;
-            b.textContent = String(val);
-            root.appendChild(b);
-          }
-        });
-      }
-      window.__timelines = window.__timelines || {};
-      window.__timelines['character-moment'] = {
-        pause: function () {}, seek: function () {}, paused: function () { return true; },
-      };
-    })();
+(function(){
+  const V = (window.__hyperframes && window.__hyperframes.getVariables) ? window.__hyperframes.getVariables() : {};
+
+  // populate [data-slot="key"]
+  Object.entries(V).forEach(([k, v]) => {
+    if (k.startsWith('__')) return;
+    document.querySelectorAll('[data-slot="' + k + '"]').forEach(el => { el.textContent = (v == null ? '' : String(v)); });
+  });
+
+  // auto character badges
+  ['characterName','leftName','rightName'].forEach(k => {
+    if (!V[k]) return;
+    if (!document.querySelector('[data-slot="' + k + '"]')) {
+      const el = document.createElement('div');
+      el.className = 'auto-char-badge auto-' + k;
+      el.textContent = V[k];
+      document.getElementById('root').appendChild(el);
+    }
+  });
+
+  // V3 — overrides
+  const O = V.__overrides || {};
+
+  const ANCHOR = {
+    'top-left':      { left:'0%',  top:'0%',   transform:'' },
+    'top-center':    { left:'50%', top:'0%',   transform:'translateX(-50%)' },
+    'top-right':     { left:'100%',top:'0%',   transform:'translateX(-100%)' },
+    'middle-left':   { left:'0%',  top:'50%',  transform:'translateY(-50%)' },
+    'middle-center': { left:'50%', top:'50%',  transform:'translate(-50%,-50%)' },
+    'middle-right':  { left:'100%',top:'50%',  transform:'translate(-100%,-50%)' },
+    'bottom-left':   { left:'0%',  top:'100%', transform:'translateY(-100%)' },
+    'bottom-center': { left:'50%', top:'100%', transform:'translate(-50%,-100%)' },
+    'bottom-safe':   { left:'50%', top:'100%', transform:'translate(-50%,-100%)' },
+  };
+
+  Object.entries(O.slotPositions || {}).forEach(([slotId, pos]) => {
+    const el = document.querySelector('[data-slot="' + slotId + '"][data-user-editable="position"]');
+    if (!el) return;
+    const a = ANCHOR[pos.anchor] || ANCHOR['bottom-center'];
+    Object.assign(el.style, { position:'absolute', left:a.left, top:a.top, transform:a.transform,
+      marginLeft: (pos.offsetX||0) + 'px', marginTop: (pos.offsetY||0) + 'px' });
+  });
+
+  (O.hiddenSlots || []).forEach(slotId => {
+    const el = document.querySelector('[data-slot="' + slotId + '"][data-user-hideable="true"]');
+    if (el) el.style.display = 'none';
+  });
+
+  const img = O.image;
+  if (img && img.assetPath) {
+    let host = document.querySelector('[data-slot="fable-image"]');
+    if (!host) {
+      host = document.createElement('div');
+      host.setAttribute('data-slot','fable-image');
+      host.setAttribute('data-slot-type','image');
+      Object.assign(host.style, { position:'absolute', inset:'0', zIndex:'0', pointerEvents:'none' });
+      document.getElementById('root').prepend(host);
+    }
+    const opacity = typeof img.opacity === 'number' ? img.opacity : 0.35;
+    const fit = img.fit || 'cover';
+    host.innerHTML = '<img src="' + img.assetPath + '" style="width:100%;height:100%;object-fit:' + fit + ';opacity:' + opacity + '">';
+    if (img.kenBurns) host.classList.add('fable-image-kenburns');
+  }
+
+  window.__timelines = window.__timelines || {};
+  const cid = (document.getElementById('root') || {}).getAttribute && document.getElementById('root').getAttribute('data-composition-id') || 'default';
+  window.__timelines[cid] = { start: function(){}, stop: function(){} };
+})();
   </script>
 </body>
 </html>
