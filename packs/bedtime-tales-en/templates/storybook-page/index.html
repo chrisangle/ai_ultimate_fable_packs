@@ -44,12 +44,20 @@
     color: #92400e; font-weight: 500;
   }
   .illustration {
-    position: absolute; left: 130px; top: 180px; width: 800px; height: 640px;
+    /* 720, not 800: at 800 the picture frame ended at x=990 while `.text-block` starts at x=950,
+       so the heading's first glyph sat ON the illustration. Invisible against the pale drawn
+       placeholder, but a generated night-scene image swallowed it whole. 720 leaves a ~38px
+       gutter between the picture and the text column. */
+    position: absolute; left: 130px; top: 180px; width: 720px; height: 640px;
     border-radius: 16px; overflow: hidden;
     background: linear-gradient(180deg, #7dd3fc 0%, #86efac 100%);
     box-shadow: inset 0 0 60px rgba(6, 78, 59, 0.15);
     display: flex; align-items: flex-end; justify-content: center;
   }
+  /* The image host fills the illustration frame; a generated picture then COVERS the drawn
+     placeholder scene (house/trees) rather than tinting the page behind the paper. */
+  .fable-image-host { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .fable-image-host img { display: block; width: 100%; height: 100%; }
   .house { width: 300px; height: 240px; margin-bottom: 60px; position: relative; animation: sway 5s ease-in-out infinite; }
   @keyframes sway {
     0%,100% { transform: translateY(0); }
@@ -132,6 +140,10 @@
     <div class="paper">
       <div class="scene-number" data-slot="chapterNumber" data-user-hideable="true">Chapter <span data-slot="order">1</span></div>
       <div class="illustration">
+        <!-- Scene image host. Authored (not auto-injected) so a generated illustration lands
+             INSIDE the picture frame instead of behind the opaque paper, where the runtime's
+             default full-bleed host would put it and the reader would never see it. -->
+        <div class="fable-image-host" data-slot="fable-image" data-slot-type="image" data-slot-fit="cover"></div>
         <div class="tree left"><div class="canopy"></div><div class="trunk"></div></div>
         <div class="tree right"><div class="canopy"></div><div class="trunk"></div></div>
         <div class="house">
