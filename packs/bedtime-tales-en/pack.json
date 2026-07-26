@@ -12,19 +12,29 @@
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
-
   "target": {
     "language": "en",
-    "market": ["en-US", "en-GB", "en-CA", "en-AU"],
+    "market": [
+      "en-US",
+      "en-GB",
+      "en-CA",
+      "en-AU"
+    ],
     "audience": "kids",
     "genre": "bedtime-story",
     "aspectRatio": "16:9",
-    "supportedAspects": ["16:9"],
-    "duration": { "min": 180, "target": 300, "max": 360 }
+    "supportedAspects": [
+      "16:9"
+    ],
+    "duration": {
+      "min": 180,
+      "target": 300,
+      "max": 360
+    }
   },
-
-  "compat": { "core": ">=1.1.0" },
-
+  "compat": {
+    "core": ">=1.1.0"
+  },
   "assets": {
     "templates": "templates",
     "characters": "characters",
@@ -32,25 +42,28 @@
     "voice": "voice",
     "style": "style/tokens.css"
   },
-
   "prompts": {
     "script": "prompts/script.md",
     "scene": "prompts/scene.md"
   },
-
   "voice": {
     "referenceClip": "voice/ref-narrator-en.mp3",
     "defaultVoiceId": "bedtime-narrator-en",
     "language": "en"
   },
-
   "scenes": {
     "defaultTemplate": "storybook-page",
     "hookTemplate": "hook-title",
     "outroTemplate": "end-card",
-    "beatStructure": ["hook", "setup", "problem", "resolution", "moral", "outro"]
+    "beatStructure": [
+      "hook",
+      "setup",
+      "problem",
+      "resolution",
+      "moral",
+      "outro"
+    ]
   },
-
   "wizard": {
     "supportsUrl": false,
     "ideaPlaceholder": {
@@ -58,7 +71,6 @@
       "vi": "VD: Chú cáo nhỏ đánh rơi găng tay trong rừng mùa đông — tìm lại được nhờ giúp đỡ các bạn."
     }
   },
-
   "templateCatalog": {
     "hook-title": {
       "id": "hook-title",
@@ -76,19 +88,28 @@
           "type": "string",
           "required": true,
           "maxLength": 32,
-          "label": { "en": "Kicker (small caps)", "vi": "Kicker (chữ in nhỏ)" }
+          "label": {
+            "en": "Kicker (small caps)",
+            "vi": "Kicker (chữ in nhỏ)"
+          }
         },
         "title": {
           "type": "string",
           "required": true,
           "maxLength": 80,
-          "label": { "en": "Story title inside the book", "vi": "Tựa truyện trong sách" }
+          "label": {
+            "en": "Story title inside the book",
+            "vi": "Tựa truyện trong sách"
+          }
         },
         "voiceText": {
           "type": "string",
           "required": true,
           "maxLength": 120,
-          "label": { "en": "Warm invitation caption", "vi": "Caption lời mời ấm áp" }
+          "label": {
+            "en": "Warm invitation caption",
+            "vi": "Caption lời mời ấm áp"
+          }
         }
       }
     },
@@ -108,20 +129,32 @@
           "type": "string",
           "required": true,
           "maxLength": 3,
-          "label": { "en": "Chapter / page number", "vi": "Số chương / trang" },
-          "help": { "en": "1, 2, 3…", "vi": "1, 2, 3…" }
+          "label": {
+            "en": "Chapter / page number",
+            "vi": "Số chương / trang"
+          },
+          "help": {
+            "en": "1, 2, 3…",
+            "vi": "1, 2, 3…"
+          }
         },
         "heading": {
           "type": "string",
           "required": true,
           "maxLength": 40,
-          "label": { "en": "Heading (sentence case)", "vi": "Tiêu đề (chữ thường)" }
+          "label": {
+            "en": "Heading (sentence case)",
+            "vi": "Tiêu đề (chữ thường)"
+          }
         },
         "voiceText": {
           "type": "string",
           "required": true,
           "maxLength": 260,
-          "label": { "en": "Body copy (narrator reads this)", "vi": "Nội dung (người dẫn đọc)" }
+          "label": {
+            "en": "Body copy (narrator reads this)",
+            "vi": "Nội dung (người dẫn đọc)"
+          }
         }
       }
     },
@@ -141,25 +174,37 @@
           "type": "string",
           "required": true,
           "maxLength": 20,
-          "label": { "en": "End title (default: The End)", "vi": "Tựa kết (mặc định: The End)" }
+          "label": {
+            "en": "End title (default: The End)",
+            "vi": "Tựa kết (mặc định: The End)"
+          }
         },
         "sub": {
           "type": "string",
           "required": true,
           "maxLength": 20,
-          "label": { "en": "Subtitle (default: Sweet Dreams)", "vi": "Phụ đề (mặc định: Sweet Dreams)" }
+          "label": {
+            "en": "Subtitle (default: Sweet Dreams)",
+            "vi": "Phụ đề (mặc định: Sweet Dreams)"
+          }
         },
         "voiceText": {
           "type": "string",
           "required": true,
           "maxLength": 100,
-          "label": { "en": "Goodnight caption", "vi": "Caption chúc ngủ ngon" }
+          "label": {
+            "en": "Goodnight caption",
+            "vi": "Caption chúc ngủ ngon"
+          }
         }
       }
     },
     "character-moment": {
       "id": "character-moment",
-      "name": { "en": "Character Moment", "vi": "Khoảnh Khắc Nhân Vật" },
+      "name": {
+        "en": "Character Moment",
+        "vi": "Khoảnh Khắc Nhân Vật"
+      },
       "description": {
         "en": "Warm portrait circle with an emoji face + character label + heading + body copy. Use when introducing or focusing on a single character.",
         "vi": "Vòng chân dung ấm áp với emoji + nhãn nhân vật + tiêu đề + nội dung. Dùng khi giới thiệu hoặc tập trung vào một nhân vật."
@@ -167,27 +212,53 @@
       "role": "body",
       "slots": {
         "name": {
-          "type": "string", "required": true, "maxLength": 24,
-          "label": { "en": "Character label (all caps)", "vi": "Nhãn nhân vật (in hoa)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 24,
+          "label": {
+            "en": "Character label (all caps)",
+            "vi": "Nhãn nhân vật (in hoa)"
+          }
         },
         "face": {
-          "type": "string", "required": true, "maxLength": 4,
-          "label": { "en": "Emoji face", "vi": "Emoji khuôn mặt" },
-          "help": { "en": "One emoji only, e.g. 🧑‍🍳 🐇 🦊 👵", "vi": "Chỉ 1 emoji, ví dụ 🧑‍🍳 🐇 🦊 👵" }
+          "type": "string",
+          "required": true,
+          "maxLength": 4,
+          "label": {
+            "en": "Emoji face",
+            "vi": "Emoji khuôn mặt"
+          },
+          "help": {
+            "en": "One emoji only, e.g. 🧑‍🍳 🐇 🦊 👵",
+            "vi": "Chỉ 1 emoji, ví dụ 🧑‍🍳 🐇 🦊 👵"
+          }
         },
         "heading": {
-          "type": "string", "required": true, "maxLength": 40,
-          "label": { "en": "Short heading", "vi": "Tiêu đề ngắn" }
+          "type": "string",
+          "required": true,
+          "maxLength": 40,
+          "label": {
+            "en": "Short heading",
+            "vi": "Tiêu đề ngắn"
+          }
         },
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 220,
-          "label": { "en": "Body copy (narrator reads)", "vi": "Nội dung (người dẫn đọc)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 220,
+          "label": {
+            "en": "Body copy (narrator reads)",
+            "vi": "Nội dung (người dẫn đọc)"
+          }
         }
       }
     },
     "question-page": {
       "id": "question-page",
-      "name": { "en": "Question Page", "vi": "Trang Câu Hỏi" },
+      "name": {
+        "en": "Question Page",
+        "vi": "Trang Câu Hỏi"
+      },
       "description": {
         "en": "Giant faded question mark + italic question + soft caption. Use to make the child pause and wonder — no answers, only the question.",
         "vi": "Dấu chấm hỏi mờ khổng lồ + câu hỏi in nghiêng + caption dịu. Dùng để trẻ dừng lại và suy nghĩ — không đưa đáp án, chỉ đặt câu hỏi."
@@ -195,22 +266,40 @@
       "role": "body",
       "slots": {
         "prompt": {
-          "type": "string", "required": true, "maxLength": 32,
-          "label": { "en": "Prompt label (all caps)", "vi": "Nhãn (in hoa)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": {
+            "en": "Prompt label (all caps)",
+            "vi": "Nhãn (in hoa)"
+          }
         },
         "question": {
-          "type": "string", "required": true, "maxLength": 60,
-          "label": { "en": "The question (italic)", "vi": "Câu hỏi (in nghiêng)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 60,
+          "label": {
+            "en": "The question (italic)",
+            "vi": "Câu hỏi (in nghiêng)"
+          }
         },
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 160,
-          "label": { "en": "Follow-up caption", "vi": "Caption tiếp nối" }
+          "type": "string",
+          "required": true,
+          "maxLength": 160,
+          "label": {
+            "en": "Follow-up caption",
+            "vi": "Caption tiếp nối"
+          }
         }
       }
     },
     "quiet-moment": {
       "id": "quiet-moment",
-      "name": { "en": "Quiet Moment", "vi": "Khoảnh Khắc Yên Bình" },
+      "name": {
+        "en": "Quiet Moment",
+        "vi": "Khoảnh Khắc Yên Bình"
+      },
       "description": {
         "en": "Night sky + drifting fireflies + a single italic caption centered. Use for a mood beat — no action, just atmosphere.",
         "vi": "Bầu trời đêm + đom đóm trôi + 1 caption in nghiêng giữa màn hình. Dùng cho nhịp không khí — không hành động, chỉ tâm trạng."
@@ -218,44 +307,292 @@
       "role": "body",
       "slots": {
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 160,
-          "label": { "en": "Mood caption (italic)", "vi": "Caption tâm trạng (in nghiêng)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 160,
+          "label": {
+            "en": "Mood caption (italic)",
+            "vi": "Caption tâm trạng (in nghiêng)"
+          }
         }
       }
     }
   },
-
   "customizationSurface": {
     "hook-title": {
-      "positionEditable": ["title", "voiceText"],
-      "hideable": ["moon"],
-      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+      "positionEditable": [
+        "title",
+        "voiceText"
+      ],
+      "hideable": [
+        "moon"
+      ],
+      "captionPresetsAllowed": [
+        "Bedtime",
+        "Storybook",
+        "Cinema",
+        "Minimal"
+      ],
+      "widgets": {
+        "title": {
+          "label": {
+            "en": "Story title",
+            "vi": "Tên truyện"
+          },
+          "description": {
+            "en": "The opening title of the story.",
+            "vi": "Tên truyện ở cảnh mở đầu."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        },
+        "moon": {
+          "label": {
+            "en": "Moon",
+            "vi": "Mặt trăng"
+          },
+          "description": {
+            "en": "Decorative moon in the night sky.",
+            "vi": "Mặt trăng trang trí trên bầu trời đêm."
+          }
+        }
+      }
     },
     "storybook-page": {
-      "positionEditable": ["heading", "voiceText"],
-      "hideable": ["chapterNumber"],
-      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"],
-      "imageSlot": { "mode": "cover", "defaultOpacity": 0.35 }
+      "positionEditable": [
+        "heading",
+        "voiceText"
+      ],
+      "hideable": [
+        "chapterNumber"
+      ],
+      "captionPresetsAllowed": [
+        "Bedtime",
+        "Storybook",
+        "Cinema",
+        "Minimal"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.35
+      },
+      "widgets": {
+        "heading": {
+          "label": {
+            "en": "Page heading",
+            "vi": "Tiêu đề trang"
+          },
+          "description": {
+            "en": "Heading above the page text.",
+            "vi": "Tiêu đề phía trên phần chữ của trang."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        },
+        "chapterNumber": {
+          "label": {
+            "en": "Chapter number",
+            "vi": "Số chương"
+          },
+          "description": {
+            "en": "Small \"Chapter N\" label.",
+            "vi": "Nhãn \"Chương N\" cỡ nhỏ."
+          }
+        }
+      }
     },
     "end-card": {
-      "positionEditable": ["endTitle", "voiceText"],
-      "hideable": ["moon"],
-      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+      "positionEditable": [
+        "endTitle",
+        "voiceText"
+      ],
+      "hideable": [
+        "moon"
+      ],
+      "captionPresetsAllowed": [
+        "Bedtime",
+        "Storybook",
+        "Cinema",
+        "Minimal"
+      ],
+      "widgets": {
+        "endTitle": {
+          "label": {
+            "en": "Closing title",
+            "vi": "Tiêu đề kết"
+          },
+          "description": {
+            "en": "The good-night / the-end line.",
+            "vi": "Dòng chúc ngủ ngon hoặc kết truyện."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        },
+        "moon": {
+          "label": {
+            "en": "Moon",
+            "vi": "Mặt trăng"
+          },
+          "description": {
+            "en": "Decorative moon in the night sky.",
+            "vi": "Mặt trăng trang trí trên bầu trời đêm."
+          }
+        }
+      }
     },
     "character-moment": {
-      "positionEditable": ["heading", "voiceText"],
-      "hideable": ["warmGlow"],
-      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+      "positionEditable": [
+        "heading",
+        "voiceText"
+      ],
+      "hideable": [
+        "warmGlow"
+      ],
+      "captionPresetsAllowed": [
+        "Bedtime",
+        "Storybook",
+        "Cinema",
+        "Minimal"
+      ],
+      "widgets": {
+        "heading": {
+          "label": {
+            "en": "Character name",
+            "vi": "Tên nhân vật"
+          },
+          "description": {
+            "en": "Who this moment is about.",
+            "vi": "Khoảnh khắc này nói về ai."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        },
+        "warmGlow": {
+          "label": {
+            "en": "Warm glow",
+            "vi": "Quầng sáng ấm"
+          },
+          "description": {
+            "en": "Soft light around the character.",
+            "vi": "Vầng sáng dịu quanh nhân vật."
+          }
+        }
+      }
     },
     "question-page": {
-      "positionEditable": ["question", "voiceText"],
-      "hideable": ["questionMark"],
-      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+      "positionEditable": [
+        "question",
+        "voiceText"
+      ],
+      "hideable": [
+        "questionMark"
+      ],
+      "captionPresetsAllowed": [
+        "Bedtime",
+        "Storybook",
+        "Cinema",
+        "Minimal"
+      ],
+      "widgets": {
+        "question": {
+          "label": {
+            "en": "Question",
+            "vi": "Câu hỏi"
+          },
+          "description": {
+            "en": "The question asked to the listener.",
+            "vi": "Câu hỏi đặt ra cho người nghe."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        },
+        "questionMark": {
+          "label": {
+            "en": "Question mark",
+            "vi": "Dấu hỏi lớn"
+          },
+          "description": {
+            "en": "Large decorative question mark.",
+            "vi": "Dấu chấm hỏi lớn trang trí."
+          }
+        }
+      }
     },
     "quiet-moment": {
-      "positionEditable": ["voiceText"],
-      "hideable": ["stars"],
-      "captionPresetsAllowed": ["Bedtime", "Storybook", "Cinema", "Minimal"]
+      "positionEditable": [
+        "voiceText"
+      ],
+      "hideable": [
+        "stars"
+      ],
+      "captionPresetsAllowed": [
+        "Bedtime",
+        "Storybook",
+        "Cinema",
+        "Minimal"
+      ],
+      "widgets": {
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        },
+        "stars": {
+          "label": {
+            "en": "Stars",
+            "vi": "Ngôi sao"
+          },
+          "description": {
+            "en": "Twinkling stars in the background.",
+            "vi": "Các ngôi sao lấp lánh trên nền."
+          }
+        }
+      }
     }
   }
 }

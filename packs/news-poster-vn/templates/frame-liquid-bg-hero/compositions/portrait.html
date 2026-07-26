@@ -252,28 +252,28 @@
             data-height="1920"
             data-composition-variables='{"kicker":"AI Coding","brand":"https://aicodingvn.vercel.app/","headline":"GPT 5.5 ra mắt","subheadline":"Mô hình AI mạnh nhất từ trước tới nay vừa được công bố.","cta":"Theo dõi ngay"}'
         >
-            <div class="blob b1"></div>
-            <div class="blob b2"></div>
-            <div class="blob b3"></div>
-            <div class="blob b4"></div>
-            <canvas id="neural-net" width="1080" height="1920"></canvas>
+            <div class="blob b1" data-slot="backgroundBlobs" data-user-hideable="true"></div>
+            <div class="blob b2" data-slot="backgroundBlobs" data-user-hideable="true"></div>
+            <div class="blob b3" data-slot="backgroundBlobs" data-user-hideable="true"></div>
+            <div class="blob b4" data-slot="backgroundBlobs" data-user-hideable="true"></div>
+            <canvas data-slot="backdropPattern" data-user-hideable="true" id="neural-net" width="1080" height="1920"></canvas>
             <div class="scrim"></div>
 
-            <div class="chip top">
+            <div class="chip top" data-slot="formatChip" data-user-hideable="true">
                 <span class="kicker"></span><span>9:16</span>
             </div>
 
-            <div class="brand-bar">
+            <div class="brand-bar" data-slot="brandBar" data-user-hideable="true">
                 <img class="logo-img" src="../assets/logo.svg" />
                 <span class="brand-label">Senior AI Engineer</span>
             </div>
 
-            <div class="main">
+            <div class="main" data-slot="textBlock" data-user-editable="position">
                 <h1 class="headline"></h1>
                 <p class="subheadline"></p>
             </div>
 
-            <div class="chip bot">
+            <div class="chip bot" data-slot="footerChip" data-user-hideable="true">
                 <span class="brand"></span><span>Bản tin</span>
             </div>
         </div>
@@ -416,5 +416,69 @@
                 paused: function () { return true; },
             };
         </script>
-    </body>
+      <script>
+    /* Fable override runtime (OVERRIDES_SCRIPT_V3) — positions / hidden widgets / image slot.
+       Source of truth: src/shared/fable-pack/template-contract.ts. Do not edit by hand. */
+  (function(){
+    const V = (window.__hyperframes && window.__hyperframes.getVariables) ? window.__hyperframes.getVariables() : {};
+    const O = V.__overrides || {};
+  
+    const ANCHOR = {
+      'top-left':      { left:'0%',  top:'0%',   transform:'' },
+      'top-center':    { left:'50%', top:'0%',   transform:'translateX(-50%)' },
+      'top-right':     { left:'100%',top:'0%',   transform:'translateX(-100%)' },
+      'middle-left':   { left:'0%',  top:'50%',  transform:'translateY(-50%)' },
+      'middle-center': { left:'50%', top:'50%',  transform:'translate(-50%,-50%)' },
+      'middle-right':  { left:'100%',top:'50%',  transform:'translate(-100%,-50%)' },
+      'bottom-left':   { left:'0%',  top:'100%', transform:'translateY(-100%)' },
+      'bottom-center': { left:'50%', top:'100%', transform:'translate(-50%,-100%)' },
+      'bottom-safe':   { left:'50%', top:'100%', transform:'translate(-50%,-100%)' },
+    };
+  
+    Object.entries(O.slotPositions || {}).forEach(([slotId, pos]) => {
+      const el = document.querySelector('[data-slot="' + slotId + '"][data-user-editable="position"]');
+      if (!el) return;
+      const a = ANCHOR[pos.anchor] || ANCHOR['bottom-center'];
+      // Freeze the CURRENT rendered width first: many slots are sized by "left + right" (a
+      // full-width caption band), and re-anchoring has to drop 'right', which would otherwise
+      // collapse the box to shrink-to-fit. Guarded on > 0 so a layout-less DOM (jsdom) is a no-op.
+      const w = el.getBoundingClientRect().width;
+      // Every property goes in as !important: a CSS animation with fill-mode 'both' OUTRANKS a
+      // normal inline style (CSS cascade order: important author > animations > normal author), so
+      // an animated slot would otherwise snap back to its keyframe transform and land off-frame.
+      const set = (prop, value) => el.style.setProperty(prop, value, 'important');
+      if (w > 0) set('width', w + 'px');
+      set('position', 'absolute');
+      set('left', a.left);
+      set('top', a.top);
+      set('right', 'auto');
+      set('bottom', 'auto');
+      set('transform', a.transform || 'none');
+      set('margin-left', (pos.offsetX||0) + 'px');
+      set('margin-top', (pos.offsetY||0) + 'px');
+    });
+  
+    (O.hiddenSlots || []).forEach(slotId => {
+      document.querySelectorAll('[data-slot="' + slotId + '"][data-user-hideable="true"]')
+        .forEach(el => { el.style.display = 'none'; });
+    });
+  
+    const img = O.image;
+    if (img && img.assetPath) {
+      let host = document.querySelector('[data-slot="fable-image"]');
+      if (!host) {
+        host = document.createElement('div');
+        host.setAttribute('data-slot','fable-image');
+        host.setAttribute('data-slot-type','image');
+        Object.assign(host.style, { position:'absolute', inset:'0', zIndex:'0', pointerEvents:'none' });
+        document.getElementById('root').prepend(host);
+      }
+      const opacity = typeof img.opacity === 'number' ? img.opacity : 0.35;
+      const fit = img.fit || 'cover';
+      host.innerHTML = '<img src="' + img.assetPath + '" style="width:100%;height:100%;object-fit:' + fit + ';opacity:' + opacity + '">';
+      if (img.kenBurns) host.classList.add('fable-image-kenburns');
+    }
+  })();
+    </script>
+</body>
 </html>

@@ -12,44 +12,54 @@
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
-
   "target": {
     "language": "vi",
-    "market": ["vi-VN"],
+    "market": [
+      "vi-VN"
+    ],
     "audience": "adult",
     "genre": "self-improvement",
     "aspectRatio": "9:16",
-    "supportedAspects": ["9:16"],
-    "duration": { "min": 60, "target": 90, "max": 180 }
+    "supportedAspects": [
+      "9:16"
+    ],
+    "duration": {
+      "min": 60,
+      "target": 90,
+      "max": 180
+    }
   },
-
-  "compat": { "core": ">=1.0.0" },
-
+  "compat": {
+    "core": ">=1.0.0"
+  },
   "assets": {
     "templates": "templates",
     "voice": "voice",
     "sfx": "sfx",
     "style": "style/tokens.css"
   },
-
   "prompts": {
     "script": "prompts/script.md",
     "scene": "prompts/scene.md"
   },
-
   "voice": {
     "referenceClip": "voice/ref-narrator-vn.mp3",
     "defaultVoiceId": "self-improvement-narrator-vn",
     "language": "vi"
   },
-
   "scenes": {
     "defaultTemplate": "doodle-scene",
     "hookTemplate": "big-question-hook",
     "outroTemplate": "cta-followup",
-    "beatStructure": ["hook", "problem", "principle", "example", "action", "outro"]
+    "beatStructure": [
+      "hook",
+      "problem",
+      "principle",
+      "example",
+      "action",
+      "outro"
+    ]
   },
-
   "templateCatalog": {
     "big-question-hook": {
       "id": "big-question-hook",
@@ -67,14 +77,23 @@
           "type": "string",
           "required": true,
           "maxLength": 24,
-          "label": { "en": "Red kicker stamp", "vi": "Nhãn đỏ đóng dấu" }
+          "label": {
+            "en": "Red kicker stamp",
+            "vi": "Nhãn đỏ đóng dấu"
+          }
         },
         "headline": {
           "type": "string",
           "required": true,
           "maxLength": 40,
-          "label": { "en": "Big question", "vi": "Câu hỏi lớn" },
-          "help": { "en": "1 short line that provokes curiosity", "vi": "1 câu ngắn, gây tò mò" }
+          "label": {
+            "en": "Big question",
+            "vi": "Câu hỏi lớn"
+          },
+          "help": {
+            "en": "1 short line that provokes curiosity",
+            "vi": "1 câu ngắn, gây tò mò"
+          }
         }
       }
     },
@@ -94,13 +113,22 @@
           "type": "string",
           "required": true,
           "maxLength": 180,
-          "label": { "en": "Caption (narrator reads)", "vi": "Caption (người dẫn đọc)" }
+          "label": {
+            "en": "Caption (narrator reads)",
+            "vi": "Caption (người dẫn đọc)"
+          }
         },
         "footer": {
           "type": "string",
           "maxLength": 24,
-          "label": { "en": "Footer tag", "vi": "Footer tag" },
-          "help": { "en": "Small caps label at the bottom (default: TỰ PHÁT TRIỂN)", "vi": "Nhãn chữ in nhỏ (mặc định TỰ PHÁT TRIỂN)" }
+          "label": {
+            "en": "Footer tag",
+            "vi": "Footer tag"
+          },
+          "help": {
+            "en": "Small caps label at the bottom (default: TỰ PHÁT TRIỂN)",
+            "vi": "Nhãn chữ in nhỏ (mặc định TỰ PHÁT TRIỂN)"
+          }
         }
       }
     },
@@ -120,19 +148,28 @@
           "type": "string",
           "required": true,
           "maxLength": 80,
-          "label": { "en": "Thanks / sign-off", "vi": "Câu cảm ơn / kết bài" }
+          "label": {
+            "en": "Thanks / sign-off",
+            "vi": "Câu cảm ơn / kết bài"
+          }
         },
         "cta": {
           "type": "string",
           "required": true,
           "maxLength": 20,
-          "label": { "en": "CTA button (all caps)", "vi": "Nút CTA (in hoa)" }
+          "label": {
+            "en": "CTA button (all caps)",
+            "vi": "Nút CTA (in hoa)"
+          }
         }
       }
     },
     "insight-card": {
       "id": "insight-card",
-      "name": { "en": "Insight Card", "vi": "Thẻ Nguyên Tắc" },
+      "name": {
+        "en": "Insight Card",
+        "vi": "Thẻ Nguyên Tắc"
+      },
       "description": {
         "en": "Numbered insight — red badge + huge orange number + short title + caption. Use for a discrete principle / rule / step.",
         "vi": "Insight có số — badge đỏ + số cam khổng lồ + tiêu đề ngắn + caption. Dùng cho một nguyên tắc / quy tắc / bước cụ thể."
@@ -140,26 +177,49 @@
       "role": "body",
       "slots": {
         "badge": {
-          "type": "string", "required": true, "maxLength": 20,
-          "label": { "en": "Red badge (all caps)", "vi": "Badge đỏ (in hoa)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 20,
+          "label": {
+            "en": "Red badge (all caps)",
+            "vi": "Badge đỏ (in hoa)"
+          }
         },
         "number": {
-          "type": "string", "required": true, "maxLength": 3,
-          "label": { "en": "Big number", "vi": "Số lớn" }
+          "type": "string",
+          "required": true,
+          "maxLength": 3,
+          "label": {
+            "en": "Big number",
+            "vi": "Số lớn"
+          }
         },
         "title": {
-          "type": "string", "required": true, "maxLength": 32,
-          "label": { "en": "Short title (≤ 6 words)", "vi": "Tiêu đề ngắn (≤ 6 từ)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": {
+            "en": "Short title (≤ 6 words)",
+            "vi": "Tiêu đề ngắn (≤ 6 từ)"
+          }
         },
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 180,
-          "label": { "en": "Caption (narrator reads)", "vi": "Caption (người dẫn đọc)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 180,
+          "label": {
+            "en": "Caption (narrator reads)",
+            "vi": "Caption (người dẫn đọc)"
+          }
         }
       }
     },
     "stat-callout": {
       "id": "stat-callout",
-      "name": { "en": "Stat Callout", "vi": "Callout Con Số" },
+      "name": {
+        "en": "Stat Callout",
+        "vi": "Callout Con Số"
+      },
       "description": {
         "en": "One dominant statistic — huge red number + label + supporting caption. Use when a research figure carries the beat.",
         "vi": "Một con số nổi bật — số đỏ khổng lồ + nhãn + caption. Dùng khi 1 số liệu nghiên cứu là điểm nhấn."
@@ -167,26 +227,49 @@
       "role": "body",
       "slots": {
         "kicker": {
-          "type": "string", "required": true, "maxLength": 24,
-          "label": { "en": "Small kicker", "vi": "Nhãn nhỏ" }
+          "type": "string",
+          "required": true,
+          "maxLength": 24,
+          "label": {
+            "en": "Small kicker",
+            "vi": "Nhãn nhỏ"
+          }
         },
         "stat": {
-          "type": "string", "required": true, "maxLength": 8,
-          "label": { "en": "The number (e.g. 66 or 82%)", "vi": "Con số (ví dụ 66 hoặc 82%)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 8,
+          "label": {
+            "en": "The number (e.g. 66 or 82%)",
+            "vi": "Con số (ví dụ 66 hoặc 82%)"
+          }
         },
         "label": {
-          "type": "string", "required": true, "maxLength": 40,
-          "label": { "en": "What the number means", "vi": "Con số nghĩa là gì" }
+          "type": "string",
+          "required": true,
+          "maxLength": 40,
+          "label": {
+            "en": "What the number means",
+            "vi": "Con số nghĩa là gì"
+          }
         },
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 180,
-          "label": { "en": "Caption (narrator reads)", "vi": "Caption (người dẫn đọc)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 180,
+          "label": {
+            "en": "Caption (narrator reads)",
+            "vi": "Caption (người dẫn đọc)"
+          }
         }
       }
     },
     "checklist-panel": {
       "id": "checklist-panel",
-      "name": { "en": "Checklist Panel", "vi": "Bảng Checklist" },
+      "name": {
+        "en": "Checklist Panel",
+        "vi": "Bảng Checklist"
+      },
       "description": {
         "en": "2–4 checked items with animated checkmarks + a stamp title. Use for actionable list of daily habits / steps.",
         "vi": "2–4 mục đánh dấu với check animation + tiêu đề đóng dấu. Dùng cho danh sách thói quen / bước hành động."
@@ -194,29 +277,51 @@
       "role": "body",
       "slots": {
         "title": {
-          "type": "string", "required": true, "maxLength": 32,
-          "label": { "en": "Title stamp (all caps)", "vi": "Tiêu đề đóng dấu (in hoa)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": {
+            "en": "Title stamp (all caps)",
+            "vi": "Tiêu đề đóng dấu (in hoa)"
+          }
         },
         "item1": {
-          "type": "string", "required": true, "maxLength": 40,
-          "label": { "en": "Item 1", "vi": "Mục 1" }
+          "type": "string",
+          "required": true,
+          "maxLength": 40,
+          "label": {
+            "en": "Item 1",
+            "vi": "Mục 1"
+          }
         },
         "item2": {
-          "type": "string", "required": true, "maxLength": 40,
-          "label": { "en": "Item 2", "vi": "Mục 2" }
+          "type": "string",
+          "required": true,
+          "maxLength": 40,
+          "label": {
+            "en": "Item 2",
+            "vi": "Mục 2"
+          }
         },
         "item3": {
-          "type": "string", "maxLength": 40,
-          "label": { "en": "Item 3 (optional)", "vi": "Mục 3 (tuỳ chọn)" }
+          "type": "string",
+          "maxLength": 40,
+          "label": {
+            "en": "Item 3 (optional)",
+            "vi": "Mục 3 (tuỳ chọn)"
+          }
         },
         "item4": {
-          "type": "string", "maxLength": 40,
-          "label": { "en": "Item 4 (optional)", "vi": "Mục 4 (tuỳ chọn)" }
+          "type": "string",
+          "maxLength": 40,
+          "label": {
+            "en": "Item 4 (optional)",
+            "vi": "Mục 4 (tuỳ chọn)"
+          }
         }
       }
     }
   },
-
   "wizard": {
     "supportsUrl": true,
     "ideaPlaceholder": {
@@ -228,17 +333,375 @@
       "vi": "https://vnexpress.net/tam-ly-hoc-tao-thoi-quen"
     }
   },
-
   "extraSceneFields": {
     "emotion": {
       "type": "enum",
-      "values": ["tired", "motivated", "frustrated", "energetic", "curious"],
+      "values": [
+        "tired",
+        "motivated",
+        "frustrated",
+        "energetic",
+        "curious"
+      ],
       "default": "curious",
       "label": "Cảm xúc nhân vật"
     },
     "keyPoint": {
       "type": "string",
       "label": "1 câu chốt (nếu có)"
+    }
+  },
+  "customizationSurface": {
+    "big-question-hook": {
+      "positionEditable": [
+        "kicker",
+        "headline"
+      ],
+      "hideable": [
+        "paperLines",
+        "kicker",
+        "mascot"
+      ],
+      "widgets": {
+        "paperLines": {
+          "label": {
+            "en": "Notebook rules",
+            "vi": "Dòng kẻ vở"
+          },
+          "description": {
+            "en": "Ruled-paper lines across the background.",
+            "vi": "Các dòng kẻ giấy vở chạy ngang nền."
+          }
+        },
+        "kicker": {
+          "label": {
+            "en": "Red tag",
+            "vi": "Nhãn đỏ"
+          },
+          "description": {
+            "en": "Tilted red label above the question.",
+            "vi": "Nhãn đỏ nghiêng phía trên câu hỏi."
+          }
+        },
+        "headline": {
+          "label": {
+            "en": "Big question",
+            "vi": "Câu hỏi lớn"
+          },
+          "description": {
+            "en": "The hook question.",
+            "vi": "Câu hỏi mở đầu."
+          }
+        },
+        "mascot": {
+          "label": {
+            "en": "Doodle character",
+            "vi": "Nhân vật vẽ tay"
+          },
+          "description": {
+            "en": "Hand-drawn figure under the question.",
+            "vi": "Hình vẽ tay dưới câu hỏi."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Hormozi",
+        "News",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "checklist-panel": {
+      "positionEditable": [
+        "title"
+      ],
+      "hideable": [
+        "paperLines",
+        "footer"
+      ],
+      "widgets": {
+        "paperLines": {
+          "label": {
+            "en": "Notebook rules",
+            "vi": "Dòng kẻ vở"
+          },
+          "description": {
+            "en": "Ruled-paper lines across the background.",
+            "vi": "Các dòng kẻ giấy vở chạy ngang nền."
+          }
+        },
+        "title": {
+          "label": {
+            "en": "Checklist title",
+            "vi": "Tiêu đề checklist"
+          },
+          "description": {
+            "en": "Red title card above the items.",
+            "vi": "Thẻ tiêu đề đỏ phía trên danh sách."
+          }
+        },
+        "footer": {
+          "label": {
+            "en": "Channel footer",
+            "vi": "Chân trang kênh"
+          },
+          "description": {
+            "en": "Small channel wordmark at the bottom.",
+            "vi": "Tên kênh cỡ nhỏ ở đáy khung."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Hormozi",
+        "News",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "cta-followup": {
+      "positionEditable": [
+        "voiceText",
+        "cta"
+      ],
+      "hideable": [
+        "cta"
+      ],
+      "widgets": {
+        "voiceText": {
+          "label": {
+            "en": "Closing line",
+            "vi": "Câu kết"
+          },
+          "description": {
+            "en": "Thank-you / sign-off line.",
+            "vi": "Câu cảm ơn hoặc chào kết."
+          }
+        },
+        "cta": {
+          "label": {
+            "en": "Follow button",
+            "vi": "Nút theo dõi"
+          },
+          "description": {
+            "en": "Call-to-action button. Hide it on platforms that penalise CTAs.",
+            "vi": "Nút kêu gọi theo dõi. Ẩn nếu nền tảng hạn chế CTA."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Hormozi",
+        "News",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.35
+      }
+    },
+    "doodle-scene": {
+      "positionEditable": [
+        "voiceText",
+        "footer"
+      ],
+      "hideable": [
+        "paperLines",
+        "mascot",
+        "voiceText",
+        "footer"
+      ],
+      "widgets": {
+        "paperLines": {
+          "label": {
+            "en": "Notebook rules",
+            "vi": "Dòng kẻ vở"
+          },
+          "description": {
+            "en": "Ruled-paper lines across the background.",
+            "vi": "Các dòng kẻ giấy vở chạy ngang nền."
+          }
+        },
+        "mascot": {
+          "label": {
+            "en": "Doodle character",
+            "vi": "Nhân vật vẽ tay"
+          },
+          "description": {
+            "en": "Hand-drawn figure in the middle.",
+            "vi": "Hình vẽ tay giữa khung."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Burned-in caption bar",
+            "vi": "Thanh phụ đề in sẵn"
+          },
+          "description": {
+            "en": "Hide it when you use the app subtitle track instead.",
+            "vi": "Ẩn khi bạn dùng phụ đề của app thay thế."
+          }
+        },
+        "footer": {
+          "label": {
+            "en": "Channel footer",
+            "vi": "Chân trang kênh"
+          },
+          "description": {
+            "en": "Small channel wordmark at the bottom.",
+            "vi": "Tên kênh cỡ nhỏ ở đáy khung."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Hormozi",
+        "News",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "insight-card": {
+      "positionEditable": [
+        "badge",
+        "number",
+        "title",
+        "voiceText"
+      ],
+      "hideable": [
+        "paperLines",
+        "badge",
+        "footer"
+      ],
+      "widgets": {
+        "paperLines": {
+          "label": {
+            "en": "Notebook rules",
+            "vi": "Dòng kẻ vở"
+          },
+          "description": {
+            "en": "Ruled-paper lines across the background.",
+            "vi": "Các dòng kẻ giấy vở chạy ngang nền."
+          }
+        },
+        "badge": {
+          "label": {
+            "en": "Red tag",
+            "vi": "Nhãn đỏ"
+          },
+          "description": {
+            "en": "Tilted red label at the top.",
+            "vi": "Nhãn đỏ nghiêng phía trên."
+          }
+        },
+        "number": {
+          "label": {
+            "en": "Rule number",
+            "vi": "Số thứ tự"
+          },
+          "description": {
+            "en": "Big orange index of this principle.",
+            "vi": "Số thứ tự cam cỡ lớn của nguyên tắc."
+          }
+        },
+        "title": {
+          "label": {
+            "en": "Principle",
+            "vi": "Nguyên tắc"
+          },
+          "description": {
+            "en": "Short statement of the rule.",
+            "vi": "Câu phát biểu ngắn của nguyên tắc."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Explanation",
+            "vi": "Diễn giải"
+          },
+          "description": {
+            "en": "Supporting sentence under the rule.",
+            "vi": "Câu diễn giải dưới nguyên tắc."
+          }
+        },
+        "footer": {
+          "label": {
+            "en": "Channel footer",
+            "vi": "Chân trang kênh"
+          },
+          "description": {
+            "en": "Small channel wordmark at the bottom.",
+            "vi": "Tên kênh cỡ nhỏ ở đáy khung."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Hormozi",
+        "News",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "stat-callout": {
+      "positionEditable": [
+        "kicker",
+        "stat",
+        "label",
+        "voiceText"
+      ],
+      "hideable": [
+        "kicker"
+      ],
+      "widgets": {
+        "kicker": {
+          "label": {
+            "en": "Source pill",
+            "vi": "Nhãn nguồn"
+          },
+          "description": {
+            "en": "Outlined pill naming the source.",
+            "vi": "Nhãn viền ghi nguồn nghiên cứu."
+          }
+        },
+        "stat": {
+          "label": {
+            "en": "Big number",
+            "vi": "Con số lớn"
+          },
+          "description": {
+            "en": "The headline figure.",
+            "vi": "Con số chủ đạo."
+          }
+        },
+        "label": {
+          "label": {
+            "en": "Number label",
+            "vi": "Chú thích số"
+          },
+          "description": {
+            "en": "What the number measures.",
+            "vi": "Con số đó nói về điều gì."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Explanation",
+            "vi": "Diễn giải"
+          },
+          "description": {
+            "en": "Supporting sentence under the figure.",
+            "vi": "Câu diễn giải dưới con số."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Hormozi",
+        "News",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
     }
   }
 }

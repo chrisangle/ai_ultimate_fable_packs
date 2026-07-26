@@ -96,10 +96,10 @@
        data-width="1920"
        data-height="1080"
        data-composition-variables='{"kicker":"MYTHOLOGY","headline":"The Real Story"}'>
-    <div class="glow"></div>
-    <div class="kicker" data-slot="kicker">MYTHOLOGY</div>
-    <div class="headline" data-slot="headline">The Real Story</div>
-    <svg class="stickman" width="120" height="200" viewBox="0 0 100 170" aria-hidden="true">
+    <div class="glow" data-slot="glow" data-user-hideable="true"></div>
+    <div class="kicker" data-user-editable="position" data-user-hideable="true" data-slot="kicker">MYTHOLOGY</div>
+    <div class="headline" data-user-editable="position" data-slot="headline">The Real Story</div>
+    <svg class="stickman" data-slot="mascot" data-user-hideable="true" width="120" height="200" viewBox="0 0 100 170" aria-hidden="true">
       <circle cx="50" cy="20" r="16" fill="#fde68a" stroke="#1c1917" stroke-width="2.5"/>
       <circle cx="45" cy="18" r="1.8" fill="#1c1917"/>
       <circle cx="55" cy="18" r="1.8" fill="#1c1917"/>
@@ -142,5 +142,69 @@
       };
     })();
   </script>
+  <script>
+    /* Fable override runtime (OVERRIDES_SCRIPT_V3) — positions / hidden widgets / image slot.
+       Source of truth: src/shared/fable-pack/template-contract.ts. Do not edit by hand. */
+  (function(){
+    const V = (window.__hyperframes && window.__hyperframes.getVariables) ? window.__hyperframes.getVariables() : {};
+    const O = V.__overrides || {};
+  
+    const ANCHOR = {
+      'top-left':      { left:'0%',  top:'0%',   transform:'' },
+      'top-center':    { left:'50%', top:'0%',   transform:'translateX(-50%)' },
+      'top-right':     { left:'100%',top:'0%',   transform:'translateX(-100%)' },
+      'middle-left':   { left:'0%',  top:'50%',  transform:'translateY(-50%)' },
+      'middle-center': { left:'50%', top:'50%',  transform:'translate(-50%,-50%)' },
+      'middle-right':  { left:'100%',top:'50%',  transform:'translate(-100%,-50%)' },
+      'bottom-left':   { left:'0%',  top:'100%', transform:'translateY(-100%)' },
+      'bottom-center': { left:'50%', top:'100%', transform:'translate(-50%,-100%)' },
+      'bottom-safe':   { left:'50%', top:'100%', transform:'translate(-50%,-100%)' },
+    };
+  
+    Object.entries(O.slotPositions || {}).forEach(([slotId, pos]) => {
+      const el = document.querySelector('[data-slot="' + slotId + '"][data-user-editable="position"]');
+      if (!el) return;
+      const a = ANCHOR[pos.anchor] || ANCHOR['bottom-center'];
+      // Freeze the CURRENT rendered width first: many slots are sized by "left + right" (a
+      // full-width caption band), and re-anchoring has to drop 'right', which would otherwise
+      // collapse the box to shrink-to-fit. Guarded on > 0 so a layout-less DOM (jsdom) is a no-op.
+      const w = el.getBoundingClientRect().width;
+      // Every property goes in as !important: a CSS animation with fill-mode 'both' OUTRANKS a
+      // normal inline style (CSS cascade order: important author > animations > normal author), so
+      // an animated slot would otherwise snap back to its keyframe transform and land off-frame.
+      const set = (prop, value) => el.style.setProperty(prop, value, 'important');
+      if (w > 0) set('width', w + 'px');
+      set('position', 'absolute');
+      set('left', a.left);
+      set('top', a.top);
+      set('right', 'auto');
+      set('bottom', 'auto');
+      set('transform', a.transform || 'none');
+      set('margin-left', (pos.offsetX||0) + 'px');
+      set('margin-top', (pos.offsetY||0) + 'px');
+    });
+  
+    (O.hiddenSlots || []).forEach(slotId => {
+      document.querySelectorAll('[data-slot="' + slotId + '"][data-user-hideable="true"]')
+        .forEach(el => { el.style.display = 'none'; });
+    });
+  
+    const img = O.image;
+    if (img && img.assetPath) {
+      let host = document.querySelector('[data-slot="fable-image"]');
+      if (!host) {
+        host = document.createElement('div');
+        host.setAttribute('data-slot','fable-image');
+        host.setAttribute('data-slot-type','image');
+        Object.assign(host.style, { position:'absolute', inset:'0', zIndex:'0', pointerEvents:'none' });
+        document.getElementById('root').prepend(host);
+      }
+      const opacity = typeof img.opacity === 'number' ? img.opacity : 0.35;
+      const fit = img.fit || 'cover';
+      host.innerHTML = '<img src="' + img.assetPath + '" style="width:100%;height:100%;object-fit:' + fit + ';opacity:' + opacity + '">';
+      if (img.kenBurns) host.classList.add('fable-image-kenburns');
+    }
+  })();
+    </script>
 </body>
 </html>

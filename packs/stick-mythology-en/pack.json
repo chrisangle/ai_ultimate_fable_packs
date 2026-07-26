@@ -12,19 +12,29 @@
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
-
   "target": {
     "language": "en",
-    "market": ["en-US", "en-GB", "en-CA", "en-AU"],
+    "market": [
+      "en-US",
+      "en-GB",
+      "en-CA",
+      "en-AU"
+    ],
     "audience": "adult",
     "genre": "mythology-retelling",
     "aspectRatio": "16:9",
-    "supportedAspects": ["16:9"],
-    "duration": { "min": 300, "target": 900, "max": 1500 }
+    "supportedAspects": [
+      "16:9"
+    ],
+    "duration": {
+      "min": 300,
+      "target": 900,
+      "max": 1500
+    }
   },
-
-  "compat": { "core": ">=1.0.0" },
-
+  "compat": {
+    "core": ">=1.0.0"
+  },
   "assets": {
     "templates": "templates",
     "characters": "characters",
@@ -33,25 +43,28 @@
     "sources": "sources",
     "style": "style/tokens.css"
   },
-
   "prompts": {
     "script": "prompts/script.md",
     "scene": "prompts/scene.md"
   },
-
   "voice": {
     "referenceClip": "voice/ref-narrator-en.mp3",
     "defaultVoiceId": "stick-mythology-narrator-en",
     "language": "en"
   },
-
   "scenes": {
     "defaultTemplate": "narrator-scene",
     "hookTemplate": "hero-hook",
     "outroTemplate": "outro-cta",
-    "beatStructure": ["hook", "setup", "conflict", "climax", "resolution", "outro"]
+    "beatStructure": [
+      "hook",
+      "setup",
+      "conflict",
+      "climax",
+      "resolution",
+      "outro"
+    ]
   },
-
   "templateCatalog": {
     "hero-hook": {
       "id": "hero-hook",
@@ -69,13 +82,19 @@
           "type": "string",
           "required": true,
           "maxLength": 32,
-          "label": { "en": "Kicker (small caps chip)", "vi": "Kicker (chữ in nhỏ)" }
+          "label": {
+            "en": "Kicker (small caps chip)",
+            "vi": "Kicker (chữ in nhỏ)"
+          }
         },
         "headline": {
           "type": "string",
           "required": true,
           "maxLength": 60,
-          "label": { "en": "Headline (3 lines max)", "vi": "Tiêu đề (tối đa 3 dòng)" }
+          "label": {
+            "en": "Headline (3 lines max)",
+            "vi": "Tiêu đề (tối đa 3 dòng)"
+          }
         }
       }
     },
@@ -95,7 +114,10 @@
           "type": "string",
           "required": true,
           "maxLength": 220,
-          "label": { "en": "Narrator caption (auto-wrap 2 lines)", "vi": "Caption người dẫn (auto-wrap 2 dòng)" }
+          "label": {
+            "en": "Narrator caption (auto-wrap 2 lines)",
+            "vi": "Caption người dẫn (auto-wrap 2 dòng)"
+          }
         }
       }
     },
@@ -115,19 +137,28 @@
           "type": "string",
           "required": true,
           "maxLength": 80,
-          "label": { "en": "Thanks / sign-off line", "vi": "Câu cảm ơn / kết thúc" }
+          "label": {
+            "en": "Thanks / sign-off line",
+            "vi": "Câu cảm ơn / kết thúc"
+          }
         },
         "cta": {
           "type": "string",
           "required": true,
           "maxLength": 32,
-          "label": { "en": "Call to action (all caps)", "vi": "Kêu gọi hành động (chữ in hoa)" }
+          "label": {
+            "en": "Call to action (all caps)",
+            "vi": "Kêu gọi hành động (chữ in hoa)"
+          }
         }
       }
     },
     "dialogue-panel": {
       "id": "dialogue-panel",
-      "name": { "en": "Dialogue Panel", "vi": "Đối Thoại 2 Nhân Vật" },
+      "name": {
+        "en": "Dialogue Panel",
+        "vi": "Đối Thoại 2 Nhân Vật"
+      },
       "description": {
         "en": "Two stickmen face each other with speech bubbles. Use when the scene is a direct exchange (2 lines, one per character).",
         "vi": "Hai hình que đối mặt với bong bóng thoại. Dùng cho cảnh đối đáp trực tiếp (2 câu, mỗi câu 1 nhân vật)."
@@ -135,18 +166,31 @@
       "role": "body",
       "slots": {
         "leftText": {
-          "type": "string", "required": true, "maxLength": 80,
-          "label": { "en": "Left character line", "vi": "Câu thoại bên trái" }
+          "type": "string",
+          "required": true,
+          "maxLength": 80,
+          "label": {
+            "en": "Left character line",
+            "vi": "Câu thoại bên trái"
+          }
         },
         "rightText": {
-          "type": "string", "required": true, "maxLength": 80,
-          "label": { "en": "Right character line", "vi": "Câu thoại bên phải" }
+          "type": "string",
+          "required": true,
+          "maxLength": 80,
+          "label": {
+            "en": "Right character line",
+            "vi": "Câu thoại bên phải"
+          }
         }
       }
     },
     "action-beat": {
       "id": "action-beat",
-      "name": { "en": "Action Beat", "vi": "Nhịp Hành Động" },
+      "name": {
+        "en": "Action Beat",
+        "vi": "Nhịp Hành Động"
+      },
       "description": {
         "en": "High-energy scene — spinning burst + lunging stickman + right-side headline. Use for the climax / big turn.",
         "vi": "Cảnh cao trào — burst xoay + hình que lao tới + headline bên phải. Dùng cho climax / bước ngoặt lớn."
@@ -154,18 +198,31 @@
       "role": "body",
       "slots": {
         "kicker": {
-          "type": "string", "required": true, "maxLength": 24,
-          "label": { "en": "Kicker (all caps)", "vi": "Kicker (in hoa)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 24,
+          "label": {
+            "en": "Kicker (all caps)",
+            "vi": "Kicker (in hoa)"
+          }
         },
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 100,
-          "label": { "en": "Action line", "vi": "Câu hành động" }
+          "type": "string",
+          "required": true,
+          "maxLength": 100,
+          "label": {
+            "en": "Action line",
+            "vi": "Câu hành động"
+          }
         }
       }
     },
     "quote-card": {
       "id": "quote-card",
-      "name": { "en": "Quote Card", "vi": "Thẻ Trích Dẫn" },
+      "name": {
+        "en": "Quote Card",
+        "vi": "Thẻ Trích Dẫn"
+      },
       "description": {
         "en": "Italic pulled quote + attribution. Use for a memorable line — no character art, focus on the words.",
         "vi": "Trích dẫn in nghiêng + tác giả. Dùng cho câu đáng nhớ — không có nhân vật, tập trung vào chữ."
@@ -173,17 +230,26 @@
       "role": "body",
       "slots": {
         "voiceText": {
-          "type": "string", "required": true, "maxLength": 120,
-          "label": { "en": "The quote (no quotes needed)", "vi": "Câu trích dẫn (không cần dấu ngoặc)" }
+          "type": "string",
+          "required": true,
+          "maxLength": 120,
+          "label": {
+            "en": "The quote (no quotes needed)",
+            "vi": "Câu trích dẫn (không cần dấu ngoặc)"
+          }
         },
         "attribution": {
-          "type": "string", "required": true, "maxLength": 32,
-          "label": { "en": "Speaker / source", "vi": "Người nói / nguồn" }
+          "type": "string",
+          "required": true,
+          "maxLength": 32,
+          "label": {
+            "en": "Speaker / source",
+            "vi": "Người nói / nguồn"
+          }
         }
       }
     }
   },
-
   "wizard": {
     "supportsUrl": true,
     "ideaPlaceholder": {
@@ -195,25 +261,396 @@
       "vi": "https://vi.wikipedia.org/wiki/Odyssey"
     }
   },
-
   "extraSceneFields": {
     "character.pose": {
       "type": "enum",
-      "values": ["walking", "talking", "fighting", "thinking", "reacting"],
+      "values": [
+        "walking",
+        "talking",
+        "fighting",
+        "thinking",
+        "reacting"
+      ],
       "default": "talking",
       "label": "Stick figure pose"
     },
     "character.expression": {
       "type": "enum",
-      "values": ["neutral", "angry", "shocked", "sad", "smug"],
+      "values": [
+        "neutral",
+        "angry",
+        "shocked",
+        "sad",
+        "smug"
+      ],
       "default": "neutral",
       "label": "Facial expression"
     },
     "background.style": {
       "type": "enum",
-      "values": ["savanna", "cave", "mountain", "sea", "village", "abstract"],
+      "values": [
+        "savanna",
+        "cave",
+        "mountain",
+        "sea",
+        "village",
+        "abstract"
+      ],
       "default": "abstract",
       "label": "Background"
+    }
+  },
+  "customizationSurface": {
+    "hero-hook": {
+      "positionEditable": [
+        "kicker",
+        "headline"
+      ],
+      "hideable": [
+        "glow",
+        "kicker",
+        "mascot"
+      ],
+      "widgets": {
+        "glow": {
+          "label": {
+            "en": "Ember glow",
+            "vi": "Quầng sáng nền"
+          },
+          "description": {
+            "en": "Warm radial glow behind the hero.",
+            "vi": "Quầng sáng ấm phía sau tiêu đề."
+          }
+        },
+        "kicker": {
+          "label": {
+            "en": "Category pill",
+            "vi": "Nhãn chuyên mục"
+          },
+          "description": {
+            "en": "Small outlined pill above the headline.",
+            "vi": "Nhãn viền tròn nhỏ phía trên tiêu đề."
+          }
+        },
+        "headline": {
+          "label": {
+            "en": "Headline",
+            "vi": "Tiêu đề chính"
+          },
+          "description": {
+            "en": "The hook title of the opening scene.",
+            "vi": "Tiêu đề mở đầu của cảnh."
+          }
+        },
+        "mascot": {
+          "label": {
+            "en": "Stick mascot",
+            "vi": "Nhân vật que"
+          },
+          "description": {
+            "en": "Stick figure standing under the title.",
+            "vi": "Hình người que đứng dưới tiêu đề."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Cinema",
+        "Hormozi",
+        "News",
+        "Minimal"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.35
+      }
+    },
+    "action-beat": {
+      "positionEditable": [
+        "kicker",
+        "voiceText"
+      ],
+      "hideable": [
+        "burst",
+        "kicker",
+        "mascot"
+      ],
+      "widgets": {
+        "burst": {
+          "label": {
+            "en": "Sunburst rays",
+            "vi": "Tia nền toả"
+          },
+          "description": {
+            "en": "Radial rays behind the action.",
+            "vi": "Các tia toả tròn phía sau hành động."
+          }
+        },
+        "kicker": {
+          "label": {
+            "en": "Beat label",
+            "vi": "Nhãn phân cảnh"
+          },
+          "description": {
+            "en": "Small label naming this beat.",
+            "vi": "Nhãn nhỏ đặt tên cho nhịp cảnh này."
+          }
+        },
+        "mascot": {
+          "label": {
+            "en": "Stick mascot",
+            "vi": "Nhân vật que"
+          },
+          "description": {
+            "en": "Stick figure performing the action.",
+            "vi": "Hình người que đang diễn hành động."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Narration text",
+            "vi": "Lời dẫn"
+          },
+          "description": {
+            "en": "On-screen copy of the narration.",
+            "vi": "Chữ hiện trên hình của lời dẫn."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Cinema",
+        "Hormozi",
+        "News",
+        "Minimal"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
+    },
+    "dialogue-panel": {
+      "positionEditable": [
+        "leftText",
+        "rightText"
+      ],
+      "hideable": [
+        "leftFigure",
+        "rightFigure"
+      ],
+      "widgets": {
+        "leftText": {
+          "label": {
+            "en": "Left speech bubble",
+            "vi": "Bong bóng thoại trái"
+          },
+          "description": {
+            "en": "What the left character says.",
+            "vi": "Lời của nhân vật bên trái."
+          }
+        },
+        "rightText": {
+          "label": {
+            "en": "Right speech bubble",
+            "vi": "Bong bóng thoại phải"
+          },
+          "description": {
+            "en": "What the right character says.",
+            "vi": "Lời của nhân vật bên phải."
+          }
+        },
+        "leftFigure": {
+          "label": {
+            "en": "Left figure",
+            "vi": "Nhân vật trái"
+          },
+          "description": {
+            "en": "Stick figure on the left.",
+            "vi": "Hình người que bên trái."
+          }
+        },
+        "rightFigure": {
+          "label": {
+            "en": "Right figure",
+            "vi": "Nhân vật phải"
+          },
+          "description": {
+            "en": "Stick figure on the right.",
+            "vi": "Hình người que bên phải."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Cinema",
+        "Hormozi",
+        "News",
+        "Minimal"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
+    },
+    "narrator-scene": {
+      "positionEditable": [
+        "voiceText"
+      ],
+      "hideable": [
+        "sun",
+        "ground",
+        "mascot",
+        "voiceText"
+      ],
+      "widgets": {
+        "sun": {
+          "label": {
+            "en": "Sun halo",
+            "vi": "Vầng mặt trời"
+          },
+          "description": {
+            "en": "Glowing sun behind the figure.",
+            "vi": "Mặt trời phát sáng sau nhân vật."
+          }
+        },
+        "ground": {
+          "label": {
+            "en": "Ground band",
+            "vi": "Dải mặt đất"
+          },
+          "description": {
+            "en": "Darker band along the bottom.",
+            "vi": "Dải sẫm chạy dọc đáy khung."
+          }
+        },
+        "mascot": {
+          "label": {
+            "en": "Stick mascot",
+            "vi": "Nhân vật que"
+          },
+          "description": {
+            "en": "Stick figure in the middle of the frame.",
+            "vi": "Hình người que giữa khung."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Burned-in caption bar",
+            "vi": "Thanh phụ đề in sẵn"
+          },
+          "description": {
+            "en": "Hide it when you use the app subtitle track instead.",
+            "vi": "Ẩn khi bạn dùng phụ đề của app thay thế."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Cinema",
+        "Hormozi",
+        "News",
+        "Minimal"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.45
+      }
+    },
+    "outro-cta": {
+      "positionEditable": [
+        "voiceText",
+        "cta"
+      ],
+      "hideable": [
+        "cta",
+        "mascot"
+      ],
+      "widgets": {
+        "voiceText": {
+          "label": {
+            "en": "Closing line",
+            "vi": "Câu kết"
+          },
+          "description": {
+            "en": "Thank-you / sign-off line.",
+            "vi": "Câu cảm ơn hoặc chào kết."
+          }
+        },
+        "cta": {
+          "label": {
+            "en": "Subscribe button",
+            "vi": "Nút kêu gọi theo dõi"
+          },
+          "description": {
+            "en": "Call-to-action pill. Hide it on platforms that penalise CTAs.",
+            "vi": "Nút kêu gọi hành động. Ẩn nếu nền tảng hạn chế CTA."
+          }
+        },
+        "mascot": {
+          "label": {
+            "en": "Stick mascot",
+            "vi": "Nhân vật que"
+          },
+          "description": {
+            "en": "Waving stick figure in the corner.",
+            "vi": "Hình người que vẫy tay ở góc."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Cinema",
+        "Hormozi",
+        "News",
+        "Minimal"
+      ]
+    },
+    "quote-card": {
+      "positionEditable": [
+        "voiceText",
+        "attribution"
+      ],
+      "hideable": [
+        "quoteMark",
+        "attribution"
+      ],
+      "widgets": {
+        "quoteMark": {
+          "label": {
+            "en": "Quote glyph",
+            "vi": "Dấu ngoặc kép"
+          },
+          "description": {
+            "en": "Large decorative quotation mark.",
+            "vi": "Dấu ngoặc kép lớn trang trí."
+          }
+        },
+        "voiceText": {
+          "label": {
+            "en": "Quote text",
+            "vi": "Nội dung trích dẫn"
+          },
+          "description": {
+            "en": "The quoted line itself.",
+            "vi": "Câu trích dẫn chính."
+          }
+        },
+        "attribution": {
+          "label": {
+            "en": "Attribution",
+            "vi": "Nguồn trích dẫn"
+          },
+          "description": {
+            "en": "Who said it. Hide for anonymous quotes.",
+            "vi": "Ai nói câu này. Ẩn nếu trích khuyết danh."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "Cinema",
+        "Hormozi",
+        "News",
+        "Minimal"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
     }
   }
 }

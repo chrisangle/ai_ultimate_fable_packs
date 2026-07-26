@@ -12,43 +12,55 @@
   "author": "aivideoultimate",
   "license": "MIT",
   "repository": "https://github.com/chrisangle/ai_ultimate_fable_packs",
-
   "target": {
     "language": "vi",
-    "market": ["vi-VN"],
+    "market": [
+      "vi-VN"
+    ],
     "audience": "adult",
     "genre": "news-poster",
     "aspectRatio": "9:16",
-    "supportedAspects": ["9:16", "16:9"],
-    "duration": { "min": 60, "target": 90, "max": 180 }
+    "supportedAspects": [
+      "9:16",
+      "16:9"
+    ],
+    "duration": {
+      "min": 60,
+      "target": 90,
+      "max": 180
+    }
   },
-
-  "compat": { "core": ">=1.0.0" },
-
+  "compat": {
+    "core": ">=1.0.0"
+  },
   "assets": {
     "templates": "templates",
     "voice": "voice",
     "style": "style/tokens.css"
   },
-
   "prompts": {
     "script": "prompts/script.md",
     "scene": "prompts/scene.md"
   },
-
   "voice": {
     "referenceClip": "voice/ref-narrator-vn.mp3",
     "defaultVoiceId": "news-poster-narrator-vn",
     "language": "vi"
   },
-
   "scenes": {
     "defaultTemplate": "frame-vignelli",
     "hookTemplate": "frame-liquid-bg-hero",
     "outroTemplate": "frame-logo-outro",
-    "beatStructure": ["hook", "bối cảnh", "con số", "insight", "so sánh", "danh sách", "outro"]
+    "beatStructure": [
+      "hook",
+      "bối cảnh",
+      "con số",
+      "insight",
+      "so sánh",
+      "danh sách",
+      "outro"
+    ]
   },
-
   "wizard": {
     "supportsUrl": true,
     "ideaPlaceholder": {
@@ -60,33 +72,1115 @@
       "vi": "https://vnexpress.net/cong-nghe/apple-vision-pro-2"
     }
   },
-
   "templateCatalog": {
     "frame-liquid-bg-hero": {
       "id": "frame-liquid-bg-hero",
-      "name": { "en": "Aurora Hero", "vi": "Aurora Hero" },
+      "name": {
+        "en": "Aurora Hero",
+        "vi": "Aurora Hero"
+      },
       "description": {
         "en": "Opening hook — aurora liquid background + hero headline. Use ONCE as scene 1.",
         "vi": "Mở đầu — nền aurora + tiêu đề chính. Dùng MỘT LẦN cho cảnh 1."
       },
       "role": "hook",
       "slots": {
-        "kicker":     { "type": "string", "required": true, "maxLength": 32 },
-        "brand":      { "type": "string", "maxLength": 40 },
-        "headline":   { "type": "string", "required": true, "maxLength": 60 },
-        "subheadline":{ "type": "string", "maxLength": 100 },
-        "cta":        { "type": "string", "maxLength": 32 }
+        "kicker": {
+          "type": "string",
+          "required": true,
+          "maxLength": 32
+        },
+        "brand": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "headline": {
+          "type": "string",
+          "required": true,
+          "maxLength": 60
+        },
+        "subheadline": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "cta": {
+          "type": "string",
+          "maxLength": 32
+        }
       }
     },
-    "frame-vignelli":            { "id": "frame-vignelli",            "name": { "en": "Vignelli Stat",       "vi": "Vignelli Stat" },       "description": { "en": "Dark charcoal + red — one striking number.",         "vi": "Nền than + đỏ — 1 số nổi bật." }, "role": "body", "slots": { "kicker": { "type": "string", "maxLength": 32 }, "number": { "type": "string", "required": true, "maxLength": 12 }, "label": { "type": "string", "required": true, "maxLength": 40 }, "note": { "type": "string", "maxLength": 80 }, "brand": { "type": "string", "maxLength": 40 } } },
-    "frame-pentagram-stat":      { "id": "frame-pentagram-stat",      "name": { "en": "Pentagram Stat",      "vi": "Pentagram Stat" },      "description": { "en": "Dark neon + orange + cyan + bar chart.",             "vi": "Nền tối neon + cam + cyan + bar chart." }, "role": "body", "slots": { "label": { "type": "string", "required": true, "maxLength": 40 }, "headline": { "type": "string", "required": true, "maxLength": 12 }, "subtitle": { "type": "string", "required": true, "maxLength": 80 }, "anchor": { "type": "string", "maxLength": 12 }, "footer_left": { "type": "string", "maxLength": 40 }, "footer_right": { "type": "string", "maxLength": 40 } } },
-    "frame-bold-poster":         { "id": "frame-bold-poster",         "name": { "en": "Bold Poster",         "vi": "Bold Poster" },         "description": { "en": "Multi-line statement + giant figure.",                 "vi": "Tuyên bố nhiều dòng + số khổng lồ." }, "role": "body", "slots": { "kicker": { "type": "string", "maxLength": 32 }, "date": { "type": "string", "maxLength": 24 }, "figure": { "type": "string", "required": true, "maxLength": 12 }, "headline": { "type": "string[]", "required": true }, "standfirst": { "type": "string", "maxLength": 180 }, "footer_left": { "type": "string", "maxLength": 40 }, "footer_right": { "type": "string", "maxLength": 40 } } },
-    "frame-build-minimal":       { "id": "frame-build-minimal",       "name": { "en": "Build Minimal",       "vi": "Build Minimal" },       "description": { "en": "1 bold word reveal + amber glow.",                     "vi": "1 từ lớn hiện từng ký tự + glow cam." }, "role": "body", "slots": { "eyebrow": { "type": "string", "maxLength": 32 }, "hero": { "type": "string", "required": true, "maxLength": 16 }, "desc": { "type": "string", "maxLength": 120 }, "side_left": { "type": "string", "maxLength": 24 }, "side_right": { "type": "string", "maxLength": 24 } } },
-    "frame-creative-voltage":    { "id": "frame-creative-voltage",    "name": { "en": "Creative Voltage",    "vi": "Creative Voltage" },    "description": { "en": "Electric-blue split + handwriting accent — slogan.",   "vi": "Xanh điện split + viết tay — slogan." }, "role": "body", "slots": { "meta": { "type": "string", "maxLength": 32 }, "display_lines": { "type": "string[]", "required": true }, "accent_index": { "type": "string", "maxLength": 4 }, "script": { "type": "string", "maxLength": 40 }, "caption": { "type": "string", "maxLength": 120 } } },
-    "frame-glitch-title":        { "id": "frame-glitch-title",        "name": { "en": "Glitch Title",        "vi": "Glitch Title" },        "description": { "en": "Cyberpunk RGB glitch — breaking/tech beats.",           "vi": "Cyberpunk RGB glitch — beat breaking/tech." }, "role": "body", "slots": { "title": { "type": "string", "required": true, "maxLength": 60 }, "subtitle": { "type": "string", "maxLength": 120 } } },
-    "frame-aicoding-list":       { "id": "frame-aicoding-list",       "name": { "en": "Icon List",           "vi": "Danh Sách Icon" },      "description": { "en": "2–5 items with icons + level tags.",                   "vi": "2–5 mục với icon + tag mức độ." }, "role": "body", "slots": { "title": { "type": "string", "required": true, "maxLength": 40 }, "accent": { "type": "string", "maxLength": 40 }, "accent_from": { "type": "color", "maxLength": 12 }, "accent_to": { "type": "color", "maxLength": 12 }, "subtitle": { "type": "string", "maxLength": 120 }, "items": { "type": "string[]", "required": true } } },
-    "frame-aicoding-comparison": { "id": "frame-aicoding-comparison", "name": { "en": "A vs B",              "vi": "A vs B" },              "description": { "en": "2-card comparison — old vs new, before vs after.",     "vi": "So sánh 2 card — cũ vs mới, trước vs sau." }, "role": "body", "slots": { "badge": { "type": "string", "maxLength": 32 }, "pre": { "type": "string", "maxLength": 40 }, "vs": { "type": "string", "maxLength": 8 }, "post": { "type": "string", "maxLength": 40 }, "left": { "type": "string", "required": true }, "right": { "type": "string", "required": true } } },
-    "frame-logo-outro":          { "id": "frame-logo-outro",          "name": { "en": "Logo Outro",          "vi": "Logo Outro" },          "description": { "en": "Brand end-card. Default outro.",                       "vi": "End-card thương hiệu. Outro mặc định." }, "role": "outro", "slots": { "brand_name": { "type": "string", "required": true, "maxLength": 40 }, "tagline": { "type": "string", "maxLength": 80 }, "primary_url": { "type": "url", "maxLength": 100 } } },
-    "frame-statement-outro":     { "id": "frame-statement-outro",     "name": { "en": "Statement Outro",     "vi": "Statement Outro" },     "description": { "en": "Alt outro — red statement on paper.",                  "vi": "Outro thay thế — card đỏ trên giấy." }, "role": "outro", "slots": { "statement": { "type": "string", "required": true, "maxLength": 120 }, "brand": { "type": "string", "maxLength": 40 }, "primary_url": { "type": "url", "maxLength": 100 }, "cta": { "type": "string", "maxLength": 32 }, "channel": { "type": "string", "maxLength": 40 }, "source": { "type": "string", "maxLength": 60 } } }
+    "frame-vignelli": {
+      "id": "frame-vignelli",
+      "name": {
+        "en": "Vignelli Stat",
+        "vi": "Vignelli Stat"
+      },
+      "description": {
+        "en": "Dark charcoal + red — one striking number.",
+        "vi": "Nền than + đỏ — 1 số nổi bật."
+      },
+      "role": "body",
+      "slots": {
+        "kicker": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "number": {
+          "type": "string",
+          "required": true,
+          "maxLength": 12
+        },
+        "label": {
+          "type": "string",
+          "required": true,
+          "maxLength": 40
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "brand": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "frame-pentagram-stat": {
+      "id": "frame-pentagram-stat",
+      "name": {
+        "en": "Pentagram Stat",
+        "vi": "Pentagram Stat"
+      },
+      "description": {
+        "en": "Dark neon + orange + cyan + bar chart.",
+        "vi": "Nền tối neon + cam + cyan + bar chart."
+      },
+      "role": "body",
+      "slots": {
+        "label": {
+          "type": "string",
+          "required": true,
+          "maxLength": 40
+        },
+        "headline": {
+          "type": "string",
+          "required": true,
+          "maxLength": 12
+        },
+        "subtitle": {
+          "type": "string",
+          "required": true,
+          "maxLength": 80
+        },
+        "anchor": {
+          "type": "string",
+          "maxLength": 12
+        },
+        "footer_left": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "footer_right": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "frame-bold-poster": {
+      "id": "frame-bold-poster",
+      "name": {
+        "en": "Bold Poster",
+        "vi": "Bold Poster"
+      },
+      "description": {
+        "en": "Multi-line statement + giant figure.",
+        "vi": "Tuyên bố nhiều dòng + số khổng lồ."
+      },
+      "role": "body",
+      "slots": {
+        "kicker": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "date": {
+          "type": "string",
+          "maxLength": 24
+        },
+        "figure": {
+          "type": "string",
+          "required": true,
+          "maxLength": 12
+        },
+        "headline": {
+          "type": "string[]",
+          "required": true
+        },
+        "standfirst": {
+          "type": "string",
+          "maxLength": 180
+        },
+        "footer_left": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "footer_right": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "frame-build-minimal": {
+      "id": "frame-build-minimal",
+      "name": {
+        "en": "Build Minimal",
+        "vi": "Build Minimal"
+      },
+      "description": {
+        "en": "1 bold word reveal + amber glow.",
+        "vi": "1 từ lớn hiện từng ký tự + glow cam."
+      },
+      "role": "body",
+      "slots": {
+        "eyebrow": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "hero": {
+          "type": "string",
+          "required": true,
+          "maxLength": 16
+        },
+        "desc": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "side_left": {
+          "type": "string",
+          "maxLength": 24
+        },
+        "side_right": {
+          "type": "string",
+          "maxLength": 24
+        }
+      }
+    },
+    "frame-creative-voltage": {
+      "id": "frame-creative-voltage",
+      "name": {
+        "en": "Creative Voltage",
+        "vi": "Creative Voltage"
+      },
+      "description": {
+        "en": "Electric-blue split + handwriting accent — slogan.",
+        "vi": "Xanh điện split + viết tay — slogan."
+      },
+      "role": "body",
+      "slots": {
+        "meta": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "display_lines": {
+          "type": "string[]",
+          "required": true
+        },
+        "accent_index": {
+          "type": "string",
+          "maxLength": 4
+        },
+        "script": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "caption": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    },
+    "frame-glitch-title": {
+      "id": "frame-glitch-title",
+      "name": {
+        "en": "Glitch Title",
+        "vi": "Glitch Title"
+      },
+      "description": {
+        "en": "Cyberpunk RGB glitch — breaking/tech beats.",
+        "vi": "Cyberpunk RGB glitch — beat breaking/tech."
+      },
+      "role": "body",
+      "slots": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 60
+        },
+        "subtitle": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    },
+    "frame-aicoding-list": {
+      "id": "frame-aicoding-list",
+      "name": {
+        "en": "Icon List",
+        "vi": "Danh Sách Icon"
+      },
+      "description": {
+        "en": "2–5 items with icons + level tags.",
+        "vi": "2–5 mục với icon + tag mức độ."
+      },
+      "role": "body",
+      "slots": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 40
+        },
+        "accent": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "accent_from": {
+          "type": "color",
+          "maxLength": 12
+        },
+        "accent_to": {
+          "type": "color",
+          "maxLength": 12
+        },
+        "subtitle": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "items": {
+          "type": "string[]",
+          "required": true
+        }
+      }
+    },
+    "frame-aicoding-comparison": {
+      "id": "frame-aicoding-comparison",
+      "name": {
+        "en": "A vs B",
+        "vi": "A vs B"
+      },
+      "description": {
+        "en": "2-card comparison — old vs new, before vs after.",
+        "vi": "So sánh 2 card — cũ vs mới, trước vs sau."
+      },
+      "role": "body",
+      "slots": {
+        "badge": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "pre": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "vs": {
+          "type": "string",
+          "maxLength": 8
+        },
+        "post": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "left": {
+          "type": "string",
+          "required": true
+        },
+        "right": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "frame-logo-outro": {
+      "id": "frame-logo-outro",
+      "name": {
+        "en": "Logo Outro",
+        "vi": "Logo Outro"
+      },
+      "description": {
+        "en": "Brand end-card. Default outro.",
+        "vi": "End-card thương hiệu. Outro mặc định."
+      },
+      "role": "outro",
+      "slots": {
+        "brand_name": {
+          "type": "string",
+          "required": true,
+          "maxLength": 40
+        },
+        "tagline": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "primary_url": {
+          "type": "url",
+          "maxLength": 100
+        }
+      }
+    },
+    "frame-statement-outro": {
+      "id": "frame-statement-outro",
+      "name": {
+        "en": "Statement Outro",
+        "vi": "Statement Outro"
+      },
+      "description": {
+        "en": "Alt outro — red statement on paper.",
+        "vi": "Outro thay thế — card đỏ trên giấy."
+      },
+      "role": "outro",
+      "slots": {
+        "statement": {
+          "type": "string",
+          "required": true,
+          "maxLength": 120
+        },
+        "brand": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "primary_url": {
+          "type": "url",
+          "maxLength": 100
+        },
+        "cta": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "channel": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 60
+        }
+      }
+    }
+  },
+  "customizationSurface": {
+    "frame-liquid-bg-hero": {
+      "positionEditable": [
+        "textBlock"
+      ],
+      "hideable": [
+        "backgroundBlobs",
+        "backdropPattern",
+        "formatChip",
+        "footerChip",
+        "brandBar"
+      ],
+      "widgets": {
+        "backgroundBlobs": {
+          "label": {
+            "en": "Colour blobs",
+            "vi": "Mảng màu nền"
+          },
+          "description": {
+            "en": "Four soft gradient blobs behind everything.",
+            "vi": "Bốn mảng gradient mềm phía sau toàn bộ."
+          }
+        },
+        "backdropPattern": {
+          "label": {
+            "en": "Backdrop pattern",
+            "vi": "Hoạ tiết nền"
+          },
+          "description": {
+            "en": "Grid / particle network layer.",
+            "vi": "Lớp lưới hoặc mạng hạt chuyển động."
+          }
+        },
+        "formatChip": {
+          "label": {
+            "en": "Top tag",
+            "vi": "Nhãn trên"
+          },
+          "description": {
+            "en": "Channel name + format tag in the top corners.",
+            "vi": "Tên kênh và nhãn định dạng ở góc trên."
+          }
+        },
+        "footerChip": {
+          "label": {
+            "en": "Bottom tag",
+            "vi": "Nhãn dưới"
+          },
+          "description": {
+            "en": "URL + section tag along the bottom.",
+            "vi": "Đường dẫn và nhãn chuyên mục ở đáy."
+          }
+        },
+        "brandBar": {
+          "label": {
+            "en": "Brand bar",
+            "vi": "Thanh thương hiệu"
+          },
+          "description": {
+            "en": "Avatar + role line under the top tag.",
+            "vi": "Ảnh đại diện và dòng chức danh dưới nhãn trên."
+          }
+        },
+        "textBlock": {
+          "label": {
+            "en": "Text block",
+            "vi": "Khối chữ"
+          },
+          "description": {
+            "en": "Headline + supporting copy as one block.",
+            "vi": "Tiêu đề và phần chữ phụ như một khối."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.4
+      }
+    },
+    "frame-vignelli": {
+      "positionEditable": [
+        "textBlock"
+      ],
+      "hideable": [
+        "backgroundBubbles",
+        "gridPattern",
+        "accentColumn",
+        "brandMark"
+      ],
+      "widgets": {
+        "backgroundBubbles": {
+          "label": {
+            "en": "Background bubbles",
+            "vi": "Bong bóng nền"
+          },
+          "description": {
+            "en": "Soft blurred circles in the backdrop.",
+            "vi": "Các vòng tròn mờ trên nền."
+          }
+        },
+        "gridPattern": {
+          "label": {
+            "en": "Grid pattern",
+            "vi": "Lưới nền"
+          },
+          "description": {
+            "en": "Faint grid lines over the background.",
+            "vi": "Lưới kẻ mờ phủ trên nền."
+          }
+        },
+        "accentColumn": {
+          "label": {
+            "en": "Accent column",
+            "vi": "Cột màu nhấn"
+          },
+          "description": {
+            "en": "Coloured column on one side.",
+            "vi": "Cột màu nhấn ở một bên khung."
+          }
+        },
+        "textBlock": {
+          "label": {
+            "en": "Text block",
+            "vi": "Khối chữ"
+          },
+          "description": {
+            "en": "Headline + supporting copy as one block.",
+            "vi": "Tiêu đề và phần chữ phụ như một khối."
+          }
+        },
+        "brandMark": {
+          "label": {
+            "en": "Channel wordmark",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Channel name + underline at the bottom.",
+            "vi": "Tên kênh kèm gạch chân ở đáy."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.25
+      }
+    },
+    "frame-pentagram-stat": {
+      "positionEditable": [
+        "textBlock"
+      ],
+      "hideable": [
+        "ruleLines",
+        "ghostNumber",
+        "barChart",
+        "footerBar"
+      ],
+      "widgets": {
+        "ruleLines": {
+          "label": {
+            "en": "Layout rules",
+            "vi": "Đường kẻ bố cục"
+          },
+          "description": {
+            "en": "Thin horizontal + vertical guide lines.",
+            "vi": "Các đường kẻ ngang dọc mảnh của bố cục."
+          }
+        },
+        "ghostNumber": {
+          "label": {
+            "en": "Ghost number",
+            "vi": "Số chìm"
+          },
+          "description": {
+            "en": "Oversized faded number behind the text.",
+            "vi": "Con số cỡ lớn mờ phía sau chữ."
+          }
+        },
+        "textBlock": {
+          "label": {
+            "en": "Text block",
+            "vi": "Khối chữ"
+          },
+          "description": {
+            "en": "Headline + supporting copy as one block.",
+            "vi": "Tiêu đề và phần chữ phụ như một khối."
+          }
+        },
+        "barChart": {
+          "label": {
+            "en": "Bar chart",
+            "vi": "Biểu đồ cột"
+          },
+          "description": {
+            "en": "Decorative bars under the text.",
+            "vi": "Dãy cột trang trí dưới phần chữ."
+          }
+        },
+        "footerBar": {
+          "label": {
+            "en": "Footer bar",
+            "vi": "Thanh chân trang"
+          },
+          "description": {
+            "en": "Channel + URL row at the bottom.",
+            "vi": "Hàng tên kênh và đường dẫn ở đáy."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.25
+      }
+    },
+    "frame-bold-poster": {
+      "positionEditable": [
+        "kickerBar",
+        "figureNumber",
+        "standfirst"
+      ],
+      "hideable": [
+        "backgroundBubbles",
+        "kickerBar",
+        "figureNumber",
+        "footerBar"
+      ],
+      "widgets": {
+        "backgroundBubbles": {
+          "label": {
+            "en": "Background bubbles",
+            "vi": "Bong bóng nền"
+          },
+          "description": {
+            "en": "Soft blurred circles in the backdrop.",
+            "vi": "Các vòng tròn mờ trên nền."
+          }
+        },
+        "kickerBar": {
+          "label": {
+            "en": "Kicker line",
+            "vi": "Dòng kicker"
+          },
+          "description": {
+            "en": "Label + rule + date across the top.",
+            "vi": "Nhãn, đường kẻ và ngày ở đầu khung."
+          }
+        },
+        "figureNumber": {
+          "label": {
+            "en": "Issue number",
+            "vi": "Số hiệu"
+          },
+          "description": {
+            "en": "Large orange number.",
+            "vi": "Con số cam cỡ lớn."
+          }
+        },
+        "standfirst": {
+          "label": {
+            "en": "Standfirst",
+            "vi": "Chữ dẫn"
+          },
+          "description": {
+            "en": "Italic paragraph under the headline.",
+            "vi": "Đoạn chữ nghiêng dưới tiêu đề."
+          }
+        },
+        "footerBar": {
+          "label": {
+            "en": "Footer bar",
+            "vi": "Thanh chân trang"
+          },
+          "description": {
+            "en": "Rule + credits at the bottom.",
+            "vi": "Đường kẻ và dòng ghi chú ở đáy."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "frame-build-minimal": {
+      "positionEditable": [
+        "textBlock"
+      ],
+      "hideable": [
+        "cornerBrackets",
+        "sideLabels",
+        "whisperMark",
+        "indicatorDots"
+      ],
+      "widgets": {
+        "cornerBrackets": {
+          "label": {
+            "en": "Corner brackets",
+            "vi": "Ngoặc góc"
+          },
+          "description": {
+            "en": "Thin framing brackets in two corners.",
+            "vi": "Hai dấu ngoặc mảnh ở góc khung."
+          }
+        },
+        "sideLabels": {
+          "label": {
+            "en": "Side labels",
+            "vi": "Nhãn dọc hai bên"
+          },
+          "description": {
+            "en": "Vertical channel labels on both edges.",
+            "vi": "Nhãn kênh dựng đứng ở hai mép."
+          }
+        },
+        "whisperMark": {
+          "label": {
+            "en": "Diamond mark",
+            "vi": "Dấu trám"
+          },
+          "description": {
+            "en": "Tiny ornament above the title.",
+            "vi": "Ký tự trang trí nhỏ phía trên tiêu đề."
+          }
+        },
+        "textBlock": {
+          "label": {
+            "en": "Text block",
+            "vi": "Khối chữ"
+          },
+          "description": {
+            "en": "Headline + supporting copy as one block.",
+            "vi": "Tiêu đề và phần chữ phụ như một khối."
+          }
+        },
+        "indicatorDots": {
+          "label": {
+            "en": "Indicator bars",
+            "vi": "Vạch chỉ báo"
+          },
+          "description": {
+            "en": "Row of small bars near the bottom.",
+            "vi": "Dãy vạch nhỏ gần đáy khung."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
+    },
+    "frame-creative-voltage": {
+      "positionEditable": [
+        "metaLine",
+        "textBlock",
+        "captionLine"
+      ],
+      "hideable": [
+        "glow",
+        "sparks",
+        "metaLine",
+        "scriptAccent",
+        "captionLine"
+      ],
+      "widgets": {
+        "glow": {
+          "label": {
+            "en": "Centre glow",
+            "vi": "Quầng sáng giữa"
+          },
+          "description": {
+            "en": "Soft light bloom behind the type.",
+            "vi": "Vầng sáng mềm sau phần chữ."
+          }
+        },
+        "sparks": {
+          "label": {
+            "en": "Sparks",
+            "vi": "Đốm sáng"
+          },
+          "description": {
+            "en": "Small floating particles.",
+            "vi": "Các đốm sáng nhỏ bay lơ lửng."
+          }
+        },
+        "metaLine": {
+          "label": {
+            "en": "Mode line",
+            "vi": "Dòng trạng thái"
+          },
+          "description": {
+            "en": "Monospace status line at the top.",
+            "vi": "Dòng chữ mono ở đầu khung."
+          }
+        },
+        "scriptAccent": {
+          "label": {
+            "en": "Handwritten accent",
+            "vi": "Chữ viết tay"
+          },
+          "description": {
+            "en": "Script phrase plus its underline.",
+            "vi": "Cụm chữ viết tay kèm nét gạch chân."
+          }
+        },
+        "textBlock": {
+          "label": {
+            "en": "Text block",
+            "vi": "Khối chữ"
+          },
+          "description": {
+            "en": "Headline + supporting copy as one block.",
+            "vi": "Tiêu đề và phần chữ phụ như một khối."
+          }
+        },
+        "captionLine": {
+          "label": {
+            "en": "Caption line",
+            "vi": "Dòng chú thích"
+          },
+          "description": {
+            "en": "Small credit line under the type.",
+            "vi": "Dòng chú thích nhỏ dưới phần chữ."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
+    },
+    "frame-glitch-title": {
+      "positionEditable": [],
+      "hideable": [
+        "chromeLabels",
+        "asciiBlocks",
+        "overline",
+        "grain",
+        "vignette"
+      ],
+      "widgets": {
+        "chromeLabels": {
+          "label": {
+            "en": "HUD labels",
+            "vi": "Nhãn HUD"
+          },
+          "description": {
+            "en": "Four corner readouts (signal, REC, credits).",
+            "vi": "Bốn nhãn ở góc (tín hiệu, REC, ghi chú)."
+          }
+        },
+        "asciiBlocks": {
+          "label": {
+            "en": "ASCII blocks",
+            "vi": "Khối ASCII"
+          },
+          "description": {
+            "en": "Two blocks of glitch characters.",
+            "vi": "Hai khối ký tự nhiễu."
+          }
+        },
+        "overline": {
+          "label": {
+            "en": "Overline",
+            "vi": "Dòng trên tiêu đề"
+          },
+          "description": {
+            "en": "Small line above the title.",
+            "vi": "Dòng chữ nhỏ phía trên tiêu đề."
+          }
+        },
+        "grain": {
+          "label": {
+            "en": "Film grain",
+            "vi": "Hạt nhiễu phim"
+          },
+          "description": {
+            "en": "Animated noise over the frame.",
+            "vi": "Lớp hạt nhiễu động phủ khung hình."
+          }
+        },
+        "vignette": {
+          "label": {
+            "en": "Vignette",
+            "vi": "Tối góc"
+          },
+          "description": {
+            "en": "Darkened edges around the frame.",
+            "vi": "Viền tối quanh mép khung."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ],
+      "imageSlot": {
+        "mode": "cover",
+        "defaultOpacity": 0.3
+      }
+    },
+    "frame-aicoding-list": {
+      "positionEditable": [],
+      "hideable": [
+        "gridPattern"
+      ],
+      "widgets": {
+        "gridPattern": {
+          "label": {
+            "en": "Grid pattern",
+            "vi": "Lưới nền"
+          },
+          "description": {
+            "en": "Faint grid lines over the background.",
+            "vi": "Lưới kẻ mờ phủ trên nền."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "frame-aicoding-comparison": {
+      "positionEditable": [],
+      "hideable": [
+        "gridPattern",
+        "badge",
+        "statsRow"
+      ],
+      "widgets": {
+        "gridPattern": {
+          "label": {
+            "en": "Grid pattern",
+            "vi": "Lưới nền"
+          },
+          "description": {
+            "en": "Faint grid lines over the background.",
+            "vi": "Lưới kẻ mờ phủ trên nền."
+          }
+        },
+        "badge": {
+          "label": {
+            "en": "Versus badge",
+            "vi": "Nhãn đối đầu"
+          },
+          "description": {
+            "en": "Pill above the headline.",
+            "vi": "Nhãn tròn phía trên tiêu đề."
+          }
+        },
+        "statsRow": {
+          "label": {
+            "en": "Stats row",
+            "vi": "Hàng số liệu"
+          },
+          "description": {
+            "en": "Two stat tiles under the cards.",
+            "vi": "Hai ô số liệu dưới hai thẻ."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "frame-logo-outro": {
+      "positionEditable": [],
+      "hideable": [
+        "ribbon",
+        "brandBar",
+        "metaUrl",
+        "cornerLabels"
+      ],
+      "widgets": {
+        "ribbon": {
+          "label": {
+            "en": "Light ribbon",
+            "vi": "Dải sáng"
+          },
+          "description": {
+            "en": "Sweeping light band behind the logo.",
+            "vi": "Dải sáng quét phía sau logo."
+          }
+        },
+        "brandBar": {
+          "label": {
+            "en": "Brand bar",
+            "vi": "Thanh thương hiệu"
+          },
+          "description": {
+            "en": "Avatar + role line at the top.",
+            "vi": "Ảnh đại diện và chức danh ở đầu khung."
+          }
+        },
+        "metaUrl": {
+          "label": {
+            "en": "URL line",
+            "vi": "Dòng đường dẫn"
+          },
+          "description": {
+            "en": "Website / handle under the logo.",
+            "vi": "Website hoặc handle dưới logo."
+          }
+        },
+        "cornerLabels": {
+          "label": {
+            "en": "Corner labels",
+            "vi": "Nhãn góc"
+          },
+          "description": {
+            "en": "Two fixed labels in the bottom corners.",
+            "vi": "Hai nhãn cố định ở góc dưới."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ]
+    },
+    "frame-statement-outro": {
+      "positionEditable": [],
+      "hideable": [
+        "hairlines",
+        "cta",
+        "channel",
+        "source"
+      ],
+      "widgets": {
+        "hairlines": {
+          "label": {
+            "en": "Hairlines",
+            "vi": "Đường kẻ mảnh"
+          },
+          "description": {
+            "en": "Thin rules above and below the statement.",
+            "vi": "Hai đường kẻ mảnh trên và dưới câu kết."
+          }
+        },
+        "cta": {
+          "label": {
+            "en": "Call to action",
+            "vi": "Lời kêu gọi"
+          },
+          "description": {
+            "en": "Follow / subscribe line.",
+            "vi": "Dòng kêu gọi theo dõi."
+          }
+        },
+        "channel": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Channel wordmark.",
+            "vi": "Tên kênh dạng chữ."
+          }
+        },
+        "source": {
+          "label": {
+            "en": "Source line",
+            "vi": "Dòng nguồn"
+          },
+          "description": {
+            "en": "Where the story came from.",
+            "vi": "Nguồn của tin."
+          }
+        }
+      },
+      "captionPresetsAllowed": [
+        "News",
+        "Hormozi",
+        "Minimal",
+        "Cinema"
+      ]
+    }
   }
 }
