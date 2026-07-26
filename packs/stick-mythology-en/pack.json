@@ -304,12 +304,15 @@
     "hero-hook": {
       "positionEditable": [
         "kicker",
-        "headline"
+        "headline",
+        "brandingName"
       ],
       "hideable": [
         "glow",
         "kicker",
-        "mascot"
+        "mascot",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "glow": {
@@ -350,6 +353,26 @@
           "description": {
             "en": "Stick figure standing under the title.",
             "vi": "Hình người que đứng dưới tiêu đề."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       },

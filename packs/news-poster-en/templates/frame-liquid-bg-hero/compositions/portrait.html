@@ -276,6 +276,9 @@
             <div class="chip bot" data-slot="footerChip" data-user-hideable="true">
                 <span class="brand"></span><span>Bản tin</span>
             </div>
+
+            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:70px; bottom:4px; font:600 22px 'Inter Tight',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
+            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:70px; bottom:36px; height:32px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
         </div>
 
         <script>
@@ -293,6 +296,9 @@
                 set(".brand", v.brand);
                 set(".headline", v.headline);
                 set(".subheadline", v.subheadline);
+                set('[data-slot="brandingName"]', v.brandingName);
+                var brandingLogoEl = document.querySelector('[data-slot="brandingLogo"]');
+                if (brandingLogoEl && v.brandingLogo) brandingLogoEl.src = v.brandingLogo;
                 // Optional caller-chosen headline gradient (else the vivid default).
                 // Always use 3-stop so any 2-color pair stays vivid (hot-pink midpoint).
                 if (v.headline_from && v.headline_to) {

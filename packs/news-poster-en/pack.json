@@ -527,14 +527,17 @@
   "customizationSurface": {
     "frame-liquid-bg-hero": {
       "positionEditable": [
-        "textBlock"
+        "textBlock",
+        "brandingName"
       ],
       "hideable": [
         "backgroundBlobs",
         "backdropPattern",
         "formatChip",
         "footerChip",
-        "brandBar"
+        "brandBar",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "backgroundBlobs": {
@@ -595,6 +598,26 @@
           "description": {
             "en": "Headline + supporting copy as one block.",
             "vi": "Tiêu đề và phần chữ phụ như một khối."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       },

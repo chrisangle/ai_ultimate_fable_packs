@@ -322,10 +322,13 @@
     "hook-title": {
       "positionEditable": [
         "title",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "moon"
+        "moon",
+        "brandingName",
+        "brandingLogo"
       ],
       "captionPresetsAllowed": [
         "Bedtime",
@@ -362,6 +365,26 @@
           "description": {
             "en": "Decorative moon in the night sky.",
             "vi": "Mặt trăng trang trí trên bầu trời đêm."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       }

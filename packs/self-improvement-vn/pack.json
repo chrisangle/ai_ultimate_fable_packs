@@ -355,12 +355,15 @@
     "big-question-hook": {
       "positionEditable": [
         "kicker",
-        "headline"
+        "headline",
+        "brandingName"
       ],
       "hideable": [
         "paperLines",
         "kicker",
-        "mascot"
+        "mascot",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "paperLines": {
@@ -401,6 +404,26 @@
           "description": {
             "en": "Hand-drawn figure under the question.",
             "vi": "Hình vẽ tay dưới câu hỏi."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       },
