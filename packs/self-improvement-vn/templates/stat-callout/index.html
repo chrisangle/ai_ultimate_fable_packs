@@ -30,6 +30,13 @@
     from { opacity: 0; transform: translate(-50%, 40px); }
     to   { opacity: 1; transform: translate(-50%, 0); }
   }
+  /* Same ticker, WITHOUT the -50% X shift: `ticker` is for elements centred by `left: 50%`, so
+     applying it to a full-width block (left+right: safe) dragged that block half its own width
+     off the left edge and clipped the text (fill-mode `both` kept the wrong transform). */
+  @keyframes ticker-block {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   @keyframes pop {
     0%   { opacity: 0; transform: translate(-50%, 20px) scale(0.7); }
     70%  { opacity: 1; transform: translate(-50%, -6px) scale(1.06); }
@@ -64,7 +71,7 @@
     color: var(--pack-ink);
     font-size: 44px; font-weight: 500; line-height: 1.4;
     text-align: center; opacity: 0.9;
-    animation: ticker 0.9s ease-out both 1.4s;
+    animation: ticker-block 0.9s ease-out both 1.4s;
   }
   /* Character identity fallback — reserved slots {characterName / leftName /
      rightName}. Auto-injected by the boilerplate script when the value is

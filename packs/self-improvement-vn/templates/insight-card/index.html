@@ -42,6 +42,13 @@
     from { opacity: 0; transform: translate(-50%, 30px); }
     to   { opacity: 1; transform: translate(-50%, 0); }
   }
+  /* Same rise, WITHOUT the -50% X shift: `rise` is for elements centred by `left: 50%`, so
+     applying it to a full-width block (left+right: safe) dragged that block half its own width
+     off the left edge and clipped the text (fill-mode `both` kept the wrong transform). */
+  @keyframes rise-block {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .badge {
     position: absolute; top: 260px; left: 50%; transform: translateX(-50%) rotate(-4deg);
     background: var(--pack-accent-1); color: white;
@@ -71,7 +78,7 @@
     color: var(--pack-ink);
     font-size: 44px; font-weight: 500; line-height: 1.4;
     text-align: center;
-    animation: rise 0.9s ease-out both 1.2s;
+    animation: rise-block 0.9s ease-out both 1.2s;
   }
   .footer {
     position: absolute; bottom: var(--pack-safe); left: 0; right: 0;
