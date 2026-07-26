@@ -4,7 +4,7 @@
     "en": "News Poster (VN)",
     "vi": "Poster Tin Tức Việt"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": {
     "en": "Vietnamese editorial-poster short news — same 11 designer-grade templates forked from huytranvan2010/AI-auto-generate-video (MIT), tuned for Vietnamese typography (Be Vietnam Pro + Inter Tight fallback). Portrait 9:16 primary, 60-120s.",
     "vi": "Poster editorial tin tức tiếng Việt — 11 template chất lượng thiết kế fork từ huytranvan2010/AI-auto-generate-video (MIT), tối ưu chữ Việt (Be Vietnam Pro + Inter Tight). Dọc 9:16 chính, 60-120 giây."
