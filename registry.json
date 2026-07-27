@@ -2,7 +2,7 @@
   "packs": [
     {
       "packId": "stick-mythology-en",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "name": {
         "en": "Stick Figure Mythology",
         "vi": "Thần Thoại Que Diêm"
@@ -16,7 +16,7 @@
     },
     {
       "packId": "self-improvement-vn",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "name": {
         "en": "Self-Improvement (VN)",
         "vi": "Tự Phát Triển Bản Thân"
@@ -30,7 +30,7 @@
     },
     {
       "packId": "bedtime-tales-en",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "name": {
         "en": "Bedtime Tales",
         "vi": "Chuyện Kể Trước Giờ Ngủ"
@@ -44,7 +44,7 @@
     },
     {
       "packId": "news-poster-en",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "name": {
         "en": "News Poster",
         "vi": "Poster Tin Tức"
@@ -58,7 +58,7 @@
     },
     {
       "packId": "news-poster-vn",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "name": {
         "en": "News Poster (VN)",
         "vi": "Poster Tin Tức Việt"
