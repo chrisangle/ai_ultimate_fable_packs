@@ -80,7 +80,11 @@ listed here for a template are optional — omit or leave sensible defaults):
 - `frame-glitch-title`: `title` = the shocking/breaking headline; `subtitle`
   = supporting context.
 - `frame-aicoding-list`: `title` = list heading; `items` is an ARRAY of
-  2–5 short strings (each one list entry, NOT a single string).
+  2–5 OBJECTS (not strings), each shaped exactly like this: `{ "icon":
+  "⚠️", "title": "Traditional LMS", "desc": "42% of enterprises are
+  replacing it", "tag": "High", "level": "warn" }` — `icon` is one emoji;
+  `title`/`desc`/`tag` are short strings; `level` is one of `danger` |
+  `warn` | `good` | `info` (controls the card's accent color).
 - `frame-aicoding-comparison`: `left` and `right` are NESTED OBJECTS (not
   strings), each shaped exactly like this: `{ "label": "LMS", "from":
   "#ffb020", "to": "#ff7a3d", "bullets": ["First point.", "Second

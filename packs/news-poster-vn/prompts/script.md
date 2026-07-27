@@ -80,7 +80,11 @@ trên), tôn trọng `maxLength`. Hướng dẫn từng slot (field không liệ
 - `frame-glitch-title`: `title` = headline gây sốc/tin nóng; `subtitle` =
   ngữ cảnh hỗ trợ.
 - `frame-aicoding-list`: `title` = tiêu đề danh sách; `items` là MẢNG 2–5
-  chuỗi ngắn (mỗi phần tử là 1 mục danh sách, KHÔNG phải 1 chuỗi đơn).
+  OBJECT (không phải chuỗi), đúng hình dạng này: `{ "icon": "⚠️", "title":
+  "LMS truyền thống", "desc": "42% doanh nghiệp đang thay thế", "tag":
+  "Cao", "level": "warn" }` — `icon` là 1 emoji; `title`/`desc`/`tag` là
+  chuỗi ngắn; `level` là một trong `danger` | `warn` | `good` | `info`
+  (quyết định màu accent của card).
 - `frame-aicoding-comparison`: `left` và `right` là OBJECT LỒNG NHAU (không
   phải chuỗi), đúng hình dạng này: `{ "label": "LMS", "from": "#ffb020",
   "to": "#ff7a3d", "bullets": ["Điểm 1.", "Điểm 2."], "stat": "88%",

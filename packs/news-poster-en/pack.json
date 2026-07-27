@@ -4,7 +4,7 @@
     "en": "News Poster",
     "vi": "Poster Tin Tức"
   },
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": {
     "en": "Editorial-poster short news for tech / product / breaking beats — 11 designer-grade templates forked from huytranvan2010/AI-auto-generate-video (MIT). Vignelli · Pentagram · Swiss · aurora · cyberpunk. English narrator, 60-120s landscape.",
     "vi": "Poster editorial cho tin tech / sản phẩm / breaking — 11 template chất lượng thiết kế fork từ huytranvan2010/AI-auto-generate-video (MIT). Vignelli · Pentagram · Swiss · aurora · cyberpunk. Người dẫn tiếng Anh, ngang 60-120 giây."
@@ -404,8 +404,8 @@
           "type": "string[]",
           "required": true,
           "label": {
-            "en": "Items (2-5)",
-            "vi": "Mục (2-5)"
+            "en": "Items (2-5, each a JSON object — see prompts/script.md)",
+            "vi": "Mục (2-5, mỗi mục là 1 JSON object — xem prompts/script.md)"
           }
         }
       }
