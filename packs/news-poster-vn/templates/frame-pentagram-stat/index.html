@@ -303,6 +303,25 @@
   .auto-char-badge.auto-characterName { left: 50%; transform: translateX(-50%); }
   .auto-char-badge.auto-leftName      { left: 60px; }
   .auto-char-badge.auto-rightName     { right: 60px; }
+  /* I4: top-left corner — clears .content (top:130), .bars (bottom:150-430),
+     .bottom-bar (bottom:0-80), and the ~200px bottom caption safety zone
+     (lowest point here is 82px from the TOP, i.e. ~998px of bottom clearance). */
+  .fable-branding-name {
+    position: absolute; left: 24px; top: 24px;
+    font: 600 22px 'Archivo',sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .fable-branding-logo {
+    position: absolute; left: 24px; top: 54px;
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    z-index: 50;
+    pointer-events: none;
+  }
 </style>
     </head>
     <body>
@@ -365,8 +384,8 @@
                 <div class="bottom-right"></div>
             </div>
 
-            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:24px; bottom:84px; font:600 22px 'Archivo',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
-            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:24px; bottom:112px; height:28px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
+            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true"></div>
+            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" />
         </div>
 
         <script>
