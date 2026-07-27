@@ -44,7 +44,7 @@
     },
     {
       "packId": "news-poster-en",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "name": {
         "en": "News Poster",
         "vi": "Poster Tin Tức"
@@ -58,7 +58,7 @@
     },
     {
       "packId": "news-poster-vn",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "name": {
         "en": "News Poster (VN)",
         "vi": "Poster Tin Tức Việt"
