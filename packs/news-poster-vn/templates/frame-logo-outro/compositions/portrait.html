@@ -217,7 +217,23 @@
             .corner.right {
                 right: 70px;
             }
-        </style>
+          .fable-branding-name {
+    position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%);
+    font: 600 18px 'Inter Tight',sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .fable-branding-logo {
+    position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+    z-index: 50;
+    pointer-events: none;
+  }
+</style>
     </head>
     <body>
         <div
@@ -270,8 +286,8 @@
             <div class="corner left" data-slot="cornerLabels" data-user-hideable="true">Theo dõi</div>
             <div class="corner right" data-slot="cornerLabels" data-user-hideable="true">Hết</div>
 
-            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:50%; bottom:4px; transform:translateX(-50%); font:600 18px 'Inter Tight',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
-            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:50%; bottom:30px; transform:translateX(-50%); height:20px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
+            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true"></div>
+            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" />
         </div>
 
         <script>

@@ -82,6 +82,22 @@
   .caption { position: absolute; right: 80px; bottom: 90px; z-index: 4; font-family: 'Space Mono', monospace;
     font-size: 24px; font-weight: 400; letter-spacing: 2px; color: rgba(255,255,255,0.55);
     opacity: 0; animation: fade 0.6s ease-out 2.2s forwards; }
+  .fable-branding-name {
+    position: absolute; left: 24px; bottom: 24px;
+    font: 600 22px 'Be Vietnam Pro',sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .fable-branding-logo {
+    position: absolute; left: 24px; bottom: 54px;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    z-index: 50;
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -116,8 +132,8 @@
 
     <div class="caption" data-slot="captionLine" data-user-editable="position" data-user-hideable="true"></div>
 
-    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:24px; bottom:24px; font:600 22px 'Be Vietnam Pro',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
-    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:24px; bottom:54px; height:32px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
+    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true"></div>
+    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" />
   </div>
 
   <script>

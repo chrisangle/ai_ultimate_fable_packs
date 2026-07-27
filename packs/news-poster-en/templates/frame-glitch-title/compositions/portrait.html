@@ -62,6 +62,22 @@
   .ascii { position: absolute; z-index: 6; font-size: 20px; opacity: 0.25; line-height: 1; letter-spacing: 2px; white-space: pre; }
   .ascii.a1 { top: 200px; left: 70px; }
   .ascii.a2 { bottom: 200px; right: 70px; text-align: right; }
+  .fable-branding-name {
+    position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+    font: 600 20px 'Archivo',sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .fable-branding-logo {
+    position: absolute; left: 50%; bottom: 44px; transform: translateX(-50%);
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+    z-index: 50;
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -108,8 +124,8 @@
     <div class="grain" data-slot="grain" data-user-hideable="true"></div>
     <div class="vignette" data-slot="vignette" data-user-hideable="true"></div>
 
-    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:50%; bottom:16px; transform:translateX(-50%); font:600 20px 'Archivo',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
-    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:50%; bottom:44px; transform:translateX(-50%); height:24px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
+    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true"></div>
+    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" />
   </div>
 
   <script>

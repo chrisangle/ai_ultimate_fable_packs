@@ -87,6 +87,22 @@
   .auto-char-badge.auto-characterName { left: 50%; transform: translateX(-50%); }
   .auto-char-badge.auto-leftName      { left: 60px; }
   .auto-char-badge.auto-rightName     { right: 60px; }
+  .fable-branding-name {
+    position: absolute; left: 24px; bottom: 24px;
+    font: 600 22px 'Fraunces', Georgia, serif;
+    color: #422006;
+    text-shadow: 0 1px 4px rgba(255,255,255,.5);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .fable-branding-logo {
+    position: absolute; left: 24px; bottom: 54px;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    z-index: 50;
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -104,8 +120,8 @@
       <div class="heading" data-slot="heading" data-user-editable="position">A kind old baker.</div>
       <div class="body-copy" data-slot="voiceText" data-user-editable="position">He rose before the sun, kneaded warm dough with his hands, and hummed the same old tune his mother once sang.</div>
     </div>
-    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:24px; bottom:24px; font:600 22px 'Inter Tight',sans-serif; color:#422006; text-shadow:0 1px 4px rgba(255,255,255,.5); z-index:50; pointer-events:none;"></div>
-    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:24px; bottom:54px; height:32px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
+    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true"></div>
+    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" />
   </div>
   <script>
     /* Fable boilerplate runtime (BOILERPLATE_SCRIPT_V3 = SLOT_INJECTOR_SCRIPT_V3 + OVERRIDES_SCRIPT_V3).

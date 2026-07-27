@@ -89,6 +89,22 @@
   .auto-char-badge.auto-characterName { left: 50%; transform: translateX(-50%); }
   .auto-char-badge.auto-leftName      { left: 60px; }
   .auto-char-badge.auto-rightName     { right: 60px; }
+  .fable-branding-name {
+    position: absolute; left: 24px; bottom: 24px;
+    font: 600 22px 'Be Vietnam Pro', sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .fable-branding-logo {
+    position: absolute; left: 24px; bottom: 54px;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    z-index: 50;
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -103,8 +119,8 @@
     <div class="stat" data-user-editable="position" data-slot="stat">66</div>
     <div class="label" data-user-editable="position" data-slot="label">ngày để tạo thói quen</div>
     <div class="caption" data-user-editable="position" data-slot="voiceText">Nghiên cứu Đại học London cho thấy trung bình mất sáu mươi sáu ngày để một hành vi trở thành tự động.</div>
-    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:24px; bottom:24px; font:600 22px 'Inter Tight',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
-    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" alt="" data-user-hideable="true" style="position:absolute; left:24px; bottom:54px; height:32px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
+    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true"></div>
+    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" alt="" data-user-hideable="true" />
   </div>
   <script>
     /* Fable slot-injector runtime (SLOT_INJECTOR_SCRIPT_V3) — [data-slot] population (text + image
