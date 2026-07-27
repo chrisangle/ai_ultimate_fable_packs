@@ -392,10 +392,13 @@
     "storybook-page": {
       "positionEditable": [
         "heading",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "chapterNumber"
+        "chapterNumber",
+        "brandingName",
+        "brandingLogo"
       ],
       "captionPresetsAllowed": [
         "Bedtime",
@@ -437,16 +440,39 @@
             "en": "Small \"Chapter N\" label.",
             "vi": "Nhãn \"Chương N\" cỡ nhỏ."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       }
     },
     "end-card": {
       "positionEditable": [
         "endTitle",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "moon"
+        "moon",
+        "brandingName",
+        "brandingLogo"
       ],
       "captionPresetsAllowed": [
         "Bedtime",
@@ -484,16 +510,39 @@
             "en": "Decorative moon in the night sky.",
             "vi": "Mặt trăng trang trí trên bầu trời đêm."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       }
     },
     "character-moment": {
       "positionEditable": [
         "heading",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "warmGlow"
+        "warmGlow",
+        "brandingName",
+        "brandingLogo"
       ],
       "captionPresetsAllowed": [
         "Bedtime",
@@ -531,16 +580,39 @@
             "en": "Soft light around the character.",
             "vi": "Vầng sáng dịu quanh nhân vật."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       }
     },
     "question-page": {
       "positionEditable": [
         "question",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "questionMark"
+        "questionMark",
+        "brandingName",
+        "brandingLogo"
       ],
       "captionPresetsAllowed": [
         "Bedtime",
@@ -578,15 +650,38 @@
             "en": "Large decorative question mark.",
             "vi": "Dấu chấm hỏi lớn trang trí."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       }
     },
     "quiet-moment": {
       "positionEditable": [
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "stars"
+        "stars",
+        "brandingName",
+        "brandingLogo"
       ],
       "captionPresetsAllowed": [
         "Bedtime",
@@ -613,6 +708,26 @@
           "description": {
             "en": "Twinkling stars in the background.",
             "vi": "Các ngôi sao lấp lánh trên nền."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       }
