@@ -120,6 +120,9 @@
 
     <div class="grain" data-slot="grain" data-user-hideable="true"></div>
     <div class="vignette" data-slot="vignette" data-user-hideable="true"></div>
+
+    <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:50%; bottom:14px; transform:translateX(-50%); font:600 18px 'Archivo',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
+    <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:50%; bottom:36px; transform:translateX(-50%); height:20px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
   </div>
 
   <script>
@@ -127,6 +130,10 @@
       var v = (window.__hyperframes &&
                typeof window.__hyperframes.getVariables === "function")
         ? window.__hyperframes.getVariables() : {};
+      var brandingNameEl = document.querySelector('[data-slot="brandingName"]');
+      if (brandingNameEl && v.brandingName != null) brandingNameEl.textContent = String(v.brandingName);
+      var brandingLogoEl = document.querySelector('[data-slot="brandingLogo"]');
+      if (brandingLogoEl && v.brandingLogo) brandingLogoEl.src = v.brandingLogo;
       var title = v.title != null ? String(v.title) : "";
       var allLayers = document.querySelectorAll(".glitch-text");
       allLayers.forEach(function (el) { el.textContent = title; });
