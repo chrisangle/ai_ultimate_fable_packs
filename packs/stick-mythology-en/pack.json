@@ -390,12 +390,15 @@
     "action-beat": {
       "positionEditable": [
         "kicker",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
         "burst",
         "kicker",
-        "mascot"
+        "mascot",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "burst": {
@@ -437,6 +440,26 @@
             "en": "On-screen copy of the narration.",
             "vi": "Chữ hiện trên hình của lời dẫn."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -453,11 +476,14 @@
     "dialogue-panel": {
       "positionEditable": [
         "leftText",
-        "rightText"
+        "rightText",
+        "brandingName"
       ],
       "hideable": [
         "leftFigure",
-        "rightFigure"
+        "rightFigure",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "leftText": {
@@ -499,6 +525,26 @@
             "en": "Stick figure on the right.",
             "vi": "Hình người que bên phải."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -514,13 +560,16 @@
     },
     "narrator-scene": {
       "positionEditable": [
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
         "sun",
         "ground",
         "mascot",
-        "voiceText"
+        "voiceText",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "sun": {
@@ -562,6 +611,26 @@
             "en": "Hide it when you use the app subtitle track instead.",
             "vi": "Ẩn khi bạn dùng phụ đề của app thay thế."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -578,11 +647,14 @@
     "outro-cta": {
       "positionEditable": [
         "voiceText",
-        "cta"
+        "cta",
+        "brandingName"
       ],
       "hideable": [
         "cta",
-        "mascot"
+        "mascot",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "voiceText": {
@@ -614,6 +686,26 @@
             "en": "Waving stick figure in the corner.",
             "vi": "Hình người que vẫy tay ở góc."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -626,11 +718,14 @@
     "quote-card": {
       "positionEditable": [
         "voiceText",
-        "attribution"
+        "attribution",
+        "brandingName"
       ],
       "hideable": [
         "quoteMark",
-        "attribution"
+        "attribution",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "quoteMark": {
@@ -661,6 +756,26 @@
           "description": {
             "en": "Who said it. Hide for anonymous quotes.",
             "vi": "Ai nói câu này. Ẩn nếu trích khuyết danh."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       },
