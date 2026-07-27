@@ -4,7 +4,7 @@
     "en": "Stick Figure Mythology",
     "vi": "Thần Thoại Que Diêm"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": {
     "en": "Retellings of Greek/Norse mythology in hand-drawn stickman doodle style, English narrator.",
     "vi": "Kể lại thần thoại Hy Lạp/Bắc Âu dưới dạng doodle hình que vẽ tay, người dẫn nói tiếng Anh."
@@ -44,8 +44,7 @@
     "style": "style/tokens.css"
   },
   "prompts": {
-    "script": "prompts/script.md",
-    "scene": "prompts/scene.md"
+    "script": "prompts/script.md"
   },
   "voice": {
     "referenceClip": "voice/ref-narrator-en.mp3",

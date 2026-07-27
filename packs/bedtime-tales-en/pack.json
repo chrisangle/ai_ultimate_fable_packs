@@ -4,7 +4,7 @@
     "en": "Bedtime Tales",
     "vi": "Chuyện Kể Trước Giờ Ngủ"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": {
     "en": "Cozy storybook-style bedtime tales for kids, warm English narrator, 3–6 minute videos.",
     "vi": "Truyện kể trước giờ ngủ cho trẻ em, phong cách sách tranh ấm áp, người dẫn tiếng Anh, video 3–6 phút."
@@ -43,8 +43,7 @@
     "style": "style/tokens.css"
   },
   "prompts": {
-    "script": "prompts/script.md",
-    "scene": "prompts/scene.md"
+    "script": "prompts/script.md"
   },
   "voice": {
     "referenceClip": "voice/ref-narrator-en.mp3",

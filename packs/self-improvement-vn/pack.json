@@ -4,7 +4,7 @@
     "en": "Self-Improvement (VN)",
     "vi": "Tự Phát Triển Bản Thân"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": {
     "en": "Vietnamese doodle animation for self-improvement / productivity shorts, 60–90s vertical (Đồn Như Lời style).",
     "vi": "Doodle animation tiếng Việt cho short về self-improvement / productivity, dọc 60–90 giây (kiểu Đồn Như Lời)."
@@ -39,8 +39,7 @@
     "style": "style/tokens.css"
   },
   "prompts": {
-    "script": "prompts/script.md",
-    "scene": "prompts/scene.md"
+    "script": "prompts/script.md"
   },
   "voice": {
     "referenceClip": "voice/ref-narrator-vn.mp3",
