@@ -436,11 +436,14 @@
     },
     "checklist-panel": {
       "positionEditable": [
-        "title"
+        "title",
+        "brandingName"
       ],
       "hideable": [
         "paperLines",
-        "footer"
+        "footer",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "paperLines": {
@@ -472,6 +475,26 @@
             "en": "Small channel wordmark at the bottom.",
             "vi": "Tên kênh cỡ nhỏ ở đáy khung."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -484,10 +507,13 @@
     "cta-followup": {
       "positionEditable": [
         "voiceText",
-        "cta"
+        "cta",
+        "brandingName"
       ],
       "hideable": [
-        "cta"
+        "cta",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "voiceText": {
@@ -509,6 +535,26 @@
             "en": "Call-to-action button. Hide it on platforms that penalise CTAs.",
             "vi": "Nút kêu gọi theo dõi. Ẩn nếu nền tảng hạn chế CTA."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -525,13 +571,16 @@
     "doodle-scene": {
       "positionEditable": [
         "voiceText",
-        "footer"
+        "footer",
+        "brandingName"
       ],
       "hideable": [
         "paperLines",
         "mascot",
         "voiceText",
-        "footer"
+        "footer",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "paperLines": {
@@ -573,6 +622,26 @@
             "en": "Small channel wordmark at the bottom.",
             "vi": "Tên kênh cỡ nhỏ ở đáy khung."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -587,12 +656,15 @@
         "badge",
         "number",
         "title",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
         "paperLines",
         "badge",
-        "footer"
+        "footer",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "paperLines": {
@@ -654,6 +726,26 @@
             "en": "Small channel wordmark at the bottom.",
             "vi": "Tên kênh cỡ nhỏ ở đáy khung."
           }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
+          }
         }
       },
       "captionPresetsAllowed": [
@@ -668,10 +760,13 @@
         "kicker",
         "stat",
         "label",
-        "voiceText"
+        "voiceText",
+        "brandingName"
       ],
       "hideable": [
-        "kicker"
+        "kicker",
+        "brandingName",
+        "brandingLogo"
       ],
       "widgets": {
         "kicker": {
@@ -712,6 +807,26 @@
           "description": {
             "en": "Supporting sentence under the figure.",
             "vi": "Câu diễn giải dưới con số."
+          }
+        },
+        "brandingName": {
+          "label": {
+            "en": "Channel name",
+            "vi": "Tên kênh"
+          },
+          "description": {
+            "en": "Your channel name overlay.",
+            "vi": "Chữ tên kênh hiển thị trên hình."
+          }
+        },
+        "brandingLogo": {
+          "label": {
+            "en": "Channel logo",
+            "vi": "Logo kênh"
+          },
+          "description": {
+            "en": "Your channel logo overlay.",
+            "vi": "Logo kênh hiển thị trên hình."
           }
         }
       },
