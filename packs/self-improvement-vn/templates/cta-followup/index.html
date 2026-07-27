@@ -81,35 +81,37 @@
     <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" alt="" data-user-hideable="true" style="position:absolute; left:24px; bottom:54px; height:32px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
   </div>
   <script>
-    (function () {
-      var v = (window.__hyperframes && typeof window.__hyperframes.getVariables === 'function')
-        ? window.__hyperframes.getVariables() : {};
-      // A. Populate declared [data-slot] elements verbatim.
-      document.querySelectorAll('[data-slot]').forEach(function (el) {
-        var key = el.getAttribute('data-slot');
-        if (v[key] != null) el.textContent = String(v[key]);
+    /* Fable slot-injector runtime (SLOT_INJECTOR_SCRIPT_V3) — [data-slot] population (text + image
+       slots), auto character badges, timeline registration.
+       Source of truth: src/shared/fable-pack/template-contract.ts. Do not edit by hand. */
+  (function(){
+    const V = (window.__hyperframes && window.__hyperframes.getVariables) ? window.__hyperframes.getVariables() : {};
+
+    // populate [data-slot="key"] — image-type slots get .src, everything else gets .textContent.
+    Object.entries(V).forEach(([k, v]) => {
+      if (k.startsWith('__')) return;
+      document.querySelectorAll('[data-slot="' + k + '"]').forEach(el => {
+        if (v == null) return;
+        if (el.getAttribute('data-slot-type') === 'image') { el.src = String(v); }
+        else { el.textContent = String(v); }
       });
-      // B. Auto-badge fallback — inject default character badge for reserved
-      //    identity slots (characterName / leftName / rightName) when the
-      //    value is set AND the template did not author its own placement.
-      //    Docs: docs/pack-template-contract.md#character-identity.
-      var root = document.getElementById('root');
-      if (root) {
-        ['characterName', 'leftName', 'rightName'].forEach(function (slot) {
-          var val = v[slot];
-          if (val && !document.querySelector('[data-slot="' + slot + '"]')) {
-            var b = document.createElement('div');
-            b.className = 'auto-char-badge auto-' + slot;
-            b.textContent = String(val);
-            root.appendChild(b);
-          }
-        });
+    });
+
+    // auto character badges
+    ['characterName','leftName','rightName'].forEach(k => {
+      if (!V[k]) return;
+      if (!document.querySelector('[data-slot="' + k + '"]')) {
+        const el = document.createElement('div');
+        el.className = 'auto-char-badge auto-' + k;
+        el.textContent = V[k];
+        document.getElementById('root').appendChild(el);
       }
-      window.__timelines = window.__timelines || {};
-      window.__timelines['cta-followup'] = {
-        pause: function () {}, seek: function () {}, paused: function () { return true; },
-      };
-    })();
+    });
+
+    window.__timelines = window.__timelines || {};
+    const cid = (document.getElementById('root') || {}).getAttribute && document.getElementById('root').getAttribute('data-composition-id') || 'default';
+    window.__timelines[cid] = { start: function(){}, stop: function(){} };
+  })();
   </script>
   <script>
     /* Fable override runtime (OVERRIDES_SCRIPT_V3) — positions / hidden widgets / image slot.
