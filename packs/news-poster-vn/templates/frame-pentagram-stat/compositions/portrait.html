@@ -328,6 +328,9 @@
                 <div class="bottom-left"></div>
                 <div class="bottom-right"></div>
             </div>
+
+            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:24px; bottom:120px; font:600 22px 'Archivo',sans-serif; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.6); z-index:50; pointer-events:none;"></div>
+            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:24px; bottom:150px; height:28px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
         </div>
 
         <script>
@@ -347,6 +350,9 @@
                 set(".type-anchor", v.anchor);
                 set(".bottom-left", v.footer_left);
                 set(".bottom-right", v.footer_right);
+                set('[data-slot="brandingName"]', v.brandingName);
+                var brandingLogoEl = document.querySelector('[data-slot="brandingLogo"]');
+                if (brandingLogoEl && v.brandingLogo) brandingLogoEl.src = v.brandingLogo;
 
                 /* Auto-scale headline to fit container width */
                 function fitText(el, maxPx, minPx) {

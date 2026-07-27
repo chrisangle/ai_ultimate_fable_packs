@@ -149,6 +149,9 @@
             <div class="channel" data-slot="channel" data-user-hideable="true"></div>
             <div class="source" data-slot="source" data-user-hideable="true"></div>
             <div class="rule-bot" data-slot="hairlines" data-user-hideable="true"></div>
+
+            <div class="fable-branding-name" data-slot="brandingName" data-user-editable="position" data-user-hideable="true" style="position:absolute; left:24px; bottom:24px; font:600 22px 'Be Vietnam Pro',sans-serif; color:#1c1410; text-shadow:none; z-index:50; pointer-events:none;"></div>
+            <img class="fable-branding-logo" data-slot="brandingLogo" data-slot-type="image" data-slot-fit="contain" data-user-hideable="true" alt="" style="position:absolute; left:24px; bottom:54px; height:32px; width:auto; object-fit:contain; z-index:50; pointer-events:none;" />
         </div>
 
         <script>
@@ -165,6 +168,9 @@
                 set(".cta", v.cta);
                 set(".channel", v.channel);
                 set(".source", v.source);
+                set('[data-slot="brandingName"]', v.brandingName);
+                var brandingLogoEl = document.querySelector('[data-slot="brandingLogo"]');
+                if (brandingLogoEl && v.brandingLogo) brandingLogoEl.src = v.brandingLogo;
             })();
             window.__timelines = window.__timelines || {};
             window.__timelines["main"] = {
