@@ -699,7 +699,7 @@
         "brandingName": {
           "label": {
             "en": "Channel name",
-            "vi": "Tên kênh"
+            "vi": "Tên kênh (chèn thêm)"
           },
           "description": {
             "en": "Your channel name overlay.",
