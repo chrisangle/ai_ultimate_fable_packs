@@ -1414,8 +1414,8 @@
         },
         "brandingName": {
           "label": {
-            "en": "Channel name",
-            "vi": "Tên kênh"
+            "en": "Channel branding",
+            "vi": "Thương hiệu kênh"
           },
           "description": {
             "en": "Your channel name overlay.",
